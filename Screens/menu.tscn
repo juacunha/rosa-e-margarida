@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dry5f677xv3pr"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="menu_ost" type="AudioStreamPlayer" parent="."]
+
+[node name="Iniciar2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 344.0
+offset_right = 668.0
+offset_bottom = 392.0
+text = "Jogar"
+
+[node name="Opções" type="Button" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 400.0
+offset_right = 668.0
+offset_bottom = 448.0
+text = "Opções
+"
+
+[node name="Sair" type="Button" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 456.0
+offset_right = 668.0
+offset_bottom = 504.0
+text = "Sair"

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://do32sr4bvpphr"]
+
+[node name="sala_cozinha" type="Node2D"]
+
+[node name="ost" type="AudioStreamPlayer" parent="."]
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+
+[node name="coffee" type="AudioStreamPlayer" parent="."]
