@@ -1,4 +1,4 @@
-# Automated Testing Project
+# Rosa and Margarida Game
 
 **People Involved**: Alicie Martins, Debs Sieburger, Julia Acunha e Luiz Henrique 
 **Version 1.0**: xx/xx/xxxx
