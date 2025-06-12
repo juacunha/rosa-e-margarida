@@ -528,5 +528,8 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_5cld6")
 animation = &"walk_up"
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+
 [connection signal="body_entered" from="InteractableArea" to="." method="_on_interactable_area_body_entered"]
 [connection signal="body_exited" from="InteractableArea" to="." method="_on_interactable_area_body_exited"]

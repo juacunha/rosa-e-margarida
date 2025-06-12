@@ -13,7 +13,6 @@ config_version=5
 config/name="Rosa-e-Margarida"
 run/main_scene="uid://dry5f677xv3pr"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 

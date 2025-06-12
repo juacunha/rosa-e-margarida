@@ -1,13 +1,203 @@
-[gd_scene load_steps=3 format=3 uid="uid://q7a6nccqmh1i"]
+[gd_scene load_steps=23 format=3 uid="uid://q7a6nccqmh1i"]
 
 [ext_resource type="PackedScene" uid="uid://osy80j4wrwhi" path="res://Scenes/porta.tscn" id="1_10atf"]
 [ext_resource type="PackedScene" uid="uid://ccadisl0ugbyj" path="res://Scenes/player.tscn" id="1_uylpo"]
+[ext_resource type="Texture2D" uid="uid://dko6f10p43chu" path="res://Assets/Assets Casa/Assets Casa/Paredes/paredes quarto.png" id="1_ywv3x"]
+[ext_resource type="Texture2D" uid="uid://fqwmupmn6qy" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/janela quarto.png" id="2_mklxq"]
+[ext_resource type="Texture2D" uid="uid://cic6jnmh80v6a" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/cama.png" id="3_t12d2"]
+[ext_resource type="Texture2D" uid="uid://cppno637b745t" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/bide.png" id="4_0l767"]
+[ext_resource type="Texture2D" uid="uid://b6kk7nvrs0kvk" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/cacto.png" id="5_a4krb"]
+[ext_resource type="Texture2D" uid="uid://dhepjaod7403k" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/abajur.png" id="6_ary4r"]
+[ext_resource type="Texture2D" uid="uid://dpcumc4wp85uq" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/comoda.png" id="7_qhsix"]
+[ext_resource type="Texture2D" uid="uid://ccfavfv2wqdj" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/guarda roupa.png" id="8_3o3ll"]
+[ext_resource type="Texture2D" uid="uid://ce2krmc23f2x2" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/coruja.png" id="9_p3oxi"]
+[ext_resource type="Texture2D" uid="uid://cb4teeugn06t0" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/tapete grande.png" id="10_0cvhf"]
+[ext_resource type="Texture2D" uid="uid://c5bi4jphgxe4l" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/tapete pequeno.png" id="11_60ca0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywv3x"]
+size = Vector2(66.539, 13.529)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mklxq"]
+size = Vector2(58.7221, 17.6744)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t12d2"]
+size = Vector2(145.077, 1.70916)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l767"]
+size = Vector2(2.72701, 12.4321)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmmut"]
+size = Vector2(48, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qkk2"]
+size = Vector2(18, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgh3r"]
+size = Vector2(14, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4krb"]
+size = Vector2(26, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wc1b"]
+size = Vector2(30.5, 30.5)
 
 [node name="Quarto" type="Node2D"]
+position = Vector2(219, 200)
 
 [node name="ChaoeParedes" type="Node2D" parent="."]
 
+[node name="StaticBody2D" type="StaticBody2D" parent="ChaoeParedes"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ChaoeParedes/StaticBody2D"]
+texture_filter = 1
+position = Vector2(331, 107)
+texture = ExtResource("1_ywv3x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(355, 64.5)
+scale = Vector2(1.8517, 2.75223)
+shape = SubResource("RectangleShape2D_ywv3x")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(465.166, 107.169)
+scale = Vector2(1.83351, 2.73487)
+shape = SubResource("RectangleShape2D_mklxq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(246, 107)
+scale = Vector2(1.83351, 2.73487)
+shape = SubResource("RectangleShape2D_mklxq")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(331, 165.663)
+scale = Vector2(1.83351, 2.73487)
+shape = SubResource("RectangleShape2D_t12d2")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(200.5, 147)
+scale = Vector2(1.83351, 2.73487)
+shape = SubResource("RectangleShape2D_0l767")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(461, 147)
+scale = Vector2(1.83351, 2.73487)
+shape = SubResource("RectangleShape2D_0l767")
+
 [node name="Objetos" type="Node2D" parent="."]
+
+[node name="janela" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/janela"]
+texture_filter = 1
+position = Vector2(356, 72)
+texture = ExtResource("2_mklxq")
+
+[node name="cama" type="StaticBody2D" parent="Objetos"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/cama"]
+texture_filter = 1
+position = Vector2(356, 93)
+texture = ExtResource("3_t12d2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/cama"]
+position = Vector2(356, 93)
+shape = SubResource("RectangleShape2D_fmmut")
+
+[node name="bide 1" type="StaticBody2D" parent="Objetos"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/bide 1"]
+texture_filter = 1
+position = Vector2(323, 85)
+texture = ExtResource("4_0l767")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/bide 1"]
+position = Vector2(323, 85)
+shape = SubResource("RectangleShape2D_4qkk2")
+
+[node name="bide 2" type="StaticBody2D" parent="Objetos"]
+position = Vector2(66, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/bide 2"]
+texture_filter = 1
+position = Vector2(323, 85)
+texture = ExtResource("4_0l767")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/bide 2"]
+position = Vector2(323, 85)
+shape = SubResource("RectangleShape2D_4qkk2")
+
+[node name="cacto" type="StaticBody2D" parent="Objetos"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/cacto"]
+texture_filter = 1
+position = Vector2(323, 75)
+texture = ExtResource("5_a4krb")
+
+[node name="abajur 1" type="StaticBody2D" parent="Objetos"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/abajur 1"]
+texture_filter = 1
+position = Vector2(307, 78)
+texture = ExtResource("6_ary4r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/abajur 1"]
+position = Vector2(307, 78)
+shape = SubResource("RectangleShape2D_fgh3r")
+
+[node name="abajur 2" type="StaticBody2D" parent="Objetos"]
+position = Vector2(97, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/abajur 2"]
+texture_filter = 1
+position = Vector2(307, 78)
+texture = ExtResource("6_ary4r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/abajur 2"]
+position = Vector2(307, 78)
+shape = SubResource("RectangleShape2D_fgh3r")
+
+[node name="comoda" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-4, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/comoda"]
+texture_filter = 1
+position = Vector2(254, 129)
+texture = ExtResource("7_qhsix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/comoda"]
+position = Vector2(254, 129)
+shape = SubResource("RectangleShape2D_a4krb")
+
+[node name="guarda roupa" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-4, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/guarda roupa"]
+texture_filter = 1
+position = Vector2(283, 122)
+texture = ExtResource("8_3o3ll")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/guarda roupa"]
+position = Vector2(282.75, 122.25)
+shape = SubResource("RectangleShape2D_2wc1b")
+
+[node name="coruja" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/coruja"]
+texture_filter = 1
+position = Vector2(257, 122)
+texture = ExtResource("9_p3oxi")
+
+[node name="tapete 1" type="Sprite2D" parent="Objetos"]
+texture_filter = 1
+position = Vector2(356, 137)
+texture = ExtResource("10_0cvhf")
+
+[node name="tapete 2" type="Sprite2D" parent="Objetos"]
+texture_filter = 1
+position = Vector2(436, 139)
+texture = ExtResource("11_60ca0")
 
 [node name="Portas" type="Node2D" parent="."]
 
@@ -17,5 +207,5 @@ position = Vector2(327, 19)
 [node name="Audios" type="Node" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_uylpo")]
-position = Vector2(348, 179)
+position = Vector2(356, 125)
 speed = 300.0
