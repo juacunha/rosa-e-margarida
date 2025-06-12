@@ -1,3 +1,21 @@
-[gd_scene format=3 uid="uid://q7a6nccqmh1i"]
+[gd_scene load_steps=3 format=3 uid="uid://q7a6nccqmh1i"]
+
+[ext_resource type="PackedScene" uid="uid://osy80j4wrwhi" path="res://Scenes/porta.tscn" id="1_10atf"]
+[ext_resource type="PackedScene" uid="uid://ccadisl0ugbyj" path="res://Scenes/player.tscn" id="1_uylpo"]
 
 [node name="Quarto" type="Node2D"]
+
+[node name="ChaoeParedes" type="Node2D" parent="."]
+
+[node name="Objetos" type="Node2D" parent="."]
+
+[node name="Portas" type="Node2D" parent="."]
+
+[node name="Porta" parent="Portas" instance=ExtResource("1_10atf")]
+position = Vector2(327, 19)
+
+[node name="Audios" type="Node" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_uylpo")]
+position = Vector2(348, 179)
+speed = 300.0

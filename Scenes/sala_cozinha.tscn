@@ -2,8 +2,16 @@
 
 [node name="sala_cozinha" type="Node2D"]
 
-[node name="ost" type="AudioStreamPlayer" parent="."]
+[node name="ChaoeParedes" type="Node2D" parent="."]
 
-[node name="sfx" type="AudioStreamPlayer" parent="."]
+[node name="Objetos" type="Node2D" parent="."]
 
-[node name="coffee" type="AudioStreamPlayer" parent="."]
+[node name="Portas" type="Node2D" parent="."]
+
+[node name="Audios" type="Node" parent="."]
+
+[node name="ost" type="AudioStreamPlayer" parent="Audios"]
+
+[node name="sfx" type="AudioStreamPlayer" parent="Audios"]
+
+[node name="coffee" type="AudioStreamPlayer" parent="Audios"]

@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://6rq51gy8dy4u"]
 
 [node name="Banheiro" type="Node2D"]
+
+[node name="ChaoeParedes" type="Node2D" parent="."]
+
+[node name="Objetos" type="Node2D" parent="."]
+
+[node name="Portas" type="Node2D" parent="."]
+
+[node name="Audios" type="Node" parent="."]
