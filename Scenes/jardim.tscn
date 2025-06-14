@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://jmkswqfadufv"]
+[gd_scene format=3 uid="uid://jmkswqfadufv"]
 
 [node name="Jardim" type="Node2D"]
 

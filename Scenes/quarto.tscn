@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://q7a6nccqmh1i"]
+[gd_scene load_steps=31 format=3 uid="uid://q7a6nccqmh1i"]
 
 [ext_resource type="PackedScene" uid="uid://osy80j4wrwhi" path="res://Scenes/porta.tscn" id="1_10atf"]
+[ext_resource type="Script" uid="uid://bak6nb2m0bjxd" path="res://Scripts/quarto.gd" id="1_60ca0"]
 [ext_resource type="PackedScene" uid="uid://ccadisl0ugbyj" path="res://Scenes/player.tscn" id="1_uylpo"]
 [ext_resource type="Texture2D" uid="uid://dko6f10p43chu" path="res://Assets/Assets Casa/Assets Casa/Paredes/paredes quarto.png" id="1_ywv3x"]
 [ext_resource type="Texture2D" uid="uid://fqwmupmn6qy" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/janela quarto.png" id="2_mklxq"]
@@ -13,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://ce2krmc23f2x2" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/coruja.png" id="9_p3oxi"]
 [ext_resource type="Texture2D" uid="uid://cb4teeugn06t0" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/tapete grande.png" id="10_0cvhf"]
 [ext_resource type="Texture2D" uid="uid://c5bi4jphgxe4l" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/tapete pequeno.png" id="11_60ca0"]
+[ext_resource type="Texture2D" uid="uid://dpfxq55ad1v01" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/porta quarto.png" id="14_2wc1b"]
+[ext_resource type="Texture2D" uid="uid://di6k21cikricf" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/porta quarto Sheet.png" id="15_4by6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywv3x"]
 size = Vector2(66.539, 13.529)
@@ -41,8 +44,49 @@ size = Vector2(26, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wc1b"]
 size = Vector2(30.5, 30.5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_60ca0"]
+atlas = ExtResource("14_2wc1b")
+region = Rect2(0, 0, 24, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wc1b"]
+atlas = ExtResource("15_4by6u")
+region = Rect2(0, 0, 26, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4by6u"]
+atlas = ExtResource("15_4by6u")
+region = Rect2(26, 0, 26, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sgsx"]
+atlas = ExtResource("15_4by6u")
+region = Rect2(52, 0, 26, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ktx11"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60ca0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wc1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4by6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sgsx")
+}],
+"loop": false,
+"name": &"opening",
+"speed": 2.0
+}]
+
 [node name="Quarto" type="Node2D"]
-position = Vector2(219, 200)
+script = ExtResource("1_60ca0")
 
 [node name="ChaoeParedes" type="Node2D" parent="."]
 
@@ -202,10 +246,16 @@ texture = ExtResource("11_60ca0")
 [node name="Portas" type="Node2D" parent="."]
 
 [node name="Porta" parent="Portas" instance=ExtResource("1_10atf")]
-position = Vector2(327, 19)
+position = Vector2(436, 117)
+animations = SubResource("SpriteFrames_ktx11")
 
 [node name="Audios" type="Node" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_uylpo")]
 position = Vector2(356, 125)
 speed = 300.0
+
+[node name="Surgimentos" type="Node2D" parent="."]
+
+[node name="Banheiro" type="Marker2D" parent="Surgimentos"]
+position = Vector2(435, 139)

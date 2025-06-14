@@ -13,7 +13,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_igrcy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l6n3p"]
-radius = 28.0179
+radius = 23.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_olqyp"]
 atlas = ExtResource("2_tx1dd")
@@ -531,5 +531,7 @@ animation = &"walk_up"
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
 
+[connection signal="area_entered" from="InteractableArea" to="." method="_on_interactable_area_area_entered"]
+[connection signal="area_exited" from="InteractableArea" to="." method="_on_interactable_area_area_exited"]
 [connection signal="body_entered" from="InteractableArea" to="." method="_on_interactable_area_body_entered"]
 [connection signal="body_exited" from="InteractableArea" to="." method="_on_interactable_area_body_exited"]

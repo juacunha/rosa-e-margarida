@@ -1,13 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://osy80j4wrwhi"]
+[gd_scene load_steps=6 format=3 uid="uid://osy80j4wrwhi"]
 
 [ext_resource type="Script" uid="uid://cg760x5fhhmbg" path="res://Scripts/porta.gd" id="1_5quaa"]
+[ext_resource type="Texture2D" uid="uid://dpfxq55ad1v01" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/porta quarto.png" id="2_5f6wt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5f6wt"]
+size = Vector2(24, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_camwj"]
+atlas = ExtResource("2_5f6wt")
+region = Rect2(0, 0, 24, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5quaa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_camwj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"opening",
+"speed": 5.0
+}]
 
 [node name="Porta" type="Node2D"]
 script = ExtResource("1_5quaa")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 18)
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_5f6wt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_5quaa")
+animation = &"idle"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dry5f677xv3pr"]
+[gd_scene load_steps=2 format=3 uid="uid://dry5f677xv3pr"]
+
+[ext_resource type="Script" uid="uid://sfktwpdm11l7" path="res://Scripts/menu.gd" id="1_b0dvv"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_b0dvv")
 
 [node name="menu_ost" type="AudioStreamPlayer" parent="."]
 
@@ -34,3 +37,5 @@ offset_top = 456.0
 offset_right = 668.0
 offset_bottom = 504.0
 text = "Sair"
+
+[connection signal="pressed" from="Iniciar2" to="." method="_on_iniciar_2_pressed"]

@@ -5,13 +5,16 @@ class_name Player
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+signal interaction(dono)
 
+var can_interact = false
 var idle_direcao = "idle_right"
+var can_be_played = true
 
 func _physics_process(delta: float) -> void:
 	var direction: Vector2 = Input.get_vector("left", "right", "up", "down")
 	
-	if direction:
+	if direction and can_be_played:
 		velocity = direction * speed
 		if direction.x > 0: # Movendo direita
 			animated_sprite_2d.play("walk_right")
@@ -33,8 +36,14 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("interact") and can_interact and can_be_played:
+		interaction.emit(self)
+		print("emissao interaction")
 
 
+func playable(order: bool) -> void:
+	can_be_played = order
 
 # Corpo Interagivel Entrou
 func _on_interactable_area_body_entered(body: Node2D) -> void:
@@ -44,4 +53,15 @@ func _on_interactable_area_body_entered(body: Node2D) -> void:
 # Corpo Interagivel Saiu
 func _on_interactable_area_body_exited(body: Node2D) -> void:
 	# Desconectar com o corpo
+	pass # Replace with function body.
+
+# Corpo Interagivel Entrou
+func _on_interactable_area_area_entered(area: Area2D) -> void:
+	can_interact = true
+	print("can interact")
+	pass # Replace with function body.
+
+# Corpo Interagivel Saiu
+func _on_interactable_area_area_exited(area: Area2D) -> void:
+	can_interact = false
 	pass # Replace with function body.
