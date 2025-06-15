@@ -5,8 +5,6 @@ extends Sala # O Quarto é uma Sala.
 @onready var sala: Marker2D = $Surgimentos/Sala
 
 
-
-
 signal change_scene(scene: String)
 
 func _ready() -> void:

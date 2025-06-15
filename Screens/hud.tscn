@@ -1,9 +1,8 @@
-[gd_scene format=3 uid="uid://chdil7atp58aw"]
+[gd_scene load_steps=3 format=3 uid="uid://chdil7atp58aw"]
 
-[node name="Hud" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Script" uid="uid://ckn3esehr4x81" path="res://Scripts/hud.gd" id="1_4w7y3"]
+[ext_resource type="Resource" uid="uid://cfatb2xmb1b5f" path="res://Resources/exemplo.tres" id="2_spknh"]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_4w7y3")
+data = ExtResource("2_spknh")
