@@ -1,14 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://osy80j4wrwhi"]
+[gd_scene load_steps=9 format=3 uid="uid://osy80j4wrwhi"]
 
 [ext_resource type="Script" uid="uid://cg760x5fhhmbg" path="res://Scripts/porta.gd" id="1_5quaa"]
-[ext_resource type="Texture2D" uid="uid://dpfxq55ad1v01" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/porta quarto.png" id="2_5f6wt"]
+[ext_resource type="Texture2D" uid="uid://di6k21cikricf" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/porta quarto Sheet.png" id="2_5f6wt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5f6wt"]
 size = Vector2(24, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_camwj"]
 atlas = ExtResource("2_5f6wt")
-region = Rect2(0, 0, 24, 29)
+region = Rect2(0, 0, 24, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shvlh"]
+atlas = ExtResource("2_5f6wt")
+region = Rect2(0, 0, 24, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6k30"]
+atlas = ExtResource("2_5f6wt")
+region = Rect2(28, 0, 24, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl1oo"]
+atlas = ExtResource("2_5f6wt")
+region = Rect2(56, 0, 24, 28)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5quaa"]
 animations = [{
@@ -20,7 +32,16 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shvlh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6k30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl1oo")
+}],
 "loop": true,
 "name": &"opening",
 "speed": 5.0

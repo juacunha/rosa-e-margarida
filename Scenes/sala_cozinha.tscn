@@ -1,21 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://do32sr4bvpphr"]
+[gd_scene load_steps=5 format=3 uid="uid://do32sr4bvpphr"]
 
 [ext_resource type="Script" uid="uid://c2glavm2rimp7" path="res://Scripts/sala_cozinha.gd" id="1_wvgae"]
 [ext_resource type="Texture2D" uid="uid://1ubqa7j2x2d1" path="res://Assets/Assets Casa/Assets Casa/Paredes/paredes sala.png" id="2_17mt7"]
+[ext_resource type="PackedScene" uid="uid://osy80j4wrwhi" path="res://Scenes/porta.tscn" id="3_17mt7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77if3"]
 size = Vector2(193, 34)
 
-[node name="sala_cozinha" type="Node2D"]
+[node name="Sala" type="Node2D"]
 script = ExtResource("1_wvgae")
 
 [node name="ChaoeParedes" type="Node2D" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="ChaoeParedes"]
-
-[node name="Sprite2D" type="Sprite2D" parent="ChaoeParedes/StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="ChaoeParedes"]
 texture_filter = 1
 texture = ExtResource("2_17mt7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ChaoeParedes"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
 position = Vector2(-82.5, -27)
@@ -24,6 +25,12 @@ shape = SubResource("RectangleShape2D_77if3")
 [node name="Objetos" type="Node2D" parent="."]
 
 [node name="Portas" type="Node2D" parent="."]
+
+[node name="PortaQuarto" parent="Portas" instance=ExtResource("3_17mt7")]
+position = Vector2(157, 9)
+
+[node name="PortaJardim" parent="Portas" instance=ExtResource("3_17mt7")]
+position = Vector2(-59, -15)
 
 [node name="Audios" type="Node" parent="."]
 
@@ -34,5 +41,8 @@ shape = SubResource("RectangleShape2D_77if3")
 [node name="coffee" type="AudioStreamPlayer" parent="Audios"]
 
 [node name="Surgimento" type="Node2D" parent="."]
+visible = false
 
 [node name="Quarto" type="Marker2D" parent="Surgimento"]
+
+[node name="Jardim" type="Marker2D" parent="Surgimento"]

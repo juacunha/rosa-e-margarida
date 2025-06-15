@@ -7,12 +7,9 @@ extends Sala # O Quarto é uma Sala.
 @onready var surgimento_sala: 		Marker2D = $Surgimentos/Sala
 @onready var inicial: 				Marker2D = $Surgimentos/Inicial
 
-# Categoria de Proximas cenas
-@export_category("Próximas Cenas")
-@export var banheiro: 	PackedScene
-@export var sala: 		PackedScene
 
-signal change_scene(scene: PackedScene)
+
+signal change_scene(scene: String)
 
 func _ready() -> void:
 	porta_banheiro.door_opened.connect(change_scene_func)
@@ -20,9 +17,9 @@ func _ready() -> void:
 
 func change_scene_func(dono) -> void:
 	if porta_banheiro == dono:
-		change_scene.emit(banheiro)
+		change_scene.emit("Banheiro")
 	elif porta_sala == dono:
-		change_scene.emit(sala)
+		change_scene.emit("Sala")
 	
 # Função para inserir o jogador na posição correta
 func move_player(last_room: String, player: Player) -> void:

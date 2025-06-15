@@ -1,10 +1,8 @@
 extends Control
 
-const QUARTO = preload("res://Scenes/quarto.tscn")
-
-signal change_scene(scene: PackedScene)
+signal change_scene(scene: String)
 
 
 func _on_iniciar_2_pressed() -> void:
-	change_scene.emit(QUARTO)
+	change_scene.emit("Quarto")
 	queue_free()
