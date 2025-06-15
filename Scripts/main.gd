@@ -24,7 +24,8 @@ func _ready() -> void:
 
 
 func change_scene(new_scene: String) -> void:
-	
+	if player:
+		player.playable(false)
 	TransitionScreen.transition()
 	await  TransitionScreen.on_transition_finished
 	
@@ -52,7 +53,7 @@ func change_scene(new_scene: String) -> void:
 			player = PLAYER.instantiate()
 			add_child(player)
 		new.move_player(LAST_ROOM, player)
-		print(new.name)
+		player.playable(true)
 		LAST_ROOM = new.name
 	
 	
