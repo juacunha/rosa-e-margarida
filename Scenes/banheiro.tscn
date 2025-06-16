@@ -1,9 +1,22 @@
-[gd_scene load_steps=15 format=3 uid="uid://6rq51gy8dy4u"]
+[gd_scene load_steps=34 format=3 uid="uid://6rq51gy8dy4u"]
 
 [ext_resource type="Texture2D" uid="uid://dcff0ff0yvjdb" path="res://Assets/Assets Casa/Assets Casa/Paredes/paredes banheiro.png" id="1_2xjjb"]
 [ext_resource type="Script" uid="uid://cydv4rmy5o4xm" path="res://Scripts/banheiro.gd" id="1_1127t"]
+[ext_resource type="Texture2D" uid="uid://c2lh3uq5a80s5" path="res://Assets/Assets Casa/Assets Casa/Móveis/Banheiro/abajur.png" id="3_clycg"]
 [ext_resource type="PackedScene" uid="uid://osy80j4wrwhi" path="res://Scenes/porta.tscn" id="3_vglm6"]
+[ext_resource type="Texture2D" uid="uid://cf0sqw6e55umm" path="res://Assets/Assets Casa/Assets Casa/Móveis/Banheiro/banheira.png" id="4_v5qt3"]
 [ext_resource type="Texture2D" uid="uid://di6k21cikricf" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/porta quarto Sheet.png" id="5_clycg"]
+[ext_resource type="Texture2D" uid="uid://b3ytd5r8jvml4" path="res://Assets/Assets Casa/Assets Casa/Móveis/Banheiro/tapete pequeno.png" id="5_um55e"]
+[ext_resource type="Texture2D" uid="uid://dmknibsevyp2h" path="res://Assets/Assets Casa/Assets Casa/Móveis/Banheiro/papel higienico.png" id="6_df7bm"]
+[ext_resource type="Texture2D" uid="uid://bp8u6ehhghygp" path="res://Assets/Assets Casa/Assets Casa/Móveis/Banheiro/vaso sanitario.png" id="7_df7bm"]
+[ext_resource type="Texture2D" uid="uid://cfyx4odvnklhg" path="res://Assets/Assets Casa/Assets Casa/Móveis/Banheiro/toalha de rosto.png" id="8_6xlhv"]
+[ext_resource type="Texture2D" uid="uid://dty674kdqfhu0" path="res://Assets/Assets Casa/Assets Casa/Móveis/Banheiro/quadro.png" id="9_elquk"]
+[ext_resource type="Texture2D" uid="uid://4i8a3g7tnb57" path="res://Assets/Assets Casa/Assets Casa/Móveis/Banheiro/pia.png" id="10_g1c4h"]
+[ext_resource type="Texture2D" uid="uid://bfle3yd4oh5e6" path="res://Assets/Assets Casa/Assets Casa/Móveis/Banheiro/comoda.png" id="11_7kpeg"]
+[ext_resource type="Texture2D" uid="uid://c4mg4v6m2j8cx" path="res://Assets/Assets Casa/Assets Casa/Móveis/Banheiro/escovas de dente.png" id="12_dvdwx"]
+[ext_resource type="Texture2D" uid="uid://bk4i3qrel7bym" path="res://Assets/Assets Casa/Assets Casa/Móveis/Banheiro/prateleira.png" id="13_qaaya"]
+[ext_resource type="Texture2D" uid="uid://0x7nxdthwxcn" path="res://Assets/Assets Casa/Assets Casa/Móveis/Banheiro/cosmeticos.png" id="14_mkyvy"]
+[ext_resource type="Texture2D" uid="uid://bpen16hiw37d8" path="res://Assets/Assets Casa/Assets Casa/Móveis/Banheiro/tapete coracao.png" id="15_7kpeg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5qt3"]
 size = Vector2(104, 35)
@@ -19,6 +32,24 @@ size = Vector2(33, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elquk"]
 size = Vector2(63, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgfp5"]
+size = Vector2(14, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsh6i"]
+size = Vector2(18, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkyvy"]
+size = Vector2(13, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qaaya"]
+size = Vector2(13, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvdwx"]
+size = Vector2(16, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kpeg"]
+size = Vector2(28, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pnm78"]
 atlas = ExtResource("5_clycg")
@@ -100,6 +131,114 @@ position = Vector2(15.5, 66)
 shape = SubResource("RectangleShape2D_elquk")
 
 [node name="Objetos" type="Node2D" parent="."]
+
+[node name="abajur" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-8, 42)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/abajur"]
+texture_filter = 1
+texture = ExtResource("3_clycg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/abajur"]
+shape = SubResource("RectangleShape2D_bgfp5")
+
+[node name="banheira" type="StaticBody2D" parent="Objetos"]
+position = Vector2(38, 24)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/banheira"]
+texture_filter = 1
+texture = ExtResource("4_v5qt3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/banheira"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_hsh6i")
+
+[node name="tapete 1" type="StaticBody2D" parent="Objetos"]
+position = Vector2(20, 24)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/tapete 1"]
+texture_filter = 1
+texture = ExtResource("5_um55e")
+
+[node name="papel higienico" type="StaticBody2D" parent="Objetos"]
+position = Vector2(39, -24)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/papel higienico"]
+texture_filter = 1
+texture = ExtResource("6_df7bm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/papel higienico"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_mkyvy")
+
+[node name="vaso" type="StaticBody2D" parent="Objetos"]
+position = Vector2(24, -23)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/vaso"]
+texture_filter = 1
+texture = ExtResource("7_df7bm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/vaso"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_qaaya")
+
+[node name="toalha" type="StaticBody2D" parent="Objetos"]
+position = Vector2(7, -30)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/toalha"]
+texture_filter = 1
+texture = ExtResource("8_6xlhv")
+
+[node name="quadro" type="StaticBody2D" parent="Objetos"]
+position = Vector2(8, -45)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/quadro"]
+texture_filter = 1
+texture = ExtResource("9_elquk")
+
+[node name="pia" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-8, -28)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/pia"]
+texture_filter = 1
+texture = ExtResource("10_g1c4h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/pia"]
+shape = SubResource("RectangleShape2D_dvdwx")
+
+[node name="comoda" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-32, -21)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/comoda"]
+texture_filter = 1
+texture = ExtResource("11_7kpeg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Objetos/comoda"]
+texture_filter = 1
+position = Vector2(8, -7)
+texture = ExtResource("12_dvdwx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/comoda"]
+shape = SubResource("RectangleShape2D_7kpeg")
+
+[node name="prateleira" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-32, -38)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/prateleira"]
+texture_filter = 1
+texture = ExtResource("13_qaaya")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Objetos/prateleira"]
+texture_filter = 1
+position = Vector2(1, -3)
+texture = ExtResource("14_mkyvy")
+
+[node name="tapete 2" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-25, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/tapete 2"]
+texture_filter = 1
+texture = ExtResource("15_7kpeg")
 
 [node name="Portas" type="Node2D" parent="."]
 

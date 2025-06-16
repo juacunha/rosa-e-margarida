@@ -1,11 +1,91 @@
-[gd_scene load_steps=5 format=3 uid="uid://do32sr4bvpphr"]
+[gd_scene load_steps=50 format=3 uid="uid://do32sr4bvpphr"]
 
 [ext_resource type="Script" uid="uid://c2glavm2rimp7" path="res://Scripts/sala_cozinha.gd" id="1_wvgae"]
 [ext_resource type="Texture2D" uid="uid://1ubqa7j2x2d1" path="res://Assets/Assets Casa/Assets Casa/Paredes/paredes sala.png" id="2_17mt7"]
 [ext_resource type="PackedScene" uid="uid://osy80j4wrwhi" path="res://Scenes/porta.tscn" id="3_17mt7"]
+[ext_resource type="Texture2D" uid="uid://cbd85tdxelfw7" path="res://Assets/Assets Casa/Assets Casa/Móveis/Sala/tapete pequeno.png" id="3_77if3"]
+[ext_resource type="Texture2D" uid="uid://dq7pktyeg8bm5" path="res://Assets/Assets Casa/Assets Casa/Móveis/Sala/abajur.png" id="4_s5yak"]
+[ext_resource type="Texture2D" uid="uid://cygnek4ewlkmv" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/janela sala.png" id="5_yho6t"]
+[ext_resource type="Texture2D" uid="uid://bu6aitlkgx22r" path="res://Assets/Assets Casa/Assets Casa/Móveis/Sala/quadro 1.png" id="6_77xqd"]
+[ext_resource type="Texture2D" uid="uid://d1tej5h5bdcbn" path="res://Assets/Assets Casa/Assets Casa/Móveis/Sala/sofa.png" id="7_7ytoy"]
+[ext_resource type="Texture2D" uid="uid://b0gefv1p8kxx1" path="res://Assets/Assets Casa/Assets Casa/Móveis/Sala/tapete grande.png" id="8_y51i7"]
+[ext_resource type="Texture2D" uid="uid://cua2iyr0nsrng" path="res://Assets/Assets Casa/Assets Casa/Móveis/Sala/poltrona.png" id="9_pb2h0"]
+[ext_resource type="Texture2D" uid="uid://byar3slk11d8u" path="res://Assets/Assets Casa/Assets Casa/Móveis/Sala/mesa pequena.png" id="10_g5mn1"]
+[ext_resource type="Texture2D" uid="uid://lohs4ypm0r6e" path="res://Assets/Assets Casa/Assets Casa/Móveis/Sala/comoda.png" id="11_3xb31"]
+[ext_resource type="Texture2D" uid="uid://by0paw01oqdql" path="res://Assets/Assets Casa/Assets Casa/Móveis/Sala/mesa grande.png" id="12_r6xfg"]
+[ext_resource type="Texture2D" uid="uid://g0h784o6qv6a" path="res://Assets/Assets Casa/Assets Casa/Móveis/Sala/cacto.png" id="13_3hgrs"]
+[ext_resource type="Texture2D" uid="uid://c0os4v6p6tdpu" path="res://Assets/Assets Casa/Assets Casa/Móveis/Sala/mesa e cadeiras.png" id="14_g5mn1"]
+[ext_resource type="Texture2D" uid="uid://b7pccwr1ptcnl" path="res://Assets/Assets Casa/Assets Casa/Móveis/Sala/quadro 2.png" id="15_3xb31"]
+[ext_resource type="Texture2D" uid="uid://shp3q1t315h2" path="res://Assets/Assets Casa/Assets Casa/Móveis/Sala/quadro 3.png" id="16_r6xfg"]
+[ext_resource type="Texture2D" uid="uid://d0ssxg1frme4h" path="res://Assets/Assets Casa/Assets Casa/Móveis/Sala/luminaria.png" id="17_3xb31"]
+[ext_resource type="Texture2D" uid="uid://bruk42il6upqt" path="res://Assets/Assets Casa/Assets Casa/Móveis/Sala/flor.png" id="18_r6xfg"]
+[ext_resource type="Texture2D" uid="uid://bovx10vc2fx0l" path="res://Assets/Assets Casa/Assets Casa/Móveis/Cozinha/quadro.png" id="19_ftyu1"]
+[ext_resource type="Texture2D" uid="uid://c02dtse04dvyt" path="res://Assets/Assets Casa/Assets Casa/Móveis/Cozinha/tapete.png" id="20_pi1cx"]
+[ext_resource type="Texture2D" uid="uid://pct51uc547yv" path="res://Assets/Assets Casa/Assets Casa/Móveis/Cozinha/abajur.png" id="21_28imd"]
+[ext_resource type="Texture2D" uid="uid://cusxuss6w634k" path="res://Assets/Assets Casa/Assets Casa/Móveis/Cozinha/pia geladeira.png" id="22_28imd"]
+[ext_resource type="Texture2D" uid="uid://l4k8jl3fpn34" path="res://Assets/Assets Casa/Assets Casa/Móveis/Cozinha/microondas.png" id="23_poy8u"]
+[ext_resource type="Texture2D" uid="uid://k3o8vpyrdfm5" path="res://Assets/Assets Casa/Assets Casa/Móveis/Cozinha/adesivos geladeira.png" id="23_vxw6m"]
+[ext_resource type="Texture2D" uid="uid://daffit5paug27" path="res://Assets/Assets Casa/Assets Casa/Móveis/Cozinha/armario suspenso.png" id="24_poy8u"]
+[ext_resource type="Texture2D" uid="uid://7d0iobitp2fr" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/janela cozinha.png" id="26_1whwd"]
+[ext_resource type="Texture2D" uid="uid://bxv1hcuj1n58b" path="res://Assets/Assets Casa/Assets Casa/Móveis/Cozinha/cortina.png" id="27_m0inl"]
+[ext_resource type="Texture2D" uid="uid://cu2un8h1apxtm" path="res://Assets/Assets Casa/Assets Casa/Móveis/Cozinha/bancada.png" id="28_ytupa"]
+[ext_resource type="Texture2D" uid="uid://ddwb7cwd8hqx2" path="res://Assets/Assets Casa/Assets Casa/Móveis/Cozinha/banquinho.png" id="29_o87s1"]
+[ext_resource type="Texture2D" uid="uid://cy1k8bn7nh36e" path="res://Assets/Assets Casa/Assets Casa/Móveis/Cozinha/frutas.png" id="30_1whwd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77if3"]
-size = Vector2(193, 34)
+size = Vector2(197, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17mt7"]
+size = Vector2(5, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5yak"]
+size = Vector2(15.5, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1irh"]
+size = Vector2(197, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1whwd"]
+size = Vector2(21.6389, 2.01693)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0inl"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ytupa"]
+size = Vector2(16, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o87s1"]
+size = Vector2(26, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68nxm"]
+size = Vector2(26, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1whwd"]
+radius = 16.0312
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dr80n"]
+size = Vector2(7, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0jkj"]
+size = Vector2(12, 5.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rh2fc"]
+size = Vector2(13, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbkvd"]
+size = Vector2(10, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilugp"]
+size = Vector2(94, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tujl"]
+size = Vector2(110, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j83x1"]
+size = Vector2(13, 20)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1whwd"]
+radius = 6.0
+height = 16.0
 
 [node name="Sala" type="Node2D"]
 script = ExtResource("1_wvgae")
@@ -19,18 +99,369 @@ texture = ExtResource("2_17mt7")
 [node name="StaticBody2D" type="StaticBody2D" parent="ChaoeParedes"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
-position = Vector2(-82.5, -27)
+position = Vector2(-82.5, -26.5)
 shape = SubResource("RectangleShape2D_77if3")
 
-[node name="Objetos" type="Node2D" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(195, -27)
+shape = SubResource("RectangleShape2D_77if3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(57, -75)
+shape = SubResource("RectangleShape2D_77if3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(130.5, 58.5)
+shape = SubResource("RectangleShape2D_17mt7")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(179, -6)
+shape = SubResource("RectangleShape2D_17mt7")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(-178, 26)
+shape = SubResource("RectangleShape2D_17mt7")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(13, 91)
+shape = SubResource("RectangleShape2D_17mt7")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(14, -58)
+shape = SubResource("RectangleShape2D_17mt7")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(99, -55)
+shape = SubResource("RectangleShape2D_17mt7")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(136.25, 26.5)
+shape = SubResource("RectangleShape2D_s5yak")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(-82.5, 58.5)
+shape = SubResource("RectangleShape2D_u1irh")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(67, 91)
+shape = SubResource("RectangleShape2D_u1irh")
+
+[node name="ObjetosSala" type="Node2D" parent="."]
+
+[node name="tapete pequeno" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(160, 18)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/tapete pequeno"]
+texture_filter = 1
+texture = ExtResource("3_77if3")
+
+[node name="abajur" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(163, -17)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/abajur"]
+texture_filter = 1
+texture = ExtResource("4_s5yak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjetosSala/abajur"]
+position = Vector2(0, -3.8147e-06)
+scale = Vector2(0.554555, -12.8909)
+shape = SubResource("RectangleShape2D_1whwd")
+
+[node name="janela" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(137, -24)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/janela"]
+texture_filter = 1
+texture = ExtResource("5_yho6t")
+
+[node name="quadro" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(110, -25)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/quadro"]
+texture_filter = 1
+texture = ExtResource("6_77xqd")
+
+[node name="sofa" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(80, 76)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/sofa"]
+texture_filter = 1
+texture = ExtResource("7_7ytoy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjetosSala/sofa"]
+shape = SubResource("RectangleShape2D_m0inl")
+
+[node name="tapete" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(80, 49)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/tapete"]
+texture_filter = 1
+texture = ExtResource("8_y51i7")
+
+[node name="poltrona2" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(43, 34)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/poltrona2"]
+texture_filter = 1
+texture = ExtResource("9_pb2h0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjetosSala/poltrona2"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_ytupa")
+
+[node name="mesinha" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(43, 51)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/mesinha"]
+texture_filter = 1
+texture = ExtResource("10_g5mn1")
+
+[node name="poltrona" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(43, 66)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/poltrona"]
+texture_filter = 1
+texture = ExtResource("9_pb2h0")
+
+[node name="comoda" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(79, 21)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/comoda"]
+texture_filter = 1
+texture = ExtResource("11_3xb31")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjetosSala/comoda"]
+shape = SubResource("RectangleShape2D_o87s1")
+
+[node name="mesa centro" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(80, 48)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/mesa centro"]
+texture_filter = 1
+texture = ExtResource("12_r6xfg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjetosSala/mesa centro"]
+shape = SubResource("RectangleShape2D_68nxm")
+
+[node name="cacto" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(80, 42)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/cacto"]
+texture_filter = 1
+texture = ExtResource("13_3hgrs")
+
+[node name="janela2" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(56, -72)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/janela2"]
+texture_filter = 1
+texture = ExtResource("5_yho6t")
+
+[node name="mesa e cadeiras" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(57, -43)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/mesa e cadeiras"]
+texture_filter = 1
+texture = ExtResource("14_g5mn1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjetosSala/mesa e cadeiras"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_1whwd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ObjetosSala/mesa e cadeiras"]
+position = Vector2(17.5, 0.5)
+shape = SubResource("RectangleShape2D_dr80n")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ObjetosSala/mesa e cadeiras"]
+position = Vector2(-18, 1)
+shape = SubResource("RectangleShape2D_dr80n")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ObjetosSala/mesa e cadeiras"]
+position = Vector2(-1, 17.75)
+shape = SubResource("RectangleShape2D_h0jkj")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="ObjetosSala/mesa e cadeiras"]
+position = Vector2(-1, -17)
+shape = SubResource("RectangleShape2D_h0jkj")
+
+[node name="quadro 2" type="StaticBody2D" parent="ObjetosSala"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/quadro 2"]
+texture_filter = 1
+position = Vector2(85, -74)
+texture = ExtResource("15_3xb31")
+
+[node name="quadro 3" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(27, -74)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/quadro 3"]
+texture_filter = 1
+texture = ExtResource("16_r6xfg")
+
+[node name="luminaria" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(87, -51)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/luminaria"]
+texture_filter = 1
+texture = ExtResource("17_3xb31")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjetosSala/luminaria"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_rh2fc")
+
+[node name="luminaria2" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(27, -51)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/luminaria2"]
+texture_filter = 1
+texture = ExtResource("17_3xb31")
+flip_h = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ObjetosSala/luminaria2"]
+shape = SubResource("RectangleShape2D_rh2fc")
+
+[node name="flor" type="StaticBody2D" parent="ObjetosSala"]
+position = Vector2(57, -48)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosSala/flor"]
+texture_filter = 1
+texture = ExtResource("18_r6xfg")
+
+[node name="ObjetosCozinha" type="Node2D" parent="."]
+
+[node name="quadro" type="StaticBody2D" parent="ObjetosCozinha"]
+position = Vector2(0, -28)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosCozinha/quadro"]
+texture_filter = 1
+texture = ExtResource("19_ftyu1")
+
+[node name="tapete" type="StaticBody2D" parent="ObjetosCozinha"]
+position = Vector2(-16, 23)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosCozinha/tapete"]
+texture_filter = 1
+texture = ExtResource("20_pi1cx")
+
+[node name="abajur" type="StaticBody2D" parent="ObjetosCozinha"]
+position = Vector2(-50, -12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosCozinha/abajur"]
+texture_filter = 1
+texture = ExtResource("21_28imd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjetosCozinha/abajur"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_nbkvd")
+
+[node name="pia" type="StaticBody2D" parent="ObjetosCozinha"]
+position = Vector2(-108, -10)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosCozinha/pia"]
+texture_filter = 1
+texture = ExtResource("22_28imd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ObjetosCozinha/pia"]
+texture_filter = 1
+position = Vector2(41, 3)
+texture = ExtResource("23_vxw6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjetosCozinha/pia"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_ilugp")
+
+[node name="microondas" type="StaticBody2D" parent="ObjetosCozinha"]
+position = Vector2(-112, -11)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosCozinha/microondas"]
+texture_filter = 1
+texture = ExtResource("23_poy8u")
+
+[node name="armario" type="StaticBody2D" parent="ObjetosCozinha"]
+position = Vector2(-105, -29)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosCozinha/armario"]
+texture_filter = 1
+texture = ExtResource("24_poy8u")
+
+[node name="janela" type="StaticBody2D" parent="ObjetosCozinha"]
+position = Vector2(-165, -26)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosCozinha/janela"]
+texture_filter = 1
+texture = ExtResource("26_1whwd")
+
+[node name="cortina" type="StaticBody2D" parent="ObjetosCozinha"]
+position = Vector2(-165, -25)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosCozinha/cortina"]
+texture_filter = 1
+texture = ExtResource("27_m0inl")
+
+[node name="bancada" type="StaticBody2D" parent="ObjetosCozinha"]
+position = Vector2(-110, 27)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosCozinha/bancada"]
+texture_filter = 1
+texture = ExtResource("28_ytupa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjetosCozinha/bancada"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_2tujl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ObjetosCozinha/bancada"]
+position = Vector2(48.5, -3)
+shape = SubResource("RectangleShape2D_j83x1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ObjetosCozinha/bancada"]
+position = Vector2(-48, -3)
+shape = SubResource("RectangleShape2D_j83x1")
+
+[node name="banquinho" type="StaticBody2D" parent="ObjetosCozinha"]
+position = Vector2(-79, 40)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosCozinha/banquinho"]
+texture_filter = 1
+texture = ExtResource("29_o87s1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjetosCozinha/banquinho"]
+shape = SubResource("CapsuleShape2D_1whwd")
+
+[node name="banquinho2" type="StaticBody2D" parent="ObjetosCozinha"]
+position = Vector2(-111, 40)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosCozinha/banquinho2"]
+texture_filter = 1
+texture = ExtResource("29_o87s1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ObjetosCozinha/banquinho2"]
+shape = SubResource("CapsuleShape2D_1whwd")
+
+[node name="banquinho3" type="StaticBody2D" parent="ObjetosCozinha"]
+position = Vector2(-144, 40)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosCozinha/banquinho3"]
+texture_filter = 1
+texture = ExtResource("29_o87s1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ObjetosCozinha/banquinho3"]
+shape = SubResource("CapsuleShape2D_1whwd")
+
+[node name="frutas" type="StaticBody2D" parent="ObjetosCozinha"]
+position = Vector2(-128, 25)
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjetosCozinha/frutas"]
+texture_filter = 1
+texture = ExtResource("30_1whwd")
 
 [node name="Portas" type="Node2D" parent="."]
+visible = false
 
 [node name="PortaQuarto" parent="Portas" instance=ExtResource("3_17mt7")]
 position = Vector2(157, 9)
 
 [node name="PortaJardim" parent="Portas" instance=ExtResource("3_17mt7")]
-position = Vector2(-59, -15)
+position = Vector2(-20, -22)
 
 [node name="Audios" type="Node" parent="."]
 
@@ -44,5 +475,7 @@ position = Vector2(-59, -15)
 visible = false
 
 [node name="Quarto" type="Marker2D" parent="Surgimento"]
+position = Vector2(157, 17)
 
 [node name="Jardim" type="Marker2D" parent="Surgimento"]
+position = Vector2(-20, -5)

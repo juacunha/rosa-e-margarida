@@ -33,6 +33,9 @@ func _initialize_dialog() -> void:
 	_name.text = data.complete_dialog[_id].locutor # Nome do npc
 	_dialog.text = data.complete_dialog[_id].dialog
 	_faceset.texture = load(data.complete_dialog[_id].faceset_path)
+	_faceset.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	_faceset.stretch_mode = TextureRect.STRETCH_SCALE
+	_faceset.custom_minimum_size = Vector2(160, 160) # Tamanho desejado
 	
 	_dialog.visible_characters = 0
 	while _dialog.visible_ratio < 1:

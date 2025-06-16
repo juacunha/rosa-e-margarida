@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CompleteDialogData" load_steps=4 format=3 uid="uid://cjut3mhafy3ir"]
+
+[ext_resource type="Script" uid="uid://cjhgwdoi35xan" path="res://Resources/dialog_data.gd" id="1_t783o"]
+[ext_resource type="Script" uid="uid://dc02xex6t5xfx" path="res://Resources/complete_dialog_data.gd" id="2_yg8va"]
+
+[sub_resource type="Resource" id="Resource_t783o"]
+script = ExtResource("1_t783o")
+locutor = "Rosa"
+faceset_path = "uid://b3nq03fqa6y8w"
+dialog = "O café esfriou!"
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[resource]
+script = ExtResource("2_yg8va")
+complete_dialog = Array[ExtResource("1_t783o")]([SubResource("Resource_t783o")])
+metadata/_custom_type_script = "uid://dc02xex6t5xfx"
