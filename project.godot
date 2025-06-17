@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Rosa-e-Margarida"
-run/main_scene="uid://dry5f677xv3pr"
+run/main_scene="uid://ce1nq0gus6wjl"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]

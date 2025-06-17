@@ -2,7 +2,7 @@ extends Node2D
 
 const MENU = preload("res://Screens/menu.tscn")
 const PAUSE = preload("res://Screens/pause.tscn")
-const HUD = preload("res://Screens/hud.tscn")
+#const HUD = preload("res://Screens/hud.tscn")
 
 const PLAYER = preload("res://Scenes/player.tscn")
 
@@ -11,6 +11,7 @@ const SALA = preload("res://Scenes/sala_cozinha.tscn")
 const QUARTO = preload("res://Scenes/quarto.tscn")
 const JARDIM = preload("res://Scenes/jardim.tscn")
 @onready var cenas: Node2D = $Cenas
+@onready var hud: Hud = $Hud
 
 var LAST_ROOM: String
 var player: Player
@@ -21,7 +22,9 @@ func _ready() -> void:
 	cenas.add_child(menu)
 	menu.change_scene.connect(change_scene)
 	
-
+func _create_dialog(data: CompleteDialogData) -> void:
+	hud._create_dialog_screen(data)
+	
 
 func change_scene(new_scene: String) -> void:
 	if player:
@@ -56,4 +59,5 @@ func change_scene(new_scene: String) -> void:
 		player.playable(true)
 		LAST_ROOM = new.name
 	
-	
+func connect_to_objects(scene) -> void:
+	var obj = scene.get_obj()

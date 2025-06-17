@@ -15,6 +15,9 @@ func _ready() -> void:
 	porta_banheiro.door_opened.connect(change_scene_func)
 	porta_sala.door_opened.connect(change_scene_func)
 
+func get_obj():
+	return null
+
 func change_scene_func(dono) -> void:
 	if porta_banheiro == dono:
 		change_scene.emit("Banheiro")

@@ -10,7 +10,7 @@ class_name Door
 # A porta deve animar após a interação do jogador
 #
 # O que a porta não faz:
-# Não armazena a próxima sala. A Sala é responsável por isso.
+ # Não armazena a próxima sala. A Sala é responsável por isso.
 # Não bloqueia o jogador. A Main é responsável por isso.
 # Não troca a cena. A Main é responsável por isso.
 
