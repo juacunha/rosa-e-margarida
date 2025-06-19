@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ce2krmc23f2x2" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/coruja.png" id="9_p3oxi"]
 [ext_resource type="Texture2D" uid="uid://cb4teeugn06t0" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/tapete grande.png" id="10_0cvhf"]
 [ext_resource type="Texture2D" uid="uid://c5bi4jphgxe4l" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/tapete pequeno.png" id="11_60ca0"]
-[ext_resource type="PackedScene" uid="uid://decn167jvo14r" path="res://Scenes/ObjetosInteragiveis/teste.tscn" id="15_0cvhf"]
+[ext_resource type="Texture2D" uid="uid://dflhlm8or2k1t" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/porta quarto Sheet-export.png" id="15_0cvhf"]
 [ext_resource type="Texture2D" uid="uid://di6k21cikricf" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/porta quarto Sheet.png" id="15_4by6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywv3x"]
@@ -47,16 +47,16 @@ size = Vector2(30.5, 30.5)
 atlas = ExtResource("15_4by6u")
 region = Rect2(0, 0, 24, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0cvhf"]
-atlas = ExtResource("15_4by6u")
+[sub_resource type="AtlasTexture" id="AtlasTexture_60ca0"]
+atlas = ExtResource("15_0cvhf")
 region = Rect2(0, 0, 24, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_60ca0"]
-atlas = ExtResource("15_4by6u")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wc1b"]
+atlas = ExtResource("15_0cvhf")
 region = Rect2(28, 0, 24, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2wc1b"]
-atlas = ExtResource("15_4by6u")
+[sub_resource type="AtlasTexture" id="AtlasTexture_02g5a"]
+atlas = ExtResource("15_0cvhf")
 region = Rect2(56, 0, 24, 28)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ktx11"]
@@ -71,33 +71,33 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0cvhf")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_60ca0")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2wc1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02g5a")
 }],
 "loop": false,
 "name": &"opening",
-"speed": 2.0
+"speed": 5.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4by6u"]
 atlas = ExtResource("15_4by6u")
 region = Rect2(0, 0, 24, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1sgsx"]
-atlas = ExtResource("15_4by6u")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cvhf"]
+atlas = ExtResource("15_0cvhf")
 region = Rect2(0, 0, 24, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ktx11"]
-atlas = ExtResource("15_4by6u")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sgsx"]
+atlas = ExtResource("15_0cvhf")
 region = Rect2(28, 0, 24, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k2h0k"]
-atlas = ExtResource("15_4by6u")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktx11"]
+atlas = ExtResource("15_0cvhf")
 region = Rect2(56, 0, 24, 28)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2vhwf"]
@@ -112,15 +112,15 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_0cvhf")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_1sgsx")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ktx11")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k2h0k")
 }],
-"loop": true,
+"loop": false,
 "name": &"opening",
 "speed": 5.0
 }]
@@ -312,6 +312,3 @@ position = Vector2(221, 140)
 position = Vector2(317, 106)
 
 [node name="ObjetosInteragiveis" type="Node2D" parent="."]
-
-[node name="Teste" parent="ObjetosInteragiveis" instance=ExtResource("15_0cvhf")]
-position = Vector2(388, 154)

@@ -7,9 +7,11 @@ class_name Player
 
 signal interaction(dono)
 
-var can_interact = false
+var can_interact = true
 var idle_direcao = "idle_right"
 var can_be_played = true
+
+var area_atual: Area2D = null
 
 func _physics_process(delta: float) -> void:
 	var direction: Vector2 = Input.get_vector("left", "right", "up", "down")
@@ -57,11 +59,10 @@ func _on_interactable_area_body_exited(body: Node2D) -> void:
 
 # Corpo Interagivel Entrou
 func _on_interactable_area_area_entered(area: Area2D) -> void:
-	can_interact = true
-	print("can interact")
-	pass # Replace with function body.
+	pass
+	
 
 # Corpo Interagivel Saiu
 func _on_interactable_area_area_exited(area: Area2D) -> void:
-	can_interact = false
-	pass # Replace with function body.
+	pass
+	

@@ -31,6 +31,7 @@ func interact(_dono) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.interaction.connect(interact)
+		print("obj conectado")
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

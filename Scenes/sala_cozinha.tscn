@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://do32sr4bvpphr"]
+[gd_scene load_steps=60 format=3 uid="uid://do32sr4bvpphr"]
 
 [ext_resource type="Script" uid="uid://c2glavm2rimp7" path="res://Scripts/sala_cozinha.gd" id="1_wvgae"]
 [ext_resource type="Texture2D" uid="uid://1ubqa7j2x2d1" path="res://Assets/Assets Casa/Assets Casa/Paredes/paredes sala.png" id="2_17mt7"]
@@ -31,6 +31,10 @@
 [ext_resource type="Texture2D" uid="uid://cu2un8h1apxtm" path="res://Assets/Assets Casa/Assets Casa/Móveis/Cozinha/bancada.png" id="28_ytupa"]
 [ext_resource type="Texture2D" uid="uid://ddwb7cwd8hqx2" path="res://Assets/Assets Casa/Assets Casa/Móveis/Cozinha/banquinho.png" id="29_o87s1"]
 [ext_resource type="Texture2D" uid="uid://cy1k8bn7nh36e" path="res://Assets/Assets Casa/Assets Casa/Móveis/Cozinha/frutas.png" id="30_1whwd"]
+[ext_resource type="Texture2D" uid="uid://ug5t5ft4shnr" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/porta cozinha Sheet-export.png" id="32_68nxm"]
+[ext_resource type="PackedScene" uid="uid://rp4gqbg0k612" path="res://Scenes/ObjetosInteragiveis/tv.tscn" id="32_m0inl"]
+[ext_resource type="PackedScene" uid="uid://fdnbai0b4his" path="res://Scenes/ObjetosInteragiveis/cafeteira.tscn" id="33_ytupa"]
+[ext_resource type="PackedScene" uid="uid://dtc42ox4bgn3u" path="res://Scenes/ObjetosInteragiveis/flores.tscn" id="34_o87s1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77if3"]
 size = Vector2(197, 37)
@@ -43,6 +47,9 @@ size = Vector2(15.5, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u1irh"]
 size = Vector2(197, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0janq"]
+size = Vector2(33, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1whwd"]
 size = Vector2(21.6389, 2.01693)
@@ -87,8 +94,57 @@ size = Vector2(13, 20)
 radius = 6.0
 height = 16.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr80n"]
+atlas = ExtResource("32_68nxm")
+region = Rect2(0, 0, 24, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0jkj"]
+atlas = ExtResource("32_68nxm")
+region = Rect2(0, 0, 24, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh2fc"]
+atlas = ExtResource("32_68nxm")
+region = Rect2(28, 0, 24, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbkvd"]
+atlas = ExtResource("32_68nxm")
+region = Rect2(56, 0, 24, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o87s1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr80n")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0jkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh2fc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbkvd")
+}],
+"loop": false,
+"name": &"opening",
+"speed": 5.0
+}]
+
 [node name="Sala" type="Node2D"]
 script = ExtResource("1_wvgae")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -510.0
+offset_top = -296.0
+offset_right = -470.0
+offset_bottom = -256.0
+scale = Vector2(28.4387, 16.507)
+color = Color(0, 0, 0, 1)
 
 [node name="ChaoeParedes" type="Node2D" parent="."]
 
@@ -145,6 +201,10 @@ shape = SubResource("RectangleShape2D_u1irh")
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
 position = Vector2(67, 91)
 shape = SubResource("RectangleShape2D_u1irh")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(160.5, 39)
+shape = SubResource("RectangleShape2D_0janq")
 
 [node name="ObjetosSala" type="Node2D" parent="."]
 
@@ -448,20 +508,21 @@ texture = ExtResource("29_o87s1")
 shape = SubResource("CapsuleShape2D_1whwd")
 
 [node name="frutas" type="StaticBody2D" parent="ObjetosCozinha"]
-position = Vector2(-128, 25)
+position = Vector2(-158, 18)
 
 [node name="Sprite2D" type="Sprite2D" parent="ObjetosCozinha/frutas"]
 texture_filter = 1
 texture = ExtResource("30_1whwd")
 
 [node name="Portas" type="Node2D" parent="."]
-visible = false
 
 [node name="PortaQuarto" parent="Portas" instance=ExtResource("3_17mt7")]
-position = Vector2(157, 9)
+visible = false
+position = Vector2(160, -1)
 
 [node name="PortaJardim" parent="Portas" instance=ExtResource("3_17mt7")]
-position = Vector2(-20, -22)
+position = Vector2(-25, -22)
+animations = SubResource("SpriteFrames_o87s1")
 
 [node name="Audios" type="Node" parent="."]
 
@@ -481,3 +542,14 @@ position = Vector2(157, 17)
 position = Vector2(-20, -5)
 
 [node name="ObjetosInteragiveis" type="Node2D" parent="."]
+
+[node name="Tv" parent="ObjetosInteragiveis" instance=ExtResource("32_m0inl")]
+position = Vector2(79, 11)
+
+[node name="Cafeteira" parent="ObjetosInteragiveis" instance=ExtResource("33_ytupa")]
+position = Vector2(-62, 24)
+
+[node name="Flores" parent="ObjetosInteragiveis" instance=ExtResource("34_o87s1")]
+position = Vector2(-128, 24)
+
+[editable path="Portas/PortaJardim"]
