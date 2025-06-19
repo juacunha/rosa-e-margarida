@@ -52,12 +52,15 @@ func change_scene(new_scene: String) -> void:
 	connect_to_objects(new)
 	
 	if new is Sala:
+		
 		if not LAST_ROOM:
 			LAST_ROOM = "Inicial"
 			player = PLAYER.instantiate()
 			add_child(player)
 			player.playable(true)
 			object_interaction(dialogo_inicial, null)
+		else:
+			player.playable(true)
 		new.move_player(LAST_ROOM, player)
 		LAST_ROOM = new.name
 	

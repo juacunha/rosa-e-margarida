@@ -3,6 +3,7 @@ extends Sala
 # Referência aos Nós filhos
 @onready var porta_quarto: Door = $Portas/PortaQuarto
 @onready var surgimento_quarto: Marker2D = $Surgimentos/Quarto
+@onready var objetos_interagiveis: Node2D = $ObjetosInteragiveis
 
 
 signal change_scene(scene: String)
@@ -19,3 +20,5 @@ func move_player(last_room: String, player: Player) -> void:
 	if last_room == "Quarto":
 		player.global_position = surgimento_quarto.global_position
 		
+func get_obj():
+	return objetos_interagiveis.get_children()

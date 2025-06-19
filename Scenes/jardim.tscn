@@ -278,3 +278,5 @@ position = Vector2(32, 55)
 
 [node name="Sala" type="Marker2D" parent="Surgimentos"]
 position = Vector2(31, 57)
+
+[node name="ObjetosInteragiveis" type="Node2D" parent="."]

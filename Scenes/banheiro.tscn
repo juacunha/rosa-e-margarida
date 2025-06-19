@@ -259,4 +259,6 @@ position = Vector2(-28, 28)
 [node name="Quarto" type="Marker2D" parent="Surgimentos"]
 position = Vector2(-32, 45)
 
+[node name="ObjetosInteragiveis" type="Node2D" parent="."]
+
 [editable path="Portas/PortaQuarto"]
