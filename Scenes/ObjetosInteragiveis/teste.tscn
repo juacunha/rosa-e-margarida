@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://decn167jvo14r"]
+
+[ext_resource type="Script" uid="uid://bre1nb46r2l2i" path="res://Scripts/obj.gd" id="1_w2l1y"]
+[ext_resource type="Resource" uid="uid://dxirkp3ckqb4x" path="res://Resources/interacao tv.tres" id="2_e1hpo"]
+[ext_resource type="Texture2D" uid="uid://ntvtq3vfty4k" path="res://Assets/Assets Casa/Assets Casa/Interagíveis/tv.png" id="3_ws3ya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4imom"]
+size = Vector2(14, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wfq6a"]
+radius = 38.0132
+
+[node name="Teste" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_w2l1y")
+dialog = ExtResource("2_e1hpo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_ws3ya")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4imom")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_wfq6a")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

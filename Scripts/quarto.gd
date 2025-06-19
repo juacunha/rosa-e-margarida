@@ -6,6 +6,7 @@ extends Sala # O Quarto é uma Sala.
 @onready var surgimento_banheiro: 	Marker2D = $Surgimentos/Banheiro
 @onready var surgimento_sala: 		Marker2D = $Surgimentos/Sala
 @onready var inicial: 				Marker2D = $Surgimentos/Inicial
+@onready var objetos_interagiveis: Node2D = $ObjetosInteragiveis
 
 
 
@@ -16,7 +17,7 @@ func _ready() -> void:
 	porta_sala.door_opened.connect(change_scene_func)
 
 func get_obj():
-	return null
+	return objetos_interagiveis.get_children()
 
 func change_scene_func(dono) -> void:
 	if porta_banheiro == dono:

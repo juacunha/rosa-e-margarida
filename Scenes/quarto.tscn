@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://q7a6nccqmh1i"]
+[gd_scene load_steps=35 format=3 uid="uid://q7a6nccqmh1i"]
 
 [ext_resource type="PackedScene" uid="uid://osy80j4wrwhi" path="res://Scenes/porta.tscn" id="1_10atf"]
 [ext_resource type="Script" uid="uid://bak6nb2m0bjxd" path="res://Scripts/quarto.gd" id="1_60ca0"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ce2krmc23f2x2" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/coruja.png" id="9_p3oxi"]
 [ext_resource type="Texture2D" uid="uid://cb4teeugn06t0" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/tapete grande.png" id="10_0cvhf"]
 [ext_resource type="Texture2D" uid="uid://c5bi4jphgxe4l" path="res://Assets/Assets Casa/Assets Casa/Móveis/Quarto/tapete pequeno.png" id="11_60ca0"]
+[ext_resource type="PackedScene" uid="uid://decn167jvo14r" path="res://Scenes/ObjetosInteragiveis/teste.tscn" id="15_0cvhf"]
 [ext_resource type="Texture2D" uid="uid://di6k21cikricf" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/porta quarto Sheet.png" id="15_4by6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywv3x"]
@@ -309,3 +310,8 @@ position = Vector2(221, 140)
 
 [node name="Inicial" type="Marker2D" parent="Surgimentos"]
 position = Vector2(317, 106)
+
+[node name="ObjetosInteragiveis" type="Node2D" parent="."]
+
+[node name="Teste" parent="ObjetosInteragiveis" instance=ExtResource("15_0cvhf")]
+position = Vector2(388, 154)

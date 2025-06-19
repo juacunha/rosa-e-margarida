@@ -16,6 +16,8 @@ const JARDIM = preload("res://Scenes/jardim.tscn")
 var LAST_ROOM: String
 var player: Player
 
+@export_category("Dialogos")
+@export var dialogo_inicial: CompleteDialogData
 
 func _ready() -> void:
 	var menu = MENU.instantiate()
@@ -25,13 +27,11 @@ func _ready() -> void:
 func _create_dialog(data: CompleteDialogData) -> void:
 	hud._create_dialog_screen(data)
 	
-
 func change_scene(new_scene: String) -> void:
 	if player:
 		player.playable(false)
 	TransitionScreen.transition()
 	await  TransitionScreen.on_transition_finished
-	
 	var new
 	if new_scene == "Quarto":
 		new = QUARTO.instantiate()
@@ -49,15 +49,26 @@ func change_scene(new_scene: String) -> void:
 	
 	cenas.add_child(new)
 	new.change_scene.connect(change_scene)
+	connect_to_objects(new)
 	
 	if new is Sala:
 		if not LAST_ROOM:
 			LAST_ROOM = "Inicial"
 			player = PLAYER.instantiate()
 			add_child(player)
+			player.playable(true)
+			object_interaction(dialogo_inicial, null)
 		new.move_player(LAST_ROOM, player)
-		player.playable(true)
 		LAST_ROOM = new.name
 	
 func connect_to_objects(scene) -> void:
-	var obj = scene.get_obj()
+	var objs = scene.get_obj()
+	for obj in objs:
+		if obj is InteractableObject:
+			obj.interacted.connect(object_interaction)
+
+func object_interaction(data: CompleteDialogData, dono: InteractableObject) -> void:
+	hud._create_dialog_screen(data)
+	player.playable(false)
+	await hud.dialog_ended
+	player.playable(true)
