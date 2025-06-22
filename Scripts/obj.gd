@@ -5,7 +5,9 @@ class_name InteractableObject
 @export var dialog: CompleteDialogData
 @export var can_be_interacted: bool = true
 @export var timer_animacao_brilho: float = 6.0
+@export_range(0, 3) var photo_index: int = 0
 #Aqui também terá que ser inserido as informações de cartas e fotos
+
 
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D

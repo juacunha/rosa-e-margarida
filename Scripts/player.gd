@@ -6,6 +6,7 @@ class_name Player
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 signal interaction(dono)
+signal open_album()
 
 var can_interact = true
 var idle_direcao = "idle_right"
@@ -42,7 +43,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and can_interact and can_be_played:
 		interaction.emit(self)
 		print("emissao interaction")
-
+	if Input.is_action_just_pressed("open_album"):
+		open_album.emit()
 
 func playable(order: bool) -> void:
 	can_be_played = order

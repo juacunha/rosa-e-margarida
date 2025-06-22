@@ -15,11 +15,12 @@ func _ready() -> void:
 	_initialize_dialog()
 
 func _process(_delta: float) -> void:
-	if Input.is_action_pressed("ui_accept") and _dialog.visible_ratio < 1:
-		_step = 0.005
+	if (Input.is_action_pressed("ui_accept") or Input.is_action_pressed("left_mouse")) and _dialog.visible_ratio < 1:
+		_step = 0.00001
 		return
+	
 	_step = 0.05
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("left_mouse"):
 		_id += 1
 		if _id == data.complete_dialog.size():
 			queue_free()
