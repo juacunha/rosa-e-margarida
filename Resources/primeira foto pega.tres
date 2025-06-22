@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CompleteDialogData" load_steps=5 format=3 uid="uid://yxdkpcawd3ll"]
+
+[ext_resource type="Script" uid="uid://cjhgwdoi35xan" path="res://Resources/dialog_data.gd" id="1_tx5vk"]
+[ext_resource type="Script" uid="uid://dc02xex6t5xfx" path="res://Resources/complete_dialog_data.gd" id="2_ajmhn"]
+
+[sub_resource type="Resource" id="Resource_tx5vk"]
+script = ExtResource("1_tx5vk")
+locutor = "Rosa"
+faceset_path = "uid://b3nq03fqa6y8w"
+dialog = "Nós não tínhamos muitas fotos, acho que eram só 3..."
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[sub_resource type="Resource" id="Resource_ajmhn"]
+script = ExtResource("1_tx5vk")
+locutor = "Rosa"
+faceset_path = "uid://b3nq03fqa6y8w"
+dialog = "Essa era especial, vai ser difícil passar por isso… "
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[resource]
+script = ExtResource("2_ajmhn")
+complete_dialog = Array[ExtResource("1_tx5vk")]([SubResource("Resource_tx5vk"), SubResource("Resource_ajmhn")])
+metadata/_custom_type_script = "uid://dc02xex6t5xfx"

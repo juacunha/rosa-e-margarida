@@ -1,11 +1,301 @@
-[gd_scene format=3 uid="uid://jmkswqfadufv"]
+[gd_scene load_steps=38 format=3 uid="uid://jmkswqfadufv"]
+
+[ext_resource type="Script" uid="uid://m1ctk488s73d" path="res://Scripts/jardim.gd" id="1_gqak8"]
+[ext_resource type="Texture2D" uid="uid://bierrna7511it" path="res://Assets/Assets Casa/Assets Casa/Paredes/paredes jardim.png" id="2_sdrc7"]
+[ext_resource type="Texture2D" uid="uid://cytn8pdy0qf5e" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/prateleira.png" id="3_nhble"]
+[ext_resource type="PackedScene" uid="uid://osy80j4wrwhi" path="res://Scenes/porta.tscn" id="3_yywnu"]
+[ext_resource type="Texture2D" uid="uid://cu2hmf2edt56k" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/comoda 2.png" id="4_o1shd"]
+[ext_resource type="Texture2D" uid="uid://jiumvtksnjwm" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/flor 4.png" id="5_7fird"]
+[ext_resource type="Texture2D" uid="uid://bunr5kyyar7j4" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/flor 5.png" id="6_mlo67"]
+[ext_resource type="Texture2D" uid="uid://bayxce06cr42v" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/armario direita.png" id="7_66sgd"]
+[ext_resource type="Texture2D" uid="uid://bslc5v02yu4k3" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/esquilo.png" id="8_66sgd"]
+[ext_resource type="Texture2D" uid="uid://b5phcll1bl3cr" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/sapo.png" id="9_fo2pn"]
+[ext_resource type="Texture2D" uid="uid://dhcn3an07qsgu" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/comoda.png" id="10_bg0qd"]
+[ext_resource type="Texture2D" uid="uid://cl0625d68y8sn" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/flor 10.png" id="11_cmal0"]
+[ext_resource type="Texture2D" uid="uid://lut47ybuae7" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/armario esquerda.png" id="12_3058j"]
+[ext_resource type="Texture2D" uid="uid://j5o2levqcts4" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/anjo.png" id="13_14u3v"]
+[ext_resource type="Texture2D" uid="uid://ceuxhe6t0vvwd" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/gnomo.png" id="14_vtwu2"]
+[ext_resource type="Texture2D" uid="uid://dhk4yw0aib3qx" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/flor 6.png" id="15_g6sn6"]
+[ext_resource type="Texture2D" uid="uid://tljwn8pt6r73" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/flor 7.png" id="16_diu6s"]
+[ext_resource type="Texture2D" uid="uid://dnu1xyro2srx4" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/flor 8.png" id="16_vtwu2"]
+[ext_resource type="Texture2D" uid="uid://dr1wo6nby0de5" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/flor 1.png" id="18_g0cgy"]
+[ext_resource type="Texture2D" uid="uid://camu6obkqh40x" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/flor 9.png" id="19_vwpt7"]
+[ext_resource type="Texture2D" uid="uid://b7mwugnrppups" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/flor 2.png" id="20_g0cgy"]
+[ext_resource type="Texture2D" uid="uid://j7ikmwtuk6se" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/cadeiras.png" id="21_vlgha"]
+[ext_resource type="Texture2D" uid="uid://dcuec2to1y80l" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/flor 3.png" id="22_rb2qu"]
+[ext_resource type="Texture2D" uid="uid://ccleokl1g7p2e" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/areia bonsai.png" id="23_c107u"]
+[ext_resource type="Texture2D" uid="uid://dpshmbwemt6ov" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/caminho.png" id="24_vxxdn"]
+[ext_resource type="PackedScene" uid="uid://lemia34wagel" path="res://Scenes/ObjetosInteragiveis/bonsai.tscn" id="26_vxxdn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhble"]
+size = Vector2(138, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqak8"]
+size = Vector2(5, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdrc7"]
+size = Vector2(85, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxxdn"]
+size = Vector2(30, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fird"]
+size = Vector2(26, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fo2pn"]
+size = Vector2(10, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emqm7"]
+size = Vector2(16, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14u3v"]
+size = Vector2(28, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtwu2"]
+size = Vector2(17, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gjwj"]
+size = Vector2(20, 5.75636)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c107u"]
+size = Vector2(12, 34)
 
 [node name="Jardim" type="Node2D"]
+script = ExtResource("1_gqak8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -314.0
+offset_top = -158.0
+offset_right = -274.0
+offset_bottom = -118.0
+scale = Vector2(15.7162, 9.58773)
+color = Color(0, 0, 0, 1)
 
 [node name="ChaoeParedes" type="Node2D" parent="."]
 
+[node name="Sprite2D" type="Sprite2D" parent="ChaoeParedes"]
+texture_filter = 1
+texture = ExtResource("2_sdrc7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ChaoeParedes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(0, -50.5)
+shape = SubResource("RectangleShape2D_nhble")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(-66.5, 18)
+shape = SubResource("RectangleShape2D_gqak8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(67, 18)
+shape = SubResource("RectangleShape2D_gqak8")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(-26, 66)
+shape = SubResource("RectangleShape2D_sdrc7")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(90, 66)
+shape = SubResource("RectangleShape2D_sdrc7")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="ChaoeParedes/StaticBody2D"]
+position = Vector2(32, 77.5)
+shape = SubResource("RectangleShape2D_vxxdn")
+
 [node name="Objetos" type="Node2D" parent="."]
+
+[node name="prateleira" type="StaticBody2D" parent="Objetos"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/prateleira"]
+texture_filter = 1
+position = Vector2(39, -55)
+texture = ExtResource("3_nhble")
+
+[node name="comoda" type="StaticBody2D" parent="Objetos"]
+position = Vector2(39, -34)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/comoda"]
+texture_filter = 1
+texture = ExtResource("4_o1shd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/comoda"]
+shape = SubResource("RectangleShape2D_7fird")
+
+[node name="flor 4" type="StaticBody2D" parent="Objetos"]
+position = Vector2(0, -2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/flor 4"]
+texture_filter = 1
+position = Vector2(58, -32)
+texture = ExtResource("5_7fird")
+
+[node name="flor 5" type="StaticBody2D" parent="Objetos"]
+position = Vector2(20, -36)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/flor 5"]
+texture_filter = 1
+texture = ExtResource("6_mlo67")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/flor 5"]
+scale = Vector2(1, 1.00533)
+shape = SubResource("RectangleShape2D_fo2pn")
+
+[node name="prateleira 1" type="StaticBody2D" parent="Objetos"]
+position = Vector2(6, -39)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/prateleira 1"]
+texture_filter = 1
+texture = ExtResource("7_66sgd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/prateleira 1"]
+shape = SubResource("RectangleShape2D_emqm7")
+
+[node name="esquilo" type="StaticBody2D" parent="Objetos"]
+position = Vector2(2, -2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/esquilo"]
+texture_filter = 1
+position = Vector2(4, -36)
+texture = ExtResource("8_66sgd")
+
+[node name="sapo" type="StaticBody2D" parent="Objetos"]
+position = Vector2(7, -55)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/sapo"]
+texture_filter = 1
+texture = ExtResource("9_fo2pn")
+
+[node name="comoda 2" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-17, -33)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/comoda 2"]
+texture_filter = 1
+texture = ExtResource("10_bg0qd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/comoda 2"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_14u3v")
+
+[node name="flor 10" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-10, -45)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/flor 10"]
+texture_filter = 1
+texture = ExtResource("11_cmal0")
+
+[node name="prateleira 2" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-40, -39)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/prateleira 2"]
+texture_filter = 1
+texture = ExtResource("12_3058j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/prateleira 2"]
+shape = SubResource("RectangleShape2D_vtwu2")
+
+[node name="anjo" type="StaticBody2D" parent="Objetos"]
+position = Vector2(3, -2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/anjo"]
+texture_filter = 1
+position = Vector2(-43, -37)
+texture = ExtResource("13_14u3v")
+
+[node name="gnomo" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-40, -57)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/gnomo"]
+texture_filter = 1
+texture = ExtResource("14_vtwu2")
+
+[node name="flor 6" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-56, -37)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/flor 6"]
+texture = ExtResource("15_g6sn6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/flor 6"]
+scale = Vector2(0.77054, -3.47442)
+shape = SubResource("RectangleShape2D_0gjwj")
+
+[node name="flor 7" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-51, -13)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/flor 7"]
+texture_filter = 1
+texture = ExtResource("16_diu6s")
+
+[node name="flor 8" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-50, 21)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/flor 8"]
+texture_filter = 1
+texture = ExtResource("16_vtwu2")
+
+[node name="flor 9" type="StaticBody2D" parent="Objetos"]
+position = Vector2(-24, 52)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/flor 9"]
+texture = ExtResource("19_vwpt7")
+
+[node name="flor 1" type="StaticBody2D" parent="Objetos"]
+position = Vector2(56, 55)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/flor 1"]
+texture_filter = 1
+texture = ExtResource("18_g0cgy")
+
+[node name="flor 2" type="StaticBody2D" parent="Objetos"]
+position = Vector2(55, 38)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/flor 2"]
+texture_filter = 1
+texture = ExtResource("20_g0cgy")
+
+[node name="cadeiras" type="StaticBody2D" parent="Objetos"]
+position = Vector2(57, 11)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/cadeiras"]
+texture_filter = 1
+texture = ExtResource("21_vlgha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/cadeiras"]
+shape = SubResource("RectangleShape2D_c107u")
+
+[node name="flor 3" type="StaticBody2D" parent="Objetos"]
+position = Vector2(54, -13)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/flor 3"]
+texture = ExtResource("22_rb2qu")
+
+[node name="areia bonsai" type="StaticBody2D" parent="Objetos"]
+position = Vector2(0, 14)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/areia bonsai"]
+texture_filter = 1
+texture = ExtResource("23_c107u")
+
+[node name="caminho" type="StaticBody2D" parent="Objetos"]
+position = Vector2(0, 22)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/caminho"]
+texture_filter = 1
+texture = ExtResource("24_vxxdn")
 
 [node name="Portas" type="Node2D" parent="."]
 
+[node name="PortaSala" parent="Portas" instance=ExtResource("3_yywnu")]
+position = Vector2(32, 38)
+
 [node name="Audios" type="Node" parent="."]
+
+[node name="Surgimentos" type="Node2D" parent="."]
+
+[node name="Sala" type="Marker2D" parent="Surgimentos"]
+position = Vector2(31, 57)
+
+[node name="ObjetosInteragiveis" type="Node2D" parent="."]
+
+[node name="Bonsai" parent="ObjetosInteragiveis" instance=ExtResource("26_vxxdn")]
+position = Vector2(-2, -6)

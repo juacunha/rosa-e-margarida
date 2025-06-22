@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://l6273dlba8t0" path="res://Assets/PlaceHolders/FREE_Adventurer 2D Pixel Art/Sprites/RUN/run_up.png" id="9_qqcod"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_igrcy"]
+radius = 3.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l6n3p"]
 radius = 23.0
@@ -511,7 +512,7 @@ collision_layer = 2
 script = ExtResource("1_f1ek2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(0, 14)
 shape = SubResource("CircleShape2D_igrcy")
 
 [node name="InteractableArea" type="Area2D" parent="."]

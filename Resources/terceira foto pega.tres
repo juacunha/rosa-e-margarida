@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="CompleteDialogData" load_steps=7 format=3 uid="uid://dx5rel1dllsa2"]
+
+[ext_resource type="Script" uid="uid://cjhgwdoi35xan" path="res://Resources/dialog_data.gd" id="1_6i2a8"]
+[ext_resource type="Script" uid="uid://dc02xex6t5xfx" path="res://Resources/complete_dialog_data.gd" id="2_ej3qs"]
+
+[sub_resource type="Resource" id="Resource_6i2a8"]
+script = ExtResource("1_6i2a8")
+locutor = "Rosa"
+faceset_path = "uid://b3nq03fqa6y8w"
+dialog = "Ele era tão pequenininho..."
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[sub_resource type="Resource" id="Resource_ej3qs"]
+script = ExtResource("1_6i2a8")
+locutor = "Rosa"
+faceset_path = "uid://b3nq03fqa6y8w"
+dialog = "Acho que agora somos só nós dois, bonsai..."
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[sub_resource type="Resource" id="Resource_jg7ix"]
+script = ExtResource("1_6i2a8")
+locutor = "Rosa"
+faceset_path = "uid://b3nq03fqa6y8w"
+dialog = "Bom, acho que era isso…"
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[sub_resource type="Resource" id="Resource_hotcq"]
+script = ExtResource("1_6i2a8")
+locutor = "Rosa"
+faceset_path = "uid://b3nq03fqa6y8w"
+dialog = "Hora de guardá-las..."
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[resource]
+script = ExtResource("2_ej3qs")
+complete_dialog = Array[ExtResource("1_6i2a8")]([SubResource("Resource_6i2a8"), SubResource("Resource_ej3qs"), SubResource("Resource_jg7ix"), SubResource("Resource_hotcq")])
+metadata/_custom_type_script = "uid://dc02xex6t5xfx"

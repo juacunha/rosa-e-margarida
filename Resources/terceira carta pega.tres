@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CompleteDialogData" load_steps=5 format=3 uid="uid://c1wv25q508hif"]
+
+[ext_resource type="Script" uid="uid://cjhgwdoi35xan" path="res://Resources/dialog_data.gd" id="1_6ityn"]
+[ext_resource type="Script" uid="uid://dc02xex6t5xfx" path="res://Resources/complete_dialog_data.gd" id="2_acgcc"]
+
+[sub_resource type="Resource" id="Resource_6ityn"]
+script = ExtResource("1_6ityn")
+locutor = ""
+faceset_path = ""
+dialog = "… *Suspiro*..."
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[sub_resource type="Resource" id="Resource_acgcc"]
+script = ExtResource("1_6ityn")
+locutor = ""
+faceset_path = ""
+dialog = "Vou sentir sua falta..."
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[resource]
+script = ExtResource("2_acgcc")
+complete_dialog = Array[ExtResource("1_6ityn")]([SubResource("Resource_6ityn"), SubResource("Resource_acgcc")])
+metadata/_custom_type_script = "uid://dc02xex6t5xfx"

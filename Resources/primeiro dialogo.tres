@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CompleteDialogData" load_steps=6 format=3 uid="uid://pyjk2nvtjnt3"]
+
+[ext_resource type="Script" uid="uid://cjhgwdoi35xan" path="res://Resources/dialog_data.gd" id="1_423cv"]
+[ext_resource type="Script" uid="uid://dc02xex6t5xfx" path="res://Resources/complete_dialog_data.gd" id="2_f203l"]
+
+[sub_resource type="Resource" id="Resource_423cv"]
+script = ExtResource("1_423cv")
+locutor = "Rosa"
+faceset_path = "uid://b3nq03fqa6y8w"
+dialog = "*Suspiro… "
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[sub_resource type="Resource" id="Resource_f203l"]
+script = ExtResource("1_423cv")
+locutor = "Rosa"
+faceset_path = "uid://b3nq03fqa6y8w"
+dialog = "Preciso tirar de vista nossas fotos… "
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[sub_resource type="Resource" id="Resource_qb4tu"]
+script = ExtResource("1_423cv")
+locutor = "Rosa"
+faceset_path = "uid://b3nq03fqa6y8w"
+dialog = " Pelo menos posso guardá-las nesse antigo álbum. Não quero me desfazer delas…"
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[resource]
+script = ExtResource("2_f203l")
+complete_dialog = Array[ExtResource("1_423cv")]([SubResource("Resource_423cv"), SubResource("Resource_f203l"), SubResource("Resource_qb4tu")])
+metadata/_custom_type_script = "uid://dc02xex6t5xfx"

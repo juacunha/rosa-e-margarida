@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CompleteDialogData" load_steps=3 format=3 uid="uid://diuqarbggniwu"]
+
+[ext_resource type="Script" uid="uid://cjhgwdoi35xan" path="res://Resources/dialog_data.gd" id="1_40ut4"]
+[ext_resource type="Script" uid="uid://dc02xex6t5xfx" path="res://Resources/complete_dialog_data.gd" id="2_oco8f"]
+
+[resource]
+script = ExtResource("2_oco8f")
+complete_dialog = Array[ExtResource("1_40ut4")]([])
+metadata/_custom_type_script = "uid://dc02xex6t5xfx"

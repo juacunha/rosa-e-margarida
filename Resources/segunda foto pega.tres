@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CompleteDialogData" load_steps=5 format=3 uid="uid://b7h4v5v4w0q1x"]
+
+[ext_resource type="Script" uid="uid://cjhgwdoi35xan" path="res://Resources/dialog_data.gd" id="1_7v6d5"]
+[ext_resource type="Script" uid="uid://dc02xex6t5xfx" path="res://Resources/complete_dialog_data.gd" id="2_0bqw3"]
+
+[sub_resource type="Resource" id="Resource_7v6d5"]
+script = ExtResource("1_7v6d5")
+locutor = "Rosa"
+faceset_path = "uid://b3nq03fqa6y8w"
+dialog = "Com essa, acho que vai faltar só mais uma…"
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[sub_resource type="Resource" id="Resource_0bqw3"]
+script = ExtResource("1_7v6d5")
+locutor = "Rosa"
+faceset_path = "uid://b3nq03fqa6y8w"
+dialog = "Vamos Rosa, você consegue!"
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[resource]
+script = ExtResource("2_0bqw3")
+complete_dialog = Array[ExtResource("1_7v6d5")]([SubResource("Resource_7v6d5"), SubResource("Resource_0bqw3")])
+metadata/_custom_type_script = "uid://dc02xex6t5xfx"

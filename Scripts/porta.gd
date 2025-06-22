@@ -1,63 +1,65 @@
 extends Node2D
 class_name Door
 
+# Script responsável pelo objeto porta. 
+# A Porta será filha de uma SALA, que será responsável por coordenar suas obrigações
+#
+# Obrigações da Porta:
+# A porta deve funcionar só em caso de ser concedida a permissão para tal 
+# A porta deve informar a sua Sala quando a porta for aberta
+# A porta deve animar após a interação do jogador
+#
+# O que a porta não faz:
+ # Não armazena a próxima sala. A Sala é responsável por isso.
+# Não bloqueia o jogador. A Main é responsável por isso.
+# Não troca a cena. A Main é responsável por isso.
+
+# Referência aos Ns filhos
 @onready var area_2d: Area2D = $Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var audio_player: AudioStreamPlayer2D = $SFX_Porta
 
-@export var next_room: PackedScene
-var current_interacting_body: Node2D = null
+# Exportações
+@export var animations: SpriteFrames # Passe as animações da porta. Elas devem ter o nome 'idle' e 'opening'
+@export var estado_inicial: bool = true # Se passado como falso a porta não irá detectar o jogador assim que surgir. Dessa forma, é necessário chamar o método 'enable_door()' para ativar a detecção da porta.
 
-@export_category("Animações")
-@export var animations: SpriteFrames
+# Sinal para avisar a Sala que houve uma interação válida com o jogador
+signal door_opened(dono)
 
-@export_category("Sons")
-@export var door_open_sound: AudioStream
-
-signal door_opened(dono, next_room_scene)
-
+# Função ready para definir estado inicial da Porta
 func _ready() -> void:
+	# Monitoramento inicial
+	area_2d.monitoring = estado_inicial
+	area_2d.monitorable = estado_inicial
+	# Animação Inicial
 	animated_sprite_2d.sprite_frames = animations
 	animated_sprite_2d.play("idle")
-	audio_player.finished.connect(_on_sfx_porta_finished)
 
-	
+# Função para ativar a detecção da porta
 func enable_door() -> void:
 	area_2d.monitoring = true
 	area_2d.monitorable = true
 
+# Callback para quando houver uma interação válida do jogador com a porta
 func interact(_dono) -> void:
-	print("Interagindo com a porta") 
-	current_interacting_body = _dono  # Guarda referência ao jogador
+	# Animação de abertura
 	animated_sprite_2d.play("opening")
-	_dono.playable(false)
+	# Aviso para a Sala que a porta está sendo aberta
+	door_opened.emit(self)
 	
-	if door_open_sound:
-		print("Som da porta carregado:", door_open_sound.resource_path)
-		audio_player.stream = door_open_sound
-		audio_player.play()  
-		await audio_player.finished  # Espera o som terminar
-	else:
-		print("AVISO: Nenhum som definido para a porta!")
-	
-	await animated_sprite_2d.animation_finished
-	change_room()
 
-func change_room() -> void:
-	TransitionScreen.transition()
-	await TransitionScreen.on_transition_finished
-	door_opened.emit(self, next_room)
-
+# Funções para detectar a presença do jogador
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.interaction.connect(interact)
+		
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body is Player && body != current_interacting_body:  # Só desconecta se não for o jogador atual
+	if body is Player:
 		body.interaction.disconnect(interact)
-	elif body == current_interacting_body:
-		print("Aguardando término da interação...")
 
 
-func _on_sfx_porta_finished() -> void:
-	pass # Replace with function body.
+#func change_room() -> void:
+#	TransitionScreen.transition()
+#	await  TransitionScreen.on_transition_finished
+#	door_opened.emit(self, next_room)
+#

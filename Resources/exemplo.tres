@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CompleteDialogData" load_steps=7 format=3 uid="uid://cfatb2xmb1b5f"]
+
+[ext_resource type="Script" uid="uid://cjhgwdoi35xan" path="res://Resources/dialog_data.gd" id="1_pug51"]
+[ext_resource type="Script" uid="uid://dc02xex6t5xfx" path="res://Resources/complete_dialog_data.gd" id="2_88l7f"]
+
+[sub_resource type="Resource" id="Resource_pug51"]
+script = ExtResource("1_pug51")
+locutor = "Pedro"
+faceset_path = "uid://dhcikbte07ref"
+dialog = "Olá, eu sou o Pedro. E estou testando o dialogo!"
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[sub_resource type="Resource" id="Resource_88l7f"]
+script = ExtResource("1_pug51")
+locutor = "Pedro"
+faceset_path = "uid://dhcikbte07ref"
+dialog = "É importante colocar todo o diálogo dentro do 'Complete Dialog'"
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[sub_resource type="Resource" id="Resource_4nif3"]
+script = ExtResource("1_pug51")
+locutor = "Misty"
+faceset_path = "uid://dhnhojnnoef0f"
+dialog = "Mesmo que mude o locutor deve manter todos aqui"
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[sub_resource type="Resource" id="Resource_ivx4d"]
+script = ExtResource("1_pug51")
+locutor = "Pedro"
+faceset_path = "uid://dhcikbte07ref"
+dialog = "Com isso, após o fim do dialogo completo. A cena Dialog Screen será deletada. 
+Adeus!"
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[resource]
+script = ExtResource("2_88l7f")
+complete_dialog = Array[ExtResource("1_pug51")]([SubResource("Resource_pug51"), SubResource("Resource_88l7f"), SubResource("Resource_4nif3"), SubResource("Resource_ivx4d")])
+metadata/_custom_type_script = "uid://dc02xex6t5xfx"
