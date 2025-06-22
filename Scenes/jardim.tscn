@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://jmkswqfadufv"]
+[gd_scene load_steps=40 format=3 uid="uid://jmkswqfadufv"]
 
 [ext_resource type="Script" uid="uid://m1ctk488s73d" path="res://Scripts/jardim.gd" id="1_gqak8"]
 [ext_resource type="Texture2D" uid="uid://bierrna7511it" path="res://Assets/Assets Casa/Assets Casa/Paredes/paredes jardim.png" id="2_sdrc7"]
@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://ccleokl1g7p2e" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/areia bonsai.png" id="23_c107u"]
 [ext_resource type="Texture2D" uid="uid://dpshmbwemt6ov" path="res://Assets/Assets Casa/Assets Casa/Móveis/Jardim/caminho.png" id="24_vxxdn"]
 [ext_resource type="PackedScene" uid="uid://lemia34wagel" path="res://Scenes/ObjetosInteragiveis/bonsai.tscn" id="26_vxxdn"]
+[ext_resource type="AudioStream" uid="uid://gpmk05hgqdk5" path="res://Sfx/birds.ogg" id="27_ggaqh"]
+[ext_resource type="AudioStream" uid="uid://bfhod6tsuqihe" path="res://Sfx/Songs/SO SAD MEU DEUS.mp3" id="28_5obca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhble"]
 size = Vector2(138, 37)
@@ -64,9 +66,9 @@ size = Vector2(12, 34)
 script = ExtResource("1_gqak8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -314.0
+offset_left = -330.0
 offset_top = -158.0
-offset_right = -274.0
+offset_right = -290.0
 offset_bottom = -118.0
 scale = Vector2(15.7162, 9.58773)
 color = Color(0, 0, 0, 1)
@@ -299,3 +301,17 @@ position = Vector2(31, 57)
 
 [node name="Bonsai" parent="ObjetosInteragiveis" instance=ExtResource("26_vxxdn")]
 position = Vector2(-2, -6)
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Birds SFX" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("27_ggaqh")
+volume_db = -22.78
+autoplay = true
+attenuation = 3.4822
+
+[node name="OST" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("28_5obca")
+volume_db = -18.818
+autoplay = true
+attenuation = 2.73208

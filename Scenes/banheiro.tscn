@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://6rq51gy8dy4u"]
+[gd_scene load_steps=42 format=3 uid="uid://6rq51gy8dy4u"]
 
 [ext_resource type="Texture2D" uid="uid://dcff0ff0yvjdb" path="res://Assets/Assets Casa/Assets Casa/Paredes/paredes banheiro.png" id="1_2xjjb"]
 [ext_resource type="Script" uid="uid://cydv4rmy5o4xm" path="res://Scripts/banheiro.gd" id="1_1127t"]
@@ -34,9 +34,6 @@ size = Vector2(33, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elquk"]
 size = Vector2(63, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgfp5"]
-size = Vector2(14, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hsh6i"]
 size = Vector2(18, 28)
@@ -94,6 +91,96 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_qaaya"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.607843)]
+}
+
+[sub_resource type="Animation" id="Animation_mkyvy"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.607843), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hsh6i"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.607843)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hsh6i"]
+_data = {
+&"RESET": SubResource("Animation_qaaya"),
+&"fade_in": SubResource("Animation_hsh6i"),
+&"fade_out": SubResource("Animation_mkyvy")
+}
+
+[sub_resource type="GDScript" id="GDScript_mkyvy"]
+script/source = "extends Node2D
+
+@onready var fade = $\"CanvasLayer/ColorRect\"
+@onready var anim = $\"CanvasLayer/AnimationPlayer\"
+
+
+var player_inside = false
+var light_on = false
+
+func _process(delta):
+	if player_inside and Input.is_action_just_pressed(\"interact\"):
+		toggle_light()
+
+func toggle_light():
+	light_on = !light_on
+
+	if light_on:
+		anim.play(\"fade_out\") # Clareia
+	else:
+			anim.play(\"fade_in\")  # Escurece
+
+func _on_body_entered(body):
+	if body.name == \"Player\":
+		player_inside = true
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		player_inside = false
+"
+
+[sub_resource type="GDScript" id="GDScript_qaaya"]
+script/source = "extends StaticBody2D
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgfp5"]
+size = Vector2(16, 32)
+
 [node name="Banheiro" type="Node2D"]
 script = ExtResource("1_1127t")
 
@@ -133,16 +220,6 @@ position = Vector2(15.5, 66)
 shape = SubResource("RectangleShape2D_elquk")
 
 [node name="Objetos" type="Node2D" parent="."]
-
-[node name="abajur" type="StaticBody2D" parent="Objetos"]
-position = Vector2(-8, 42)
-
-[node name="Sprite2D" type="Sprite2D" parent="Objetos/abajur"]
-texture_filter = 1
-texture = ExtResource("3_clycg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/abajur"]
-shape = SubResource("RectangleShape2D_bgfp5")
 
 [node name="banheira" type="StaticBody2D" parent="Objetos"]
 position = Vector2(38, 24)
@@ -248,13 +325,11 @@ texture = ExtResource("15_7kpeg")
 animations = SubResource("SpriteFrames_dvdwx")
 
 [node name="CollisionShape2D" parent="Portas/PortaQuarto/Area2D" index="0"]
-position = Vector2(-32.5, 35)
+position = Vector2(-32.5, 36.5)
 
 [node name="AnimatedSprite2D" parent="Portas/PortaQuarto" index="1"]
 visible = false
 position = Vector2(-28, 28)
-
-[node name="Audios" type="Node" parent="."]
 
 [node name="Surgimentos" type="Node2D" parent="."]
 
@@ -267,12 +342,44 @@ position = Vector2(-32, 45)
 
 [node name="torneira" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("18_dvdwx")
-volume_db = -9.906
+volume_db = -15.849
 autoplay = true
 
 [node name="ost" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("19_qaaya")
 volume_db = -14.926
 autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -53.0
+offset_top = -61.0
+offset_right = 53.0
+offset_bottom = 59.0
+color = Color(0, 0, 0, 0.607843)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_hsh6i")
+}
+
+[node name="Abajur" type="Area2D" parent="."]
+script = SubResource("GDScript_mkyvy")
+
+[node name="abajur" type="StaticBody2D" parent="Abajur"]
+position = Vector2(-8, 42)
+script = SubResource("GDScript_qaaya")
+
+[node name="Sprite2D" type="Sprite2D" parent="Abajur/abajur"]
+texture_filter = 1
+texture = ExtResource("3_clycg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Abajur/abajur"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_bgfp5")
+
+[connection signal="body_entered" from="Abajur" to="." method="_on_abajur_body_entered"]
 
 [editable path="Portas/PortaQuarto"]

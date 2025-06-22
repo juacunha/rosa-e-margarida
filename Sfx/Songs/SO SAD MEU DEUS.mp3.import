@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/SO SAD MEU DEUS.mp3-1eb5e0b011a12e331d92a79da
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
