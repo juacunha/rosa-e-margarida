@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dry5f677xv3pr"]
+[gd_scene load_steps=3 format=3 uid="uid://dry5f677xv3pr"]
 
 [ext_resource type="Script" uid="uid://sfktwpdm11l7" path="res://Scripts/menu.gd" id="1_b0dvv"]
+[ext_resource type="AudioStream" uid="uid://d07mdydm8nyh4" path="res://Sfx/Menu/Ravi de te revoir-loopable.mp3" id="2_7ocep"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -12,6 +13,8 @@ grow_vertical = 2
 script = ExtResource("1_b0dvv")
 
 [node name="menu_ost" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7ocep")
+autoplay = true
 
 [node name="Iniciar2" type="Button" parent="."]
 layout_mode = 0

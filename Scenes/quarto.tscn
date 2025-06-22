@@ -249,8 +249,6 @@ texture = ExtResource("11_60ca0")
 position = Vector2(436, 117)
 animations = SubResource("SpriteFrames_ktx11")
 
-[node name="Audios" type="Node" parent="."]
-
 [node name="Player" parent="." instance=ExtResource("1_uylpo")]
 position = Vector2(356, 125)
 speed = 300.0

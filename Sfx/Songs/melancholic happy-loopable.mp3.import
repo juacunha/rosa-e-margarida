@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djyi3qsj6srag"
+path="res://.godot/imported/melancholic happy-loopable.mp3-3de834896bdf5eb476f4e4d63e99561b.mp3str"
+
+[deps]
+
+source_file="res://Sfx/Songs/melancholic happy-loopable.mp3"
+dest_files=["res://.godot/imported/melancholic happy-loopable.mp3-3de834896bdf5eb476f4e4d63e99561b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
