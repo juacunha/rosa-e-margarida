@@ -1,0 +1,172 @@
+[gd_scene load_steps=24 format=3 uid="uid://cgfbm7r5mcce5"]
+
+[ext_resource type="Script" uid="uid://bre1nb46r2l2i" path="res://Scripts/obj.gd" id="1_c4cuh"]
+[ext_resource type="Resource" uid="uid://b7h4v5v4w0q1x" path="res://Resources/segunda foto pega.tres" id="2_wucdm"]
+[ext_resource type="Texture2D" uid="uid://br2ksr8libcdn" path="res://Assets/Assets Casa/Assets Casa/Interagíveis/foto casamento-Sheet.png" id="3_wucdm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4cuh"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(0, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s0ia"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(0, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y10i"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(14, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4tys"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(28, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvue5"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(42, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwk3v"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(56, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iej1n"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(70, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xxvn"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(84, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eeof"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(98, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnuw1"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(112, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdd0c"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(126, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th3ht"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(140, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqngl"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(154, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk7pe"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(168, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm5np"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(182, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bajw3"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(196, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60kek"]
+atlas = ExtResource("3_wucdm")
+region = Rect2(210, 0, 10, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xsaib"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4cuh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6s0ia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7y10i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4tys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvue5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwk3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iej1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xxvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eeof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnuw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdd0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th3ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqngl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rk7pe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm5np")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bajw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60kek")
+}],
+"loop": false,
+"name": &"shine",
+"speed": 30.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4imom"]
+size = Vector2(14, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wfq6a"]
+radius = 24.0
+
+[node name="Foto casamento" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_c4cuh")
+dialog = ExtResource("2_wucdm")
+photo_index = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xsaib")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4imom")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_wfq6a")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

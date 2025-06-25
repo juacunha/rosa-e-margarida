@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://chdil7atp58aw"]
+[gd_scene load_steps=6 format=3 uid="uid://chdil7atp58aw"]
 
 [ext_resource type="Script" uid="uid://ckn3esehr4x81" path="res://Scripts/hud.gd" id="1_4w7y3"]
 [ext_resource type="PackedScene" uid="uid://oau8obo3tb2o" path="res://Screens/album.tscn" id="2_spknh"]
+[ext_resource type="Texture2D" uid="uid://sh6yasmxaywo" path="res://Assets/Fotos/foto jardim.png" id="3_iwhx1"]
+[ext_resource type="Texture2D" uid="uid://c2jln01lxnjq2" path="res://Assets/Fotos/foto praia.png" id="4_lg0rs"]
+[ext_resource type="Texture2D" uid="uid://cjalvbnm0vxlm" path="res://Assets/Fotos/foto casamento.png" id="4_srvv7"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_4w7y3")
 
 [node name="Album" parent="." instance=ExtResource("2_spknh")]
 visible = false
+image_1 = ExtResource("3_iwhx1")
+image_2 = ExtResource("4_srvv7")
+image_3 = ExtResource("4_lg0rs")

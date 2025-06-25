@@ -1,0 +1,172 @@
+[gd_scene load_steps=24 format=3 uid="uid://c3pveuuf4ws5i"]
+
+[ext_resource type="Script" uid="uid://bre1nb46r2l2i" path="res://Scripts/obj.gd" id="1_jn0ca"]
+[ext_resource type="Resource" uid="uid://yxdkpcawd3ll" path="res://Resources/primeira foto pega.tres" id="2_jn0ca"]
+[ext_resource type="Texture2D" uid="uid://bt6ykcxryt547" path="res://Assets/Assets Casa/Assets Casa/Interagíveis/foto praia-Sheet.png" id="4_jn0ca"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grnjg"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(0, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li4a1"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(0, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wr80q"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(14, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2sk6"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(28, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecqog"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(42, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnq4t"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(56, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2f24"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(70, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcphe"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(84, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5rpy"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(98, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayrwe"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(112, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6j5j"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(126, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbt1s"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(140, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b5uv"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(154, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpx0x"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(168, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltler"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(182, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_appub"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(196, 0, 10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbnmd"]
+atlas = ExtResource("4_jn0ca")
+region = Rect2(210, 0, 10, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xsaib"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grnjg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li4a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wr80q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2sk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecqog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnq4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2f24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcphe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5rpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayrwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6j5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbt1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b5uv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpx0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltler")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_appub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbnmd")
+}],
+"loop": false,
+"name": &"shine",
+"speed": 30.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4imom"]
+size = Vector2(14, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wfq6a"]
+radius = 24.0
+
+[node name="Foto praia" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_jn0ca")
+dialog = ExtResource("2_jn0ca")
+photo_index = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xsaib")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4imom")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_wfq6a")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

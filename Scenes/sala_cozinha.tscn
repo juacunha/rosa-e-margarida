@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://do32sr4bvpphr"]
+[gd_scene load_steps=61 format=3 uid="uid://do32sr4bvpphr"]
 
 [ext_resource type="Script" uid="uid://c2glavm2rimp7" path="res://Scripts/sala_cozinha.gd" id="1_wvgae"]
 [ext_resource type="Texture2D" uid="uid://1ubqa7j2x2d1" path="res://Assets/Assets Casa/Assets Casa/Paredes/paredes sala.png" id="2_17mt7"]
@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://rp4gqbg0k612" path="res://Scenes/ObjetosInteragiveis/tv.tscn" id="32_m0inl"]
 [ext_resource type="PackedScene" uid="uid://fdnbai0b4his" path="res://Scenes/ObjetosInteragiveis/cafeteira.tscn" id="33_ytupa"]
 [ext_resource type="PackedScene" uid="uid://dtc42ox4bgn3u" path="res://Scenes/ObjetosInteragiveis/flores.tscn" id="34_o87s1"]
+[ext_resource type="PackedScene" uid="uid://cgfbm7r5mcce5" path="res://Scenes/ObjetosInteragiveis/foto casamento.tscn" id="36_dr80n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77if3"]
 size = Vector2(197, 37)
@@ -551,5 +552,8 @@ position = Vector2(-62, 24)
 
 [node name="Flores" parent="ObjetosInteragiveis" instance=ExtResource("34_o87s1")]
 position = Vector2(-128, 24)
+
+[node name="Foto casamento" parent="ObjetosInteragiveis" instance=ExtResource("36_dr80n")]
+position = Vector2(43, 48)
 
 [editable path="Portas/PortaJardim"]

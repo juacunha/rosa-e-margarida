@@ -7,7 +7,7 @@
 script = ExtResource("1_ehkp3")
 locutor = "Rosa"
 faceset_path = "uid://b3nq03fqa6y8w"
-dialog = "As novelas de hoje em dia não são mais as mesmas... "
+dialog = "As novelas de hoje em dia não são como as de antigamente..."
 metadata/_custom_type_script = "uid://cjhgwdoi35xan"
 
 [resource]
