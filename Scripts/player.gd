@@ -4,6 +4,7 @@ class_name Player
 @export var speed: float = 100.0 
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var buttons = $Buttons
 
 signal interaction(dono)
 signal open_album()
@@ -51,8 +52,8 @@ func playable(order: bool) -> void:
 
 # Corpo Interagivel Entrou
 func _on_interactable_area_body_entered(body: Node2D) -> void:
-	# Conectar com o Corpo
-	pass # Replace with function body.
+	pass
+
 
 # Corpo Interagivel Saiu
 func _on_interactable_area_body_exited(body: Node2D) -> void:
@@ -61,10 +62,11 @@ func _on_interactable_area_body_exited(body: Node2D) -> void:
 
 # Corpo Interagivel Entrou
 func _on_interactable_area_area_entered(area: Area2D) -> void:
-	pass
+	buttons.show()
+	buttons.play("Press e")
 	
 
 # Corpo Interagivel Saiu
 func _on_interactable_area_area_exited(area: Area2D) -> void:
-	pass
+	buttons.hide()
 	

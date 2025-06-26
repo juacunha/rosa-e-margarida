@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cn3fxsdtl53tt"]
+[gd_scene load_steps=4 format=3 uid="uid://cn3fxsdtl53tt"]
 
 [ext_resource type="Script" uid="uid://c8ilfdb1iioy5" path="res://Scripts/dialog_screen.gd" id="1_srbw3"]
+[ext_resource type="FontFile" uid="uid://u6o58stbr6bb" path="res://Fontes/pixelmix.ttf" id="2_ix4vy"]
+[ext_resource type="FontFile" uid="uid://cit2s4toa4okm" path="res://Fontes/pixelmix_bold.ttf" id="3_koemq"]
 
 [node name="DialogScreen" type="Control"]
 custom_minimum_size = Vector2(640, 160)
@@ -62,6 +64,7 @@ size_flags_horizontal = 3
 
 [node name="Name" type="Label" parent="Background/HContainer/VContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ix4vy")
 text = "Teste"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -69,4 +72,6 @@ vertical_alignment = 1
 [node name="Dialog" type="RichTextLabel" parent="Background/HContainer/VContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_ix4vy")
+theme_override_fonts/bold_font = ExtResource("3_koemq")
 text = "uouuuu caraca. É forte o negocio mesmo"

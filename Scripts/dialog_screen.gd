@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if (Input.is_action_pressed("ui_accept") or Input.is_action_pressed("left_mouse")) and _dialog.visible_ratio < 1:
-		_step = 0.00001
+		_step = 0.00000001
 		return
 	
 	_step = 0.05
