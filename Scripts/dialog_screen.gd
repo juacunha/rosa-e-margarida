@@ -8,8 +8,8 @@ var data: CompleteDialogData
 signal dialog_finished()
 
 @onready var _faceset: TextureRect = $Background/HContainer/Border/Faceset
-@onready var _name: Label = $Background/HContainer/VContainer/Name
-@onready var _dialog: RichTextLabel = $Background/HContainer/VContainer/Dialog
+@onready var _name: Label = $Name
+@onready var _dialog: RichTextLabel = $Dialog
 
 var skip = false
 
@@ -39,7 +39,7 @@ func _initialize_dialog() -> void:
 	_faceset.texture = load(data.complete_dialog[_id].faceset_path)
 	_faceset.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	_faceset.stretch_mode = TextureRect.STRETCH_SCALE
-	_faceset.custom_minimum_size = Vector2(160, 160) # Tamanho desejado
+	_faceset.custom_minimum_size = Vector2(110, 110) # Tamanho desejado
 	_dialog.set_visible_characters(0)
 	skip = false
 	
