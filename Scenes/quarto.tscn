@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://q7a6nccqmh1i"]
+[gd_scene load_steps=37 format=3 uid="uid://q7a6nccqmh1i"]
 
 [ext_resource type="PackedScene" uid="uid://osy80j4wrwhi" path="res://Scenes/porta.tscn" id="1_10atf"]
 [ext_resource type="Script" uid="uid://bak6nb2m0bjxd" path="res://Scripts/quarto.gd" id="1_60ca0"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dflhlm8or2k1t" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/porta quarto Sheet-export.png" id="15_0cvhf"]
 [ext_resource type="Texture2D" uid="uid://di6k21cikricf" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/porta quarto Sheet.png" id="15_4by6u"]
 [ext_resource type="PackedScene" uid="uid://c3pveuuf4ws5i" path="res://Scenes/ObjetosInteragiveis/foto praia.tscn" id="16_60ca0"]
+[ext_resource type="PackedScene" uid="uid://d0vaw5mmu6jo6" path="res://Scenes/ObjetosInteragiveis/carta margarida.tscn" id="17_2wc1b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywv3x"]
 size = Vector2(66.539, 13.529)
@@ -319,5 +320,8 @@ position = Vector2(244, 122)
 
 [node name="CollisionShape2D" parent="ObjetosInteragiveis/Foto praia/Area2D" index="0"]
 position = Vector2(6, 13)
+
+[node name="Carta Margarida" parent="ObjetosInteragiveis" instance=ExtResource("17_2wc1b")]
+position = Vector2(389, 80)
 
 [editable path="ObjetosInteragiveis/Foto praia"]

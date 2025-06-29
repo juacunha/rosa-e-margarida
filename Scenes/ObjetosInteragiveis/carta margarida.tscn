@@ -1,0 +1,167 @@
+[gd_scene load_steps=24 format=3 uid="uid://d0vaw5mmu6jo6"]
+
+[ext_resource type="Script" uid="uid://bre1nb46r2l2i" path="res://Scripts/obj.gd" id="1_40cqx"]
+[ext_resource type="Resource" uid="uid://diuqarbggniwu" path="res://Resources/segunda carta pega.tres" id="2_40cqx"]
+[ext_resource type="Texture2D" uid="uid://dfjrjo1bubg3j" path="res://Assets/Cartas/carta margarida v2.png" id="3_40cqx"]
+[ext_resource type="Texture2D" uid="uid://ui1xs4x8d6xh" path="res://Assets/Assets Casa/Assets Casa/Interagíveis/carta brilhando-Sheet.png" id="4_gj64f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdso2"]
+atlas = ExtResource("4_gj64f")
+region = Rect2(0, 0, 11, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2i6t"]
+atlas = ExtResource("4_gj64f")
+region = Rect2(0, 0, 11, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g81od"]
+atlas = ExtResource("4_gj64f")
+region = Rect2(15, 0, 11, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t72gi"]
+atlas = ExtResource("4_gj64f")
+region = Rect2(30, 0, 11, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5wc1"]
+atlas = ExtResource("4_gj64f")
+region = Rect2(45, 0, 11, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bpvh"]
+atlas = ExtResource("4_gj64f")
+region = Rect2(60, 0, 11, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy8g0"]
+atlas = ExtResource("4_gj64f")
+region = Rect2(75, 0, 11, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ido86"]
+atlas = ExtResource("4_gj64f")
+region = Rect2(90, 0, 11, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xa70u"]
+atlas = ExtResource("4_gj64f")
+region = Rect2(105, 0, 11, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcg1l"]
+atlas = ExtResource("4_gj64f")
+region = Rect2(120, 0, 11, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45eq1"]
+atlas = ExtResource("4_gj64f")
+region = Rect2(135, 0, 11, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtoqp"]
+atlas = ExtResource("4_gj64f")
+region = Rect2(150, 0, 11, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm0tu"]
+atlas = ExtResource("4_gj64f")
+region = Rect2(165, 0, 11, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y50bk"]
+atlas = ExtResource("4_gj64f")
+region = Rect2(180, 0, 11, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jo5wj"]
+atlas = ExtResource("4_gj64f")
+region = Rect2(195, 0, 11, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iexcb"]
+atlas = ExtResource("4_gj64f")
+region = Rect2(210, 0, 11, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xsaib"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdso2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2i6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g81od")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t72gi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5wc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bpvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy8g0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ido86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xa70u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcg1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45eq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtoqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mm0tu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y50bk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jo5wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iexcb")
+}],
+"loop": false,
+"name": &"shine",
+"speed": 30.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4imom"]
+size = Vector2(14, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wfq6a"]
+radius = 24.0
+
+[node name="Carta Margarida" type="StaticBody2D"]
+texture_filter = 1
+collision_mask = 0
+script = ExtResource("1_40cqx")
+dialog = ExtResource("2_40cqx")
+letter = ExtResource("3_40cqx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xsaib")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4imom")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_wfq6a")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

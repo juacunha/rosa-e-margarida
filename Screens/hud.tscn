@@ -17,6 +17,10 @@ visible = false
 image_1 = ExtResource("3_iwhx1")
 image_2 = ExtResource("4_srvv7")
 image_3 = ExtResource("4_lg0rs")
+text_1 = "Esse dia estava quente, mas nem tanto. Acabamos passando um pouco de frio, já que não olhamos a previsão do tempo antes de sair de casa. Pelo menos a vista estava bonita, e foi um momento memorável. A paisagem estava bela, e lembro que tomamos chocolate quente quando chegamos em casa (para nos esquentar). Apesar do frio, foi um ótimo dia, e uma linda memória. "
+text_2 = " Ai ai, nunca vou esquecer esse dia. Nós sempre estivemos juntas, mas quando oficializamos as coisas, foi um momento de alegria inimaginável. Ainda optamos por manter nossa privacidade a nós mesmas e pessoas próximas, mas poder viver esse momento foi incrível! Amo e sempre vou amar a Margarida, com todo meu coração!"
+text_3 = " Esse dia… Foi quando comemoramos por finalmente estarmos morando juntas. Decidimos comprar um bonsai para comemorar, para representar felicidade, harmonia, e prosperidade (ideia da Margarida, é claro). Enfim, compramos o bonsai como lembrança da nossa conquista, e decidimos tirar essa foto antes de plantá-lo. Dessa forma, sempre iríamos ter a memória de como ele era, e de um marco nas nossas vidas.
+"
 
 [node name="IconAlbum" parent="." instance=ExtResource("6_srvv7")]
 visible = false

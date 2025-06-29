@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://duh1l1c5y64m3" path="res://Scripts/main.gd" id="1_jjgbg"]
 [ext_resource type="Resource" uid="uid://pyjk2nvtjnt3" path="res://Resources/primeiro dialogo.tres" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://chdil7atp58aw" path="res://Screens/hud.tscn" id="2_bo1nx"]
-[ext_resource type="Texture2D" uid="uid://c2jln01lxnjq2" path="res://Assets/Fotos/foto praia.png" id="3_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://hrql2yjtkey0" path="res://Assets/Cartas/carta inicial v2.png" id="3_jjvhh"]
 
 [node name="Main" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_jjgbg")
 dialogo_inicial = ExtResource("2_8gbba")
 carta_inicial = ExtResource("3_jjvhh")

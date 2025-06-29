@@ -170,3 +170,9 @@ func is_album_full() -> bool:
 		if not album_inventory[photo]:
 			return false
 	return true
+
+func _on_sair_pressed():
+	get_tree().quit()
+
+func _on_menu_pressed():
+	get_tree().change_scene_to_file("res://Screens/menu.tscn")

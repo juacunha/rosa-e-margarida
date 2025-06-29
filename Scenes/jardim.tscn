@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://jmkswqfadufv"]
+[gd_scene load_steps=42 format=3 uid="uid://jmkswqfadufv"]
 
 [ext_resource type="Script" uid="uid://m1ctk488s73d" path="res://Scripts/jardim.gd" id="1_gqak8"]
 [ext_resource type="Texture2D" uid="uid://bierrna7511it" path="res://Assets/Assets Casa/Assets Casa/Paredes/paredes jardim.png" id="2_sdrc7"]
@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://gpmk05hgqdk5" path="res://Sfx/birds.ogg" id="27_ggaqh"]
 [ext_resource type="PackedScene" uid="uid://cotioohhfqxqh" path="res://Scenes/ObjetosInteragiveis/foto jardim.tscn" id="27_q6yif"]
 [ext_resource type="AudioStream" uid="uid://bfhod6tsuqihe" path="res://Sfx/Songs/SO SAD MEU DEUS.mp3" id="28_5obca"]
+[ext_resource type="PackedScene" uid="uid://bvkctt1gdthlo" path="res://Scenes/ObjetosInteragiveis/carta votos.tscn" id="28_uxo8a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhble"]
 size = Vector2(138, 37)
@@ -305,6 +306,9 @@ position = Vector2(-2, -6)
 
 [node name="Foto jardim" parent="ObjetosInteragiveis" instance=ExtResource("27_q6yif")]
 position = Vector2(-24, -40)
+
+[node name="Carta Votos" parent="ObjetosInteragiveis" instance=ExtResource("28_uxo8a")]
+position = Vector2(39, -39)
 
 [node name="Sounds" type="Node" parent="."]
 

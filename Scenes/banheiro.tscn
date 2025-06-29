@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://6rq51gy8dy4u"]
+[gd_scene load_steps=43 format=3 uid="uid://6rq51gy8dy4u"]
 
 [ext_resource type="Texture2D" uid="uid://dcff0ff0yvjdb" path="res://Assets/Assets Casa/Assets Casa/Paredes/paredes banheiro.png" id="1_2xjjb"]
 [ext_resource type="Script" uid="uid://cydv4rmy5o4xm" path="res://Scripts/banheiro.gd" id="1_1127t"]
@@ -19,6 +19,59 @@
 [ext_resource type="Texture2D" uid="uid://bpen16hiw37d8" path="res://Assets/Assets Casa/Assets Casa/Móveis/Banheiro/tapete coracao.png" id="15_7kpeg"]
 [ext_resource type="AudioStream" uid="uid://bdsqn0meh2lrw" path="res://Sfx/bathroom.ogg" id="18_dvdwx"]
 [ext_resource type="AudioStream" uid="uid://djyi3qsj6srag" path="res://Sfx/Songs/melancholic happy-loopable.mp3" id="19_qaaya"]
+[ext_resource type="PackedScene" uid="uid://blddjtexey0f2" path="res://Scenes/ObjetosInteragiveis/carta tratamento.tscn" id="20_mkyvy"]
+
+[sub_resource type="Animation" id="Animation_qaaya"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.607843)]
+}
+
+[sub_resource type="Animation" id="Animation_hsh6i"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.607843)]
+}
+
+[sub_resource type="Animation" id="Animation_mkyvy"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.607843), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hsh6i"]
+_data = {
+&"RESET": SubResource("Animation_qaaya"),
+&"fade_in": SubResource("Animation_hsh6i"),
+&"fade_out": SubResource("Animation_mkyvy")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5qt3"]
 size = Vector2(104, 35)
@@ -91,58 +144,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_qaaya"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0.607843)]
-}
-
-[sub_resource type="Animation" id="Animation_hsh6i"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.607843)]
-}
-
-[sub_resource type="Animation" id="Animation_mkyvy"]
-resource_name = "fade_out"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0.607843), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hsh6i"]
-_data = {
-&"RESET": SubResource("Animation_qaaya"),
-&"fade_in": SubResource("Animation_hsh6i"),
-&"fade_out": SubResource("Animation_mkyvy")
-}
-
 [sub_resource type="GDScript" id="GDScript_mkyvy"]
 script/source = "extends Node2D
 
@@ -183,6 +184,23 @@ size = Vector2(16, 32)
 
 [node name="Banheiro" type="Node2D"]
 script = ExtResource("1_1127t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -53.0
+offset_top = -61.0
+offset_right = 53.0
+offset_bottom = 59.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.607843)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_hsh6i")
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -309.0
@@ -338,6 +356,9 @@ position = Vector2(-32, 45)
 
 [node name="ObjetosInteragiveis" type="Node2D" parent="."]
 
+[node name="Carta Tratamento" parent="ObjetosInteragiveis" instance=ExtResource("20_mkyvy")]
+position = Vector2(-38, -26)
+
 [node name="Sounds" type="Node" parent="."]
 
 [node name="torneira" type="AudioStreamPlayer2D" parent="Sounds"]
@@ -349,21 +370,6 @@ autoplay = true
 stream = ExtResource("19_qaaya")
 volume_db = -14.926
 autoplay = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = -53.0
-offset_top = -61.0
-offset_right = 53.0
-offset_bottom = 59.0
-color = Color(0, 0, 0, 0.607843)
-metadata/_edit_use_anchors_ = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
-libraries = {
-&"": SubResource("AnimationLibrary_hsh6i")
-}
 
 [node name="Abajur" type="Area2D" parent="."]
 script = SubResource("GDScript_mkyvy")

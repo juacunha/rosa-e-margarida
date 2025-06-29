@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://oau8obo3tb2o"]
+[gd_scene load_steps=10 format=3 uid="uid://oau8obo3tb2o"]
 
 [ext_resource type="Script" uid="uid://dus70ajbpyx1c" path="res://Scripts/album.gd" id="1_7sqki"]
 [ext_resource type="Texture2D" uid="uid://bhgwgytg11x2w" path="res://Assets/PlaceHolders/Fotos/IMG_3047.png" id="2_7sqki"]
 [ext_resource type="Texture2D" uid="uid://baw2x1h2o0kbc" path="res://Assets/PlaceHolders/Fotos/IMG_3048.png" id="3_a8xvf"]
 [ext_resource type="Texture2D" uid="uid://c2jln01lxnjq2" path="res://Assets/Fotos/foto praia.png" id="4_a8xvf"]
 [ext_resource type="Texture2D" uid="uid://cjalvbnm0vxlm" path="res://Assets/Fotos/foto casamento.png" id="4_eww18"]
+[ext_resource type="FontFile" uid="uid://c14b34a1psu34" path="res://Fontes/Alkhemikal.ttf" id="4_t7aoq"]
 [ext_resource type="Texture2D" uid="uid://sh6yasmxaywo" path="res://Assets/Fotos/foto jardim.png" id="5_4ckl8"]
+[ext_resource type="Texture2D" uid="uid://cmttvtysvpmse" path="res://Assets/Botoes/botao e Sheet.png" id="8_l1f4c"]
+[ext_resource type="Texture2D" uid="uid://cv717hfj140b5" path="res://Assets/Botoes/botao tab Sheet.png" id="9_qo5d0"]
 
 [node name="Album" type="Control"]
 layout_mode = 3
@@ -51,7 +54,8 @@ offset_top = 98.0
 offset_right = 996.0
 offset_bottom = 507.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 30
+theme_override_fonts/normal_font = ExtResource("4_t7aoq")
+theme_override_font_sizes/normal_font_size = 20
 text = "Texto muito fofinho e dramatico que faz os jogadores chorarem muito"
 
 [node name="Fotos" type="HBoxContainer" parent="."]
@@ -95,10 +99,10 @@ stretch_mode = 5
 
 [node name="Anterior" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 574.0
-offset_right = 76.0
-offset_bottom = 628.0
+offset_left = 998.0
+offset_top = 584.0
+offset_right = 1053.0
+offset_bottom = 638.0
 
 [node name="Drag" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(200, 200)
@@ -109,6 +113,22 @@ mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
+[node name="Sair" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 586.0
+offset_right = 58.0
+offset_bottom = 626.0
+texture_normal = ExtResource("8_l1f4c")
+
+[node name="Menu" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 586.0
+offset_right = 116.0
+offset_bottom = 626.0
+texture_normal = ExtResource("9_qo5d0")
+
 [connection signal="mouse_entered" from="EspacoFoto" to="." method="_on_espaco_foto_mouse_entered"]
 [connection signal="mouse_exited" from="EspacoFoto" to="." method="_on_espaco_foto_mouse_exited"]
 [connection signal="gui_input" from="Fotos/Foto1" to="." method="_on_foto_1_gui_input"]
@@ -116,3 +136,5 @@ stretch_mode = 5
 [connection signal="gui_input" from="Fotos/Foto3" to="." method="_on_foto_3_gui_input"]
 [connection signal="button_down" from="Proximo" to="." method="next_image"]
 [connection signal="button_down" from="Anterior" to="." method="previous_image"]
+[connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

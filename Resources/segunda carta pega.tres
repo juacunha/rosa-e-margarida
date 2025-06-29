@@ -1,9 +1,23 @@
-[gd_resource type="Resource" script_class="CompleteDialogData" load_steps=3 format=3 uid="uid://diuqarbggniwu"]
+[gd_resource type="Resource" script_class="CompleteDialogData" load_steps=5 format=3 uid="uid://diuqarbggniwu"]
 
 [ext_resource type="Script" uid="uid://cjhgwdoi35xan" path="res://Resources/dialog_data.gd" id="1_40ut4"]
 [ext_resource type="Script" uid="uid://dc02xex6t5xfx" path="res://Resources/complete_dialog_data.gd" id="2_oco8f"]
 
+[sub_resource type="Resource" id="Resource_40ut4"]
+script = ExtResource("1_40ut4")
+locutor = "Rosa"
+faceset_path = "uid://b3nq03fqa6y8w"
+dialog = "É..."
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
+[sub_resource type="Resource" id="Resource_oco8f"]
+script = ExtResource("1_40ut4")
+locutor = "Rosa"
+faceset_path = "uid://b3nq03fqa6y8w"
+dialog = "Acho que você não estava tão ótima assim..."
+metadata/_custom_type_script = "uid://cjhgwdoi35xan"
+
 [resource]
 script = ExtResource("2_oco8f")
-complete_dialog = Array[ExtResource("1_40ut4")]([])
+complete_dialog = Array[ExtResource("1_40ut4")]([SubResource("Resource_40ut4"), SubResource("Resource_oco8f")])
 metadata/_custom_type_script = "uid://dc02xex6t5xfx"

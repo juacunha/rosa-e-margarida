@@ -8,6 +8,10 @@ signal letter_closed()
 
 func _ready() -> void:
 	imagem_carta.texture = letter_image
+	#imagem_carta.scale = Vector2(1.2, 1.2)
+	#imagem_carta.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	#var screen_size = get_viewport_rect().size
+	#imagem_carta.position = screen_size / 3
 
 func _process(delta: float) -> void:
 	
