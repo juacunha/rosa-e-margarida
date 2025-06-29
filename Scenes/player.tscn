@@ -16,7 +16,7 @@
 radius = 3.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l6n3p"]
-radius = 21.0238
+radius = 3.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_olqyp"]
 atlas = ExtResource("2_tx1dd")
@@ -559,11 +559,13 @@ position = Vector2(0, 14)
 shape = SubResource("CircleShape2D_igrcy")
 
 [node name="InteractableArea" type="Area2D" parent="."]
+position = Vector2(1, 0)
 collision_layer = 0
 collision_mask = 4
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+position = Vector2(-1, 14)
 shape = SubResource("CircleShape2D_l6n3p")
 debug_color = Color(0.878606, 0.000383506, 0.826935, 0.42)
 
@@ -582,7 +584,10 @@ scale = Vector2(0.318182, 0.318182)
 sprite_frames = SubResource("SpriteFrames_qqcod")
 animation = &"Press e"
 autoplay = "Press e"
-frame_progress = 0.895746
+
+[node name="TempoTab" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [connection signal="area_entered" from="InteractableArea" to="." method="_on_interactable_area_area_entered"]
 [connection signal="area_exited" from="InteractableArea" to="." method="_on_interactable_area_area_exited"]

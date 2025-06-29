@@ -11,15 +11,18 @@ signal dialog_finished()
 @onready var _name: Label = $Background/HContainer/VContainer/Name
 @onready var _dialog: RichTextLabel = $Background/HContainer/VContainer/Dialog
 
+var skip = false
+
 func _ready() -> void:
 	_initialize_dialog()
 
 func _process(_delta: float) -> void:
-	if (Input.is_action_pressed("ui_accept") or Input.is_action_pressed("left_mouse")) and _dialog.visible_ratio < 1:
-		_step = 0.00000001
+	if ((Input.is_action_just_pressed("ui_accept")) or Input.is_action_just_pressed("left_mouse")) and _dialog.visible_ratio < 1:
+		#_step = 0.00000001
+		_dialog.set_visible_characters(-1)
+		skip = true
 		return
 	
-	_step = 0.05
 	if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("left_mouse"):
 		_id += 1
 		if _id == data.complete_dialog.size():
@@ -37,9 +40,11 @@ func _initialize_dialog() -> void:
 	_faceset.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	_faceset.stretch_mode = TextureRect.STRETCH_SCALE
 	_faceset.custom_minimum_size = Vector2(160, 160) # Tamanho desejado
+	_dialog.set_visible_characters(0)
+	skip = false
 	
-	_dialog.visible_characters = 0
-	while _dialog.visible_ratio < 1:
-		await get_tree().create_timer(_step).timeout
+
+
+func _on_timer_timeout() -> void:
+	if not skip:
 		_dialog.visible_characters += 1
-		pass

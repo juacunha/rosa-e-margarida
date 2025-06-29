@@ -140,7 +140,6 @@ animations = [{
 size = Vector2(14, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wfq6a"]
-radius = 15.0333
 
 [node name="Foto praia" type="StaticBody2D"]
 collision_mask = 0

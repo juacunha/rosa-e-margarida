@@ -75,3 +75,9 @@ size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_ix4vy")
 theme_override_fonts/bold_font = ExtResource("3_koemq")
 text = "uouuuu caraca. É forte o negocio mesmo"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

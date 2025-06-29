@@ -318,6 +318,6 @@ position = Vector2(317, 106)
 position = Vector2(244, 122)
 
 [node name="CollisionShape2D" parent="ObjetosInteragiveis/Foto praia/Area2D" index="0"]
-position = Vector2(2, 7)
+position = Vector2(6, 13)
 
 [editable path="ObjetosInteragiveis/Foto praia"]

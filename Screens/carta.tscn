@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2cqupbrc6did"]
+
+[ext_resource type="Script" uid="uid://c57sjq4fus3ej" path="res://Scripts/carta.gd" id="1_u43fh"]
+[ext_resource type="Texture2D" uid="uid://dhcikbte07ref" path="res://Assets/Assets Casa/Assets Casa/Interagíveis/bonsai.png" id="2_8w3oa"]
+[ext_resource type="Texture2D" uid="uid://bhgwgytg11x2w" path="res://Assets/PlaceHolders/Fotos/IMG_3047.png" id="3_silwl"]
+
+[node name="Carta" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u43fh")
+letter_image = ExtResource("2_8w3oa")
+
+[node name="ImagemCarta" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_silwl")
+expand_mode = 1

@@ -5,6 +5,7 @@ class_name Player
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var buttons = $Buttons
+@onready var tempo_tab: Timer = $TempoTab
 
 signal interaction(dono)
 signal open_album()
@@ -50,6 +51,14 @@ func _process(delta: float) -> void:
 func playable(order: bool) -> void:
 	can_be_played = order
 
+func show_tab_tooltip() -> void:
+	tempo_tab.start()
+	buttons.play("Press tab")
+	buttons.show()
+	await tempo_tab.timeout
+	buttons.hide()
+	
+
 # Corpo Interagivel Entrou
 func _on_interactable_area_body_entered(body: Node2D) -> void:
 	pass
@@ -62,11 +71,13 @@ func _on_interactable_area_body_exited(body: Node2D) -> void:
 
 # Corpo Interagivel Entrou
 func _on_interactable_area_area_entered(area: Area2D) -> void:
-	buttons.show()
-	buttons.play("Press e")
+	if area.get_parent() is InteractableObject or area.get_parent() is Door:
+		buttons.show()
+		buttons.play("Press e")
 	
 
 # Corpo Interagivel Saiu
 func _on_interactable_area_area_exited(area: Area2D) -> void:
-	buttons.hide()
+	if area.get_parent() is InteractableObject or area.get_parent() is Door:
+		buttons.hide()
 	

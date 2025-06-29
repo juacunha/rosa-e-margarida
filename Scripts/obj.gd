@@ -3,6 +3,7 @@ class_name InteractableObject
 
 @export_category("Informações")
 @export var dialog: CompleteDialogData
+@export var letter: CompressedTexture2D = null
 @export var can_be_interacted: bool = true
 @export var timer_animacao_brilho: float = 6.0
 @export_range(0, 3) var photo_index: int = 0

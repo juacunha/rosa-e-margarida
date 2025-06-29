@@ -20,14 +20,12 @@ var player: Player
 
 @export_category("Dialogos")
 @export var dialogo_inicial: CompleteDialogData
-
+@export var carta_inicial: CompressedTexture2D
 func _ready() -> void:
 	var menu = MENU.instantiate()
 	cenas.add_child(menu)
 	menu.change_scene.connect(change_scene)
 	hud.finish_game.connect(change_scene)
-
-		
 
 func _create_dialog(data: CompleteDialogData) -> void:
 	hud._create_dialog_screen(data)
@@ -80,7 +78,8 @@ func change_scene(new_scene: String) -> void:
 			add_child(player)
 			player.playable(true)
 			player.open_album.connect(abrir_album)
-			object_interaction(dialogo_inicial, null)
+			object_interaction(dialogo_inicial, null, carta_inicial)
+			
 		else:
 			player.playable(true)
 		connect_to_objects(new)
@@ -100,10 +99,21 @@ func connect_to_objects(scene) -> void:
 		if obj is InteractableObject:
 			obj.interacted.connect(object_interaction)
 
-func object_interaction(data: CompleteDialogData, dono: InteractableObject) -> void:
-	hud._create_dialog_screen(data)
+func object_interaction(data: CompleteDialogData, dono: InteractableObject, first_letter: CompressedTexture2D = null) -> void:
 	player.playable(false)
+	if (dono and dono.letter):
+		hud.new_letter(dono.letter)
+		await hud.letter_ended
+	elif first_letter:
+		hud.new_letter(first_letter)
+		await hud.letter_ended
+		
+		
+	hud._create_dialog_screen(data)
 	await hud.dialog_ended
+	if first_letter:
+		player.show_tab_tooltip()
 	if dono:
 		hud.new_photo(dono.photo_index)
 	player.playable(true)
+	
