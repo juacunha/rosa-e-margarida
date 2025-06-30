@@ -24,6 +24,10 @@ AudioManager="*res://Scenes/autoload_audio/AudioManager.tscn"
 window/size/mode=3
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+botoes_click_menu=""
+
 [input]
 
 up={

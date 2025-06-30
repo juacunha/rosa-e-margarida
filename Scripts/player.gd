@@ -6,6 +6,17 @@ class_name Player
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var buttons = $Buttons
 @onready var tempo_tab: Timer = $TempoTab
+@onready var footstep_sounds = [
+	load("res://Sfx/passos_madeira/0.ogg"),
+	load("res://Sfx/passos_madeira/1.ogg"),
+	load("res://Sfx/passos_madeira/2.ogg"),
+	load("res://Sfx/passos_madeira/3.ogg"),
+	load("res://Sfx/passos_madeira/4.ogg"),
+	load("res://Sfx/passos_madeira/5.ogg"),
+	load("res://Sfx/passos_madeira/6.ogg"),
+	load("res://Sfx/passos_madeira/7.ogg"),
+	load("res://Sfx/passos_madeira/0.ogg"),
+]
 
 signal interaction(dono)
 signal open_album()

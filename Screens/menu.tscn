@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dry5f677xv3pr"]
+[gd_scene load_steps=4 format=3 uid="uid://dry5f677xv3pr"]
 
 [ext_resource type="Script" uid="uid://sfktwpdm11l7" path="res://Scripts/menu.gd" id="1_b0dvv"]
 [ext_resource type="AudioStream" uid="uid://d07mdydm8nyh4" path="res://Sfx/Menu/Ravi de te revoir-loopable.mp3" id="2_7ocep"]
+[ext_resource type="AudioStream" uid="uid://c8wcjiqf2eqn6" path="res://Sfx/click.wav" id="3_n8504"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -19,7 +20,7 @@ pitch_scale = 1.01
 autoplay = true
 parameters/looping = true
 
-[node name="Iniciar2" type="Button" parent="."]
+[node name="Iniciar2" type="Button" parent="." groups=["botoes_click_menu"]]
 layout_mode = 0
 offset_left = 468.0
 offset_top = 412.0
@@ -28,7 +29,7 @@ offset_bottom = 460.0
 mouse_default_cursor_shape = 2
 text = "Jogar"
 
-[node name="Opções" type="Button" parent="."]
+[node name="Opções" type="Button" parent="." groups=["botoes_click_menu"]]
 layout_mode = 0
 offset_left = 468.0
 offset_top = 468.0
@@ -38,7 +39,7 @@ mouse_default_cursor_shape = 2
 text = "Créditos
 "
 
-[node name="Sair" type="Button" parent="."]
+[node name="Sair" type="Button" parent="." groups=["botoes_click_menu"]]
 layout_mode = 0
 offset_left = 468.0
 offset_top = 524.0
@@ -46,6 +47,9 @@ offset_right = 672.0
 offset_bottom = 572.0
 mouse_default_cursor_shape = 2
 text = "Sair"
+
+[node name="sfx_click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_n8504")
 
 [connection signal="pressed" from="Iniciar2" to="." method="_on_iniciar_2_pressed"]
 [connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
