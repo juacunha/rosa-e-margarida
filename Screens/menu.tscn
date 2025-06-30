@@ -21,27 +21,31 @@ parameters/looping = true
 
 [node name="Iniciar2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 464.0
-offset_top = 344.0
-offset_right = 668.0
-offset_bottom = 392.0
+offset_left = 468.0
+offset_top = 412.0
+offset_right = 672.0
+offset_bottom = 460.0
+mouse_default_cursor_shape = 2
 text = "Jogar"
 
 [node name="Opções" type="Button" parent="."]
 layout_mode = 0
-offset_left = 464.0
-offset_top = 400.0
-offset_right = 668.0
-offset_bottom = 448.0
-text = "Opções
+offset_left = 468.0
+offset_top = 468.0
+offset_right = 672.0
+offset_bottom = 516.0
+mouse_default_cursor_shape = 2
+text = "Créditos
 "
 
 [node name="Sair" type="Button" parent="."]
 layout_mode = 0
-offset_left = 464.0
-offset_top = 456.0
-offset_right = 668.0
-offset_bottom = 504.0
+offset_left = 468.0
+offset_top = 524.0
+offset_right = 672.0
+offset_bottom = 572.0
+mouse_default_cursor_shape = 2
 text = "Sair"
 
 [connection signal="pressed" from="Iniciar2" to="." method="_on_iniciar_2_pressed"]
+[connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
