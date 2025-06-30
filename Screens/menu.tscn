@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dry5f677xv3pr"]
+[gd_scene load_steps=10 format=3 uid="uid://dry5f677xv3pr"]
 
 [ext_resource type="Script" uid="uid://sfktwpdm11l7" path="res://Scripts/menu.gd" id="1_b0dvv"]
 [ext_resource type="Texture2D" uid="uid://crun1cqhh2or1" path="res://Assets/menu/mesa.png" id="2_02abu"]
@@ -8,6 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://di1qi1vr2juo1" path="res://Assets/menu/livro.png" id="5_oawtx"]
 [ext_resource type="Texture2D" uid="uid://bwvfojs87tecx" path="res://Assets/menu/logo.png" id="6_el75v"]
 [ext_resource type="Texture2D" uid="uid://1a0jsdfpreby" path="res://Assets/menu/aaa2.png" id="8_n8lv8"]
+
+[sub_resource type="FontFile" id="FontFile_n8lv8"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -41,15 +48,19 @@ scale = Vector2(2.81, 2.08)
 texture = ExtResource("4_w6p7k")
 
 [node name="Iniciar2" type="Button" parent="." groups=["botoes_click_menu"]]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 475.5
-offset_top = 435.0
-offset_right = 679.5
-offset_bottom = 483.0
+offset_left = 476.0
+offset_top = 438.0
+offset_right = 680.0
+offset_bottom = 486.0
+theme_override_fonts/font = SubResource("FontFile_n8lv8")
 text = "Jogar"
 flat = true
 
 [node name="Sair" type="Button" parent="." groups=["botoes_click_menu"]]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 478.5
 offset_top = 539.0
