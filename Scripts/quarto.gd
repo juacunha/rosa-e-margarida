@@ -15,6 +15,7 @@ signal change_scene(scene: String)
 func _ready() -> void:
 	porta_banheiro.door_opened.connect(change_scene_func)
 	porta_sala.door_opened.connect(change_scene_func)
+	AudioManager.play_music("res://Sfx/Songs/melancholic happy-loopable.mp3", -10.0)
 
 func get_obj():
 	return objetos_interagiveis.get_children()

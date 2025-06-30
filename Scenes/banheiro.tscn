@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://6rq51gy8dy4u"]
+[gd_scene load_steps=42 format=3 uid="uid://6rq51gy8dy4u"]
 
 [ext_resource type="Texture2D" uid="uid://dcff0ff0yvjdb" path="res://Assets/Assets Casa/Assets Casa/Paredes/paredes banheiro.png" id="1_2xjjb"]
 [ext_resource type="Script" uid="uid://cydv4rmy5o4xm" path="res://Scripts/banheiro.gd" id="1_1127t"]
@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://0x7nxdthwxcn" path="res://Assets/Assets Casa/Assets Casa/Móveis/Banheiro/cosmeticos.png" id="14_mkyvy"]
 [ext_resource type="Texture2D" uid="uid://bpen16hiw37d8" path="res://Assets/Assets Casa/Assets Casa/Móveis/Banheiro/tapete coracao.png" id="15_7kpeg"]
 [ext_resource type="AudioStream" uid="uid://bdsqn0meh2lrw" path="res://Sfx/bathroom.ogg" id="18_dvdwx"]
-[ext_resource type="AudioStream" uid="uid://djyi3qsj6srag" path="res://Sfx/Songs/melancholic happy-loopable.mp3" id="19_qaaya"]
 [ext_resource type="PackedScene" uid="uid://blddjtexey0f2" path="res://Scenes/ObjetosInteragiveis/carta tratamento.tscn" id="20_mkyvy"]
 
 [sub_resource type="Animation" id="Animation_qaaya"]
@@ -364,11 +363,6 @@ position = Vector2(-38, -26)
 [node name="torneira" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("18_dvdwx")
 volume_db = -15.849
-autoplay = true
-
-[node name="ost" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource("19_qaaya")
-volume_db = -14.926
 autoplay = true
 
 [node name="Abajur" type="Area2D" parent="."]

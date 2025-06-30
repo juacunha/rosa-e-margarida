@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://jmkswqfadufv"]
+[gd_scene load_steps=41 format=3 uid="uid://jmkswqfadufv"]
 
 [ext_resource type="Script" uid="uid://m1ctk488s73d" path="res://Scripts/jardim.gd" id="1_gqak8"]
 [ext_resource type="Texture2D" uid="uid://bierrna7511it" path="res://Assets/Assets Casa/Assets Casa/Paredes/paredes jardim.png" id="2_sdrc7"]
@@ -28,7 +28,6 @@
 [ext_resource type="PackedScene" uid="uid://lemia34wagel" path="res://Scenes/ObjetosInteragiveis/bonsai.tscn" id="26_vxxdn"]
 [ext_resource type="AudioStream" uid="uid://gpmk05hgqdk5" path="res://Sfx/birds.ogg" id="27_ggaqh"]
 [ext_resource type="PackedScene" uid="uid://cotioohhfqxqh" path="res://Scenes/ObjetosInteragiveis/foto jardim.tscn" id="27_q6yif"]
-[ext_resource type="AudioStream" uid="uid://bfhod6tsuqihe" path="res://Sfx/Songs/SO SAD MEU DEUS.mp3" id="28_5obca"]
 [ext_resource type="PackedScene" uid="uid://bvkctt1gdthlo" path="res://Scenes/ObjetosInteragiveis/carta votos.tscn" id="28_uxo8a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhble"]
@@ -292,8 +291,6 @@ texture = ExtResource("24_vxxdn")
 [node name="PortaSala" parent="Portas" instance=ExtResource("3_yywnu")]
 position = Vector2(32, 38)
 
-[node name="Audios" type="Node" parent="."]
-
 [node name="Surgimentos" type="Node2D" parent="."]
 
 [node name="Sala" type="Marker2D" parent="Surgimentos"]
@@ -317,9 +314,3 @@ stream = ExtResource("27_ggaqh")
 volume_db = -22.78
 autoplay = true
 attenuation = 3.4822
-
-[node name="OST" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource("28_5obca")
-volume_db = -18.818
-autoplay = true
-attenuation = 2.73208

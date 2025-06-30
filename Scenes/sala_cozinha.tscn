@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://do32sr4bvpphr"]
+[gd_scene load_steps=63 format=3 uid="uid://do32sr4bvpphr"]
 
 [ext_resource type="Script" uid="uid://c2glavm2rimp7" path="res://Scripts/sala_cozinha.gd" id="1_wvgae"]
 [ext_resource type="Texture2D" uid="uid://1ubqa7j2x2d1" path="res://Assets/Assets Casa/Assets Casa/Paredes/paredes sala.png" id="2_17mt7"]
@@ -33,8 +33,10 @@
 [ext_resource type="Texture2D" uid="uid://cy1k8bn7nh36e" path="res://Assets/Assets Casa/Assets Casa/Móveis/Cozinha/frutas.png" id="30_1whwd"]
 [ext_resource type="Texture2D" uid="uid://ug5t5ft4shnr" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/porta cozinha Sheet-export.png" id="32_68nxm"]
 [ext_resource type="PackedScene" uid="uid://rp4gqbg0k612" path="res://Scenes/ObjetosInteragiveis/tv.tscn" id="32_m0inl"]
+[ext_resource type="AudioStream" uid="uid://vagm65mtip2j" path="res://Sfx/coffee.ogg" id="33_h0jkj"]
 [ext_resource type="PackedScene" uid="uid://fdnbai0b4his" path="res://Scenes/ObjetosInteragiveis/cafeteira.tscn" id="33_ytupa"]
 [ext_resource type="PackedScene" uid="uid://dtc42ox4bgn3u" path="res://Scenes/ObjetosInteragiveis/flores.tscn" id="34_o87s1"]
+[ext_resource type="AudioStream" uid="uid://dxr4t7gabg6oe" path="res://Sfx/clock ticking.mp3" id="34_rh2fc"]
 [ext_resource type="PackedScene" uid="uid://cgfbm7r5mcce5" path="res://Scenes/ObjetosInteragiveis/foto casamento.tscn" id="36_dr80n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77if3"]
@@ -527,11 +529,17 @@ animations = SubResource("SpriteFrames_o87s1")
 
 [node name="Audios" type="Node" parent="."]
 
-[node name="ost" type="AudioStreamPlayer" parent="Audios"]
-
-[node name="sfx" type="AudioStreamPlayer" parent="Audios"]
-
 [node name="coffee" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("33_h0jkj")
+volume_db = -19.81
+autoplay = true
+
+[node name="relogio" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("34_rh2fc")
+volume_db = -23.553
+pitch_scale = 0.52
+autoplay = true
+parameters/looping = true
 
 [node name="Surgimento" type="Node2D" parent="."]
 visible = false
