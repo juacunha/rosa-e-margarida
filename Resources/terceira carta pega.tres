@@ -5,15 +5,15 @@
 
 [sub_resource type="Resource" id="Resource_6ityn"]
 script = ExtResource("1_6ityn")
-locutor = ""
-faceset_path = ""
+locutor = "Rosa"
+faceset_path = "uid://b3nq03fqa6y8w"
 dialog = "… *Suspiro*..."
 metadata/_custom_type_script = "uid://cjhgwdoi35xan"
 
 [sub_resource type="Resource" id="Resource_acgcc"]
 script = ExtResource("1_6ityn")
-locutor = ""
-faceset_path = ""
+locutor = "Rosa"
+faceset_path = "uid://b3nq03fqa6y8w"
 dialog = "Vou sentir sua falta..."
 metadata/_custom_type_script = "uid://cjhgwdoi35xan"
 

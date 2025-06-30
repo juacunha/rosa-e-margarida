@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://lemia34wagel"]
+[gd_scene load_steps=50 format=3 uid="uid://lemia34wagel"]
 
 [ext_resource type="Script" uid="uid://bre1nb46r2l2i" path="res://Scripts/obj.gd" id="1_pftvb"]
 [ext_resource type="Resource" uid="uid://dq3ydggwmc2dc" path="res://Resources/interacao bonsai.tres" id="2_evu6i"]
@@ -312,7 +312,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4imom"]
-size = Vector2(19, 29)
+size = Vector2(30, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evu6i"]
+size = Vector2(20, 13.5792)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wfq6a"]
 radius = 24.0
@@ -328,8 +331,13 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 12.5)
+position = Vector2(7, 9.5)
 shape = SubResource("RectangleShape2D_4imom")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-13, -5.20611)
+scale = Vector2(0.836661, 0.558777)
+shape = SubResource("RectangleShape2D_evu6i")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

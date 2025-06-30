@@ -1,8 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2cqupbrc6did"]
+[gd_scene load_steps=9 format=3 uid="uid://b2cqupbrc6did"]
 
 [ext_resource type="Script" uid="uid://c57sjq4fus3ej" path="res://Scripts/carta.gd" id="1_u43fh"]
 [ext_resource type="Texture2D" uid="uid://dhcikbte07ref" path="res://Assets/Assets Casa/Assets Casa/Interagíveis/bonsai.png" id="2_8w3oa"]
-[ext_resource type="Texture2D" uid="uid://bhgwgytg11x2w" path="res://Assets/PlaceHolders/Fotos/IMG_3047.png" id="3_silwl"]
+[ext_resource type="Texture2D" uid="uid://cwyscofwacok8" path="res://Assets/Cartas/carta votos v3.png" id="3_1dkii"]
+[ext_resource type="AudioStream" uid="uid://d1gteg3ux1iec" path="res://Sfx/books/book_flip.1.ogg" id="4_hdplx"]
+[ext_resource type="Texture2D" uid="uid://bbtevtnidnlaq" path="res://Assets/Botoes/esc 3.png" id="5_1dkii"]
+
+[sub_resource type="Animation" id="Animation_1dkii"]
+resource_name = "sobe desce"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(418, 69), Vector2(418, 63), Vector2(418, 69)]
+}
+
+[sub_resource type="Animation" id="Animation_kiawe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(418, 69)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3a57h"]
+_data = {
+&"RESET": SubResource("Animation_kiawe"),
+&"sobe desce": SubResource("Animation_1dkii")
+}
 
 [node name="Carta" type="Control"]
 layout_mode = 3
@@ -21,5 +61,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_silwl")
+texture = ExtResource("3_1dkii")
 expand_mode = 1
+
+[node name="abrindo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_hdplx")
+
+[node name="esc" type="Sprite2D" parent="."]
+position = Vector2(418, 69)
+scale = Vector2(0.189889, 0.189889)
+texture = ExtResource("5_1dkii")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="esc"]
+libraries = {
+&"": SubResource("AnimationLibrary_3a57h")
+}
+autoplay = "sobe desce"

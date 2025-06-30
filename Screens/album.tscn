@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://oau8obo3tb2o"]
 
 [ext_resource type="Script" uid="uid://dus70ajbpyx1c" path="res://Scripts/album.gd" id="1_7sqki"]
-[ext_resource type="Texture2D" uid="uid://bhgwgytg11x2w" path="res://Assets/PlaceHolders/Fotos/IMG_3047.png" id="2_7sqki"]
 [ext_resource type="Texture2D" uid="uid://baw2x1h2o0kbc" path="res://Assets/PlaceHolders/Fotos/IMG_3048.png" id="3_a8xvf"]
 [ext_resource type="Texture2D" uid="uid://c2jln01lxnjq2" path="res://Assets/Fotos/foto praia.png" id="4_a8xvf"]
 [ext_resource type="Texture2D" uid="uid://cjalvbnm0vxlm" path="res://Assets/Fotos/foto casamento.png" id="4_eww18"]
-[ext_resource type="FontFile" uid="uid://c14b34a1psu34" path="res://Fontes/Alkhemikal.ttf" id="4_t7aoq"]
+[ext_resource type="FontFile" uid="uid://dx2lk8681g0mt" path="res://Fontes/VeniceClassic.ttf" id="4_l1f4c"]
+[ext_resource type="Texture2D" uid="uid://8ejqgjhhuwhm" path="res://Assets/Album/album.png" id="4_qo5d0"]
 [ext_resource type="Texture2D" uid="uid://sh6yasmxaywo" path="res://Assets/Fotos/foto jardim.png" id="5_4ckl8"]
 [ext_resource type="Texture2D" uid="uid://cmttvtysvpmse" path="res://Assets/Botoes/botao e Sheet.png" id="8_l1f4c"]
 [ext_resource type="Texture2D" uid="uid://cv717hfj140b5" path="res://Assets/Botoes/botao tab Sheet.png" id="9_qo5d0"]
@@ -18,70 +18,69 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7sqki")
-image_1 = ExtResource("2_7sqki")
-image_2 = ExtResource("2_7sqki")
-image_3 = ExtResource("2_7sqki")
-imagem_vazia = ExtResource("3_a8xvf")
-text_1 = "Senhoras muito fofas se casando"
+text_1 = "Esse dia… Foi quando comemoramos por finalmente estarmos morando juntas. Decidimos comprar ele para comemorar, para representar felicidade, harmonia, e prosperidade (ideia da Margarida, é claro). Enfim, compramos como lembrança da nossa conquista, e decidimos tirar essa foto antes de plantá-lo. Dessa forma, sempre iríamos ter a memória de como ele era, e de um marco nas nossas vidas."
 text_2 = "Idosas inteligentes na praia"
 text_3 = "Esse dia foi inesquecivel"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0.113725)
+texture = ExtResource("4_qo5d0")
+expand_mode = 2
 
 [node name="EspacoFoto" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 0
-offset_left = 182.0
-offset_top = 88.0
-offset_right = 560.0
-offset_bottom = 442.0
+offset_left = 102.0
+offset_top = 155.0
+offset_right = 480.0
+offset_bottom = 509.0
+scale = Vector2(0.698117, 0.520659)
 size_flags_horizontal = 0
 mouse_filter = 0
-expand_mode = 1
-stretch_mode = 5
+expand_mode = 2
 
 [node name="TextoFoto" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 650.0
-offset_top = 98.0
-offset_right = 996.0
-offset_bottom = 507.0
+offset_left = 616.0
+offset_top = 123.0
+offset_right = 962.0
+offset_bottom = 532.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("4_t7aoq")
+theme_override_fonts/normal_font = ExtResource("4_l1f4c")
 theme_override_font_sizes/normal_font_size = 20
 text = "Texto muito fofinho e dramatico que faz os jogadores chorarem muito"
 
 [node name="Fotos" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(380, 0)
 layout_mode = 0
-offset_left = 209.0
-offset_top = 446.0
-offset_right = 1027.0
-offset_bottom = 611.0
+offset_left = 266.0
+offset_top = 465.0
+offset_right = 831.0
+offset_bottom = 615.0
+theme_override_constants/separation = 35
+alignment = 1
 
 [node name="Foto1" type="TextureRect" parent="Fotos"]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("5_4ckl8")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Foto2" type="TextureRect" parent="Fotos"]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("4_eww18")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Foto3" type="TextureRect" parent="Fotos"]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("4_a8xvf")
 expand_mode = 1
