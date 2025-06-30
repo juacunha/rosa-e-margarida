@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dry5f677xv3pr"]
+[gd_scene load_steps=9 format=3 uid="uid://dry5f677xv3pr"]
 
 [ext_resource type="Script" uid="uid://sfktwpdm11l7" path="res://Scripts/menu.gd" id="1_b0dvv"]
+[ext_resource type="Texture2D" uid="uid://crun1cqhh2or1" path="res://Assets/menu/mesa.png" id="2_02abu"]
 [ext_resource type="AudioStream" uid="uid://d07mdydm8nyh4" path="res://Sfx/Menu/Ravi de te revoir-loopable.mp3" id="2_7ocep"]
 [ext_resource type="AudioStream" uid="uid://c8wcjiqf2eqn6" path="res://Sfx/click.wav" id="3_n8504"]
+[ext_resource type="Texture2D" uid="uid://dybadjigc22gw" path="res://Assets/menu/aaa.png" id="4_w6p7k"]
+[ext_resource type="Texture2D" uid="uid://di1qi1vr2juo1" path="res://Assets/menu/livro.png" id="5_oawtx"]
+[ext_resource type="Texture2D" uid="uid://bwvfojs87tecx" path="res://Assets/menu/logo.png" id="6_el75v"]
+[ext_resource type="Texture2D" uid="uid://1a0jsdfpreby" path="res://Assets/menu/aaa2.png" id="8_n8lv8"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -13,6 +18,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b0dvv")
 
+[node name="Mesa" type="Sprite2D" parent="."]
+position = Vector2(611, 322)
+scale = Vector2(0.220667, 0.314062)
+texture = ExtResource("2_02abu")
+
 [node name="menu_ost" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_7ocep")
 volume_db = 20.0
@@ -20,36 +30,74 @@ pitch_scale = 1.01
 autoplay = true
 parameters/looping = true
 
+[node name="Aaa" type="Sprite2D" parent="."]
+position = Vector2(583.5, 464)
+scale = Vector2(2.81, 2.08)
+texture = ExtResource("4_w6p7k")
+
+[node name="Aaa3" type="Sprite2D" parent="."]
+position = Vector2(585.5, 562)
+scale = Vector2(2.81, 2.08)
+texture = ExtResource("4_w6p7k")
+
 [node name="Iniciar2" type="Button" parent="." groups=["botoes_click_menu"]]
 layout_mode = 0
-offset_left = 468.0
-offset_top = 412.0
-offset_right = 672.0
-offset_bottom = 460.0
+offset_left = 475.5
+offset_top = 435.0
+offset_right = 679.5
+offset_bottom = 483.0
 mouse_default_cursor_shape = 2
 text = "Jogar"
-
-[node name="Opções" type="Button" parent="." groups=["botoes_click_menu"]]
-layout_mode = 0
-offset_left = 468.0
-offset_top = 468.0
-offset_right = 672.0
-offset_bottom = 516.0
-mouse_default_cursor_shape = 2
-text = "Créditos
-"
+flat = true
 
 [node name="Sair" type="Button" parent="." groups=["botoes_click_menu"]]
 layout_mode = 0
-offset_left = 468.0
-offset_top = 524.0
-offset_right = 672.0
-offset_bottom = 572.0
+offset_left = 478.5
+offset_top = 539.0
+offset_right = 682.5
+offset_bottom = 587.0
 mouse_default_cursor_shape = 2
 text = "Sair"
+flat = true
 
 [node name="sfx_click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_n8504")
+
+[node name="Livro" type="Sprite2D" parent="."]
+position = Vector2(535, 223)
+rotation = 0.0620715
+scale = Vector2(2.21756, 1.75652)
+texture = ExtResource("5_oawtx")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(560, 168)
+rotation = -0.24287
+scale = Vector2(2.70378, 2.4698)
+texture = ExtResource("6_el75v")
+
+[node name="Aaa2" type="Sprite2D" parent="."]
+position = Vector2(140, 317)
+rotation = -0.840815
+scale = Vector2(3.215, 3.77597)
+texture = ExtResource("8_n8lv8")
+
+[node name="Aaa4" type="Sprite2D" parent="."]
+position = Vector2(189.464, 539.974)
+rotation = -0.614505
+scale = Vector2(2.41926, 2.91875)
+texture = ExtResource("8_n8lv8")
+
+[node name="Aaa5" type="Sprite2D" parent="."]
+position = Vector2(990.064, 214.589)
+rotation = 0.740235
+scale = Vector2(2.88152, 2.91875)
+texture = ExtResource("8_n8lv8")
+
+[node name="Aaa6" type="Sprite2D" parent="."]
+position = Vector2(959, 499)
+rotation = -0.473919
+scale = Vector2(3.3327, 3.26457)
+texture = ExtResource("8_n8lv8")
 
 [connection signal="pressed" from="Iniciar2" to="." method="_on_iniciar_2_pressed"]
 [connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
