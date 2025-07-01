@@ -23,7 +23,7 @@ AudioManager="*res://Scenes/autoload_audio/AudioManager.tscn"
 
 window/size/mode=3
 window/stretch/mode="canvas_items"
-mouse_cursor/custom_image="uid://deqqpn6nidy22"
+mouse_cursor/custom_image="uid://rkpcw7hrjxnp"
 
 [global_group]
 

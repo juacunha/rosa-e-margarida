@@ -58,6 +58,7 @@ func _process(delta: float) -> void:
 		print("emissao interaction")
 	if Input.is_action_just_pressed("open_album"):
 		open_album.emit()
+	
 
 func playable(order: bool) -> void:
 	can_be_played = order

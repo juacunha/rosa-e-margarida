@@ -23,7 +23,9 @@ func open_album() -> void:
 		album.show()
 		visibility_ui(false)
 		icon_album.read()
-		
+
+func close_album() -> void:
+	album.hide()
 
 func end_game() -> void:
 	finish_game.emit("Creditos")

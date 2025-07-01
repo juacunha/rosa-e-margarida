@@ -9,6 +9,7 @@ extends Control
 @onready var proximo: TextureButton = $Proximo
 @onready var anterior: TextureButton = $Anterior
 @onready var drag: TextureRect = $Drag
+@onready var pages = $pages
 
 @export_category("Fotos")
 @export var image_1: CompressedTexture2D
@@ -76,12 +77,14 @@ func update_screen() -> void:
 		texto_foto.text = text_3
 
 func previous_image() -> void:
+	pages.play()
 	index_atual -= 1
 	if index_atual == 0:
 		index_atual = 3
 	update_screen()
 
 func next_image() -> void:
+	pages.play()
 	index_atual += 1
 	if index_atual == 4:
 		index_atual = 1
