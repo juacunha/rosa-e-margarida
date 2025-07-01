@@ -1,7 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://oau8obo3tb2o"]
+[gd_scene load_steps=28 format=3 uid="uid://oau8obo3tb2o"]
 
 [ext_resource type="Script" uid="uid://dus70ajbpyx1c" path="res://Scripts/album.gd" id="1_7sqki"]
-[ext_resource type="Texture2D" uid="uid://baw2x1h2o0kbc" path="res://Assets/PlaceHolders/Fotos/IMG_3048.png" id="3_a8xvf"]
 [ext_resource type="Texture2D" uid="uid://bhbq4pxoqjaba" path="res://Assets/Album/animação1.png" id="3_x2hwf"]
 [ext_resource type="Texture2D" uid="uid://c2jln01lxnjq2" path="res://Assets/Fotos/foto praia.png" id="4_a8xvf"]
 [ext_resource type="Texture2D" uid="uid://cjalvbnm0vxlm" path="res://Assets/Fotos/foto casamento.png" id="4_eww18"]
@@ -13,14 +12,20 @@
 [ext_resource type="Texture2D" uid="uid://c2gb8oorov1dr" path="res://Assets/Album/animação4.png" id="6_er158"]
 [ext_resource type="Texture2D" uid="uid://ctua0erdhkt7c" path="res://Assets/Album/animação5.png" id="7_de06w"]
 [ext_resource type="Texture2D" uid="uid://df3gjd7ce5f5s" path="res://Assets/Album/animação6.png" id="8_1llqc"]
-[ext_resource type="Texture2D" uid="uid://cmttvtysvpmse" path="res://Assets/Botoes/botao e Sheet.png" id="8_l1f4c"]
 [ext_resource type="Texture2D" uid="uid://cuf1aq3pdx0rw" path="res://Assets/Album/animação7.png" id="9_kques"]
-[ext_resource type="Texture2D" uid="uid://cv717hfj140b5" path="res://Assets/Botoes/botao tab Sheet.png" id="9_qo5d0"]
 [ext_resource type="Texture2D" uid="uid://c7t7t0x6vvtd6" path="res://Assets/Album/animação8.png" id="10_7f0x0"]
 [ext_resource type="AudioStream" uid="uid://qt41c84m830x" path="res://Sfx/books/book_flip.2.ogg" id="10_qo5d0"]
 [ext_resource type="Texture2D" uid="uid://bhmh7hyipnlfd" path="res://Assets/Album/animação9.png" id="11_4ybj2"]
 [ext_resource type="Texture2D" uid="uid://ccqk2e1f67qef" path="res://Assets/Album/animação10.png" id="12_ugvux"]
 [ext_resource type="Texture2D" uid="uid://kd30iiryuigd" path="res://Assets/Album/animação11.png" id="13_7cx7d"]
+[ext_resource type="Texture2D" uid="uid://d2wt7rqi4ek4c" path="res://Assets/Botoes/seta normal.png" id="18_er158"]
+[ext_resource type="Texture2D" uid="uid://onkuyvl3dg08" path="res://Assets/Botoes/seta clicada.png" id="19_de06w"]
+[ext_resource type="Texture2D" uid="uid://c5neusoqaedmo" path="res://Assets/Botoes/seta normal esquerda.png" id="20_1llqc"]
+[ext_resource type="Texture2D" uid="uid://g4t37fsqinw3" path="res://Assets/Botoes/seta clicada esquerda.png" id="21_kques"]
+[ext_resource type="Texture2D" uid="uid://h3l57dfo5icw" path="res://Assets/Botoes/botao sair normal.png" id="22_1llqc"]
+[ext_resource type="Texture2D" uid="uid://qr8gtu7d4fx3" path="res://Assets/Botoes/botao sair pressed.png" id="23_kques"]
+[ext_resource type="Texture2D" uid="uid://bics1cysmrrus" path="res://Assets/Botoes/botao menu normal.png" id="24_7f0x0"]
+[ext_resource type="Texture2D" uid="uid://bse4toulstglo" path="res://Assets/Botoes/botao menu pressed.png" id="25_4ybj2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yyxj3"]
 animations = [{
@@ -151,20 +156,26 @@ stretch_mode = 5
 
 [node name="Proximo" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 1058.0
-offset_top = 570.0
-offset_right = 1145.0
-offset_bottom = 641.0
-texture_normal = ExtResource("3_a8xvf")
+offset_left = 1008.0
+offset_top = 552.0
+offset_right = 1116.0
+offset_bottom = 619.0
+scale = Vector2(0.828886, 0.828886)
+texture_normal = ExtResource("18_er158")
+texture_pressed = ExtResource("19_de06w")
+texture_hover = ExtResource("19_de06w")
 ignore_texture_size = true
-stretch_mode = 5
 
 [node name="Anterior" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 998.0
-offset_top = 584.0
-offset_right = 1053.0
-offset_bottom = 638.0
+offset_left = 907.0
+offset_top = 552.0
+offset_right = 1014.0
+offset_bottom = 617.0
+scale = Vector2(0.828886, 0.828886)
+texture_normal = ExtResource("20_1llqc")
+texture_pressed = ExtResource("21_kques")
+texture_hover = ExtResource("21_kques")
 
 [node name="Drag" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(200, 200)
@@ -177,19 +188,25 @@ stretch_mode = 5
 
 [node name="Sair" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 586.0
-offset_right = 58.0
-offset_bottom = 626.0
-texture_normal = ExtResource("8_l1f4c")
+offset_left = 120.0
+offset_top = 561.0
+offset_right = 248.0
+offset_bottom = 625.0
+scale = Vector2(0.751095, 0.751095)
+texture_normal = ExtResource("22_1llqc")
+texture_pressed = ExtResource("23_kques")
+texture_hover = ExtResource("23_kques")
 
 [node name="Menu" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 76.0
-offset_top = 586.0
-offset_right = 116.0
-offset_bottom = 626.0
-texture_normal = ExtResource("9_qo5d0")
+offset_left = 31.0
+offset_top = 560.0
+offset_right = 137.0
+offset_bottom = 624.0
+scale = Vector2(0.751095, 0.751095)
+texture_normal = ExtResource("24_7f0x0")
+texture_pressed = ExtResource("25_4ybj2")
+texture_hover = ExtResource("25_4ybj2")
 
 [node name="pages" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_qo5d0")
