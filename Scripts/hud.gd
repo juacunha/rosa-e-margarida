@@ -9,10 +9,12 @@ const DIALOG_SCREEN = preload("res://Screens/dialog_screen.tscn")
 signal dialog_ended()
 signal letter_ended()
 signal finish_game(scene: String)
+signal change_menu(scene: String)
 var can_open_album = true
 
 func _ready() -> void:
 	album.album_full.connect(end_game)
+	album.sair.connect(go_to_menu)
 
 func open_album() -> void:
 	if get_album_visibility():
@@ -24,11 +26,12 @@ func open_album() -> void:
 		visibility_ui(false)
 		icon_album.read()
 
-func close_album() -> void:
-	album.hide()
-
 func end_game() -> void:
 	finish_game.emit("Creditos")
+
+func go_to_menu() -> void:
+	change_menu.emit("Menu")
+	queue_free()
 
 func get_album_visibility() -> bool:
 	if album.is_visible_in_tree():

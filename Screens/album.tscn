@@ -1,15 +1,67 @@
-[gd_scene load_steps=11 format=3 uid="uid://oau8obo3tb2o"]
+[gd_scene load_steps=23 format=3 uid="uid://oau8obo3tb2o"]
 
 [ext_resource type="Script" uid="uid://dus70ajbpyx1c" path="res://Scripts/album.gd" id="1_7sqki"]
 [ext_resource type="Texture2D" uid="uid://baw2x1h2o0kbc" path="res://Assets/PlaceHolders/Fotos/IMG_3048.png" id="3_a8xvf"]
+[ext_resource type="Texture2D" uid="uid://bhbq4pxoqjaba" path="res://Assets/Album/animação1.png" id="3_x2hwf"]
 [ext_resource type="Texture2D" uid="uid://c2jln01lxnjq2" path="res://Assets/Fotos/foto praia.png" id="4_a8xvf"]
 [ext_resource type="Texture2D" uid="uid://cjalvbnm0vxlm" path="res://Assets/Fotos/foto casamento.png" id="4_eww18"]
+[ext_resource type="Texture2D" uid="uid://yjjekbvkvfb0" path="res://Assets/Album/animação2.png" id="4_g0nqc"]
 [ext_resource type="FontFile" uid="uid://dx2lk8681g0mt" path="res://Fontes/VeniceClassic.ttf" id="4_l1f4c"]
 [ext_resource type="Texture2D" uid="uid://8ejqgjhhuwhm" path="res://Assets/Album/album.png" id="4_qo5d0"]
 [ext_resource type="Texture2D" uid="uid://sh6yasmxaywo" path="res://Assets/Fotos/foto jardim.png" id="5_4ckl8"]
+[ext_resource type="Texture2D" uid="uid://c8o5omwsva0wi" path="res://Assets/Album/animação3.png" id="5_qn2jo"]
+[ext_resource type="Texture2D" uid="uid://c2gb8oorov1dr" path="res://Assets/Album/animação4.png" id="6_er158"]
+[ext_resource type="Texture2D" uid="uid://ctua0erdhkt7c" path="res://Assets/Album/animação5.png" id="7_de06w"]
+[ext_resource type="Texture2D" uid="uid://df3gjd7ce5f5s" path="res://Assets/Album/animação6.png" id="8_1llqc"]
 [ext_resource type="Texture2D" uid="uid://cmttvtysvpmse" path="res://Assets/Botoes/botao e Sheet.png" id="8_l1f4c"]
+[ext_resource type="Texture2D" uid="uid://cuf1aq3pdx0rw" path="res://Assets/Album/animação7.png" id="9_kques"]
 [ext_resource type="Texture2D" uid="uid://cv717hfj140b5" path="res://Assets/Botoes/botao tab Sheet.png" id="9_qo5d0"]
+[ext_resource type="Texture2D" uid="uid://c7t7t0x6vvtd6" path="res://Assets/Album/animação8.png" id="10_7f0x0"]
 [ext_resource type="AudioStream" uid="uid://qt41c84m830x" path="res://Sfx/books/book_flip.2.ogg" id="10_qo5d0"]
+[ext_resource type="Texture2D" uid="uid://bhmh7hyipnlfd" path="res://Assets/Album/animação9.png" id="11_4ybj2"]
+[ext_resource type="Texture2D" uid="uid://ccqk2e1f67qef" path="res://Assets/Album/animação10.png" id="12_ugvux"]
+[ext_resource type="Texture2D" uid="uid://kd30iiryuigd" path="res://Assets/Album/animação11.png" id="13_7cx7d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yyxj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x2hwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g0nqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qn2jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_er158")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_de06w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1llqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kques")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7f0x0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4ybj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ugvux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7cx7d")
+}],
+"loop": false,
+"name": &"pages animation",
+"speed": 10.0
+}]
 
 [node name="Album" type="Control"]
 layout_mode = 3
@@ -32,6 +84,14 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_qo5d0")
 expand_mode = 2
+
+[node name="animacao" type="AnimatedSprite2D" parent="."]
+position = Vector2(576.222, 321)
+scale = Vector2(0.598148, 0.598148)
+sprite_frames = SubResource("SpriteFrames_yyxj3")
+animation = &"pages animation"
+frame = 10
+frame_progress = 1.0
 
 [node name="EspacoFoto" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(200, 0)
@@ -134,6 +194,7 @@ texture_normal = ExtResource("9_qo5d0")
 [node name="pages" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_qo5d0")
 
+[connection signal="animation_finished" from="animacao" to="." method="_on_animacao_animation_finished"]
 [connection signal="mouse_entered" from="EspacoFoto" to="." method="_on_espaco_foto_mouse_entered"]
 [connection signal="mouse_exited" from="EspacoFoto" to="." method="_on_espaco_foto_mouse_exited"]
 [connection signal="gui_input" from="Fotos/Foto1" to="." method="_on_foto_1_gui_input"]

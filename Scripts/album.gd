@@ -1,5 +1,7 @@
 extends Control
 
+signal change_scene(scene: String)
+
 @onready var espaco_foto: TextureRect = $EspacoFoto
 @onready var texto_foto: RichTextLabel = $TextoFoto
 @onready var fotos: HBoxContainer = $Fotos
@@ -10,6 +12,8 @@ extends Control
 @onready var anterior: TextureButton = $Anterior
 @onready var drag: TextureRect = $Drag
 @onready var pages = $pages
+@onready var animacao = $animacao
+@onready var menu = $Menu
 
 @export_category("Fotos")
 @export var image_1: CompressedTexture2D
@@ -32,12 +36,17 @@ var drag_offset: Vector2 = Vector2.ZERO
 var mouse_on_area: bool = false
 
 signal album_full()
+signal sair()
 
 func _ready() -> void:
 	foto_1.texture = imagem_vazia
 	foto_2.texture = imagem_vazia
 	foto_3.texture = imagem_vazia
 	update_screen()
+	
+	espaco_foto.show()
+	texto_foto.show()
+	
 
 func _process(delta: float) -> void:
 	if dragging == 1 and images_inventory["Foto 1"]:
@@ -78,6 +87,9 @@ func update_screen() -> void:
 
 func previous_image() -> void:
 	pages.play()
+	animacao.play_backwards("pages animation")
+	espaco_foto.hide()
+	texto_foto.hide()
 	index_atual -= 1
 	if index_atual == 0:
 		index_atual = 3
@@ -85,6 +97,9 @@ func previous_image() -> void:
 
 func next_image() -> void:
 	pages.play()
+	animacao.play("pages animation")
+	espaco_foto.hide()
+	texto_foto.hide()
 	index_atual += 1
 	if index_atual == 4:
 		index_atual = 1
@@ -178,4 +193,8 @@ func _on_sair_pressed():
 	get_tree().quit()
 
 func _on_menu_pressed():
-	get_tree().change_scene_to_file("res://Screens/menu.tscn")
+	sair.emit()
+
+func _on_animacao_animation_finished():
+	espaco_foto.show()
+	texto_foto.show()

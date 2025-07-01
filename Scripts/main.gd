@@ -26,6 +26,7 @@ func _ready() -> void:
 	cenas.add_child(menu)
 	menu.change_scene.connect(change_scene)
 	hud.finish_game.connect(change_scene)
+	hud.change_menu.connect(change_scene)
 
 func _create_dialog(data: CompleteDialogData) -> void:
 	hud._create_dialog_screen(data)

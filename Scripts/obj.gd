@@ -7,6 +7,7 @@ class_name InteractableObject
 @export var can_be_interacted: bool = true
 @export var timer_animacao_brilho: float = 6.0
 @export_range(0, 3) var photo_index: int = 0
+@export_range(0, 1) var photo_check: int = 0
 #Aqui também terá que ser inserido as informações de cartas e fotos
 
 
@@ -21,6 +22,11 @@ signal interacted(data, dono)
 func _ready() -> void:
 	timer.wait_time = timer_animacao_brilho
 
+func _process(delta):
+	if photo_check == 1 and already_interacted:
+		animated_sprite_2d.hide()
+		can_be_interacted = false
+
 func get_dialog() -> CompleteDialogData:
 	if can_be_interacted:
 		return dialog
@@ -29,18 +35,15 @@ func get_dialog() -> CompleteDialogData:
 func interact(_dono) -> void:
 	interacted.emit(dialog, self)
 	already_interacted = true
-	
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.interaction.connect(interact)
 		print("obj conectado")
 
-
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body is Player:
 		body.interaction.disconnect(interact)
-
 
 func _on_timer_timeout() -> void:
 	if can_be_interacted and not already_interacted:

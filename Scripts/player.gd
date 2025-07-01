@@ -56,7 +56,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and can_interact and can_be_played:
 		interaction.emit(self)
 		print("emissao interaction")
-	if Input.is_action_just_pressed("open_album"):
+	if Input.is_action_just_pressed("open_album") or Input.is_action_just_pressed("esc"):
 		open_album.emit()
 	
 
