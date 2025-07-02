@@ -57,13 +57,13 @@ func change_scene(new_scene: String) -> void:
 		new = MENU.instantiate()
 		CURRENT_ROOM = "Menu"
 		Input.mouse_mode =  Input.MOUSE_MODE_VISIBLE
+		player.queue_free()
 	elif new_scene == "Creditos":
 		new = CREDITOS.instantiate()
 		CURRENT_ROOM = "Creditos"
 		Input.mouse_mode =  Input.MOUSE_MODE_VISIBLE
 		player.hide()
 	
-		
 	
 	for i in cenas.get_children():
 		i.queue_free()
@@ -71,9 +71,9 @@ func change_scene(new_scene: String) -> void:
 	cenas.add_child(new)
 	new.change_scene.connect(change_scene)
 	
-	
+	print(LAST_ROOM)
 	if new is Sala:
-		if not LAST_ROOM:
+		if not LAST_ROOM or LAST_ROOM == "Menu":
 			LAST_ROOM = "Inicial"
 			player = PLAYER.instantiate()
 			add_child(player)
@@ -85,7 +85,7 @@ func change_scene(new_scene: String) -> void:
 			player.playable(true)
 		connect_to_objects(new)
 		new.move_player(LAST_ROOM, player)
-		LAST_ROOM = new.name
+	LAST_ROOM = new.name
 
 func abrir_album():
 	if hud.get_album_visibility():

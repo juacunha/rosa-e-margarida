@@ -30,8 +30,9 @@ func end_game() -> void:
 	finish_game.emit("Creditos")
 
 func go_to_menu() -> void:
+	album.hide()
 	change_menu.emit("Menu")
-	queue_free()
+	#queue_free()
 
 func get_album_visibility() -> bool:
 	if album.is_visible_in_tree():
