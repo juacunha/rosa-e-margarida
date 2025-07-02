@@ -30,11 +30,11 @@ func _on_iniciar_2_pressed() -> void:
 		.set_ease(Tween.EASE_IN_OUT)
 	
 	# Espera o fade out terminar antes de mudar de cena
-	await fade_out_tween.finished
+	#await fade_out_tween.finished
 	# Emite o sinal para mudar de cena
 	change_scene.emit("Quarto")
 	# Libera a cena atual
-	queue_free()
+	#queue_free()
 
 func _on_sair_pressed() -> void:
 	 # Fade out da música antes de sair
