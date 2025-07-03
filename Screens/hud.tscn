@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://c2jln01lxnjq2" path="res://Assets/Fotos/foto praia.png" id="4_lg0rs"]
 [ext_resource type="Texture2D" uid="uid://cjalvbnm0vxlm" path="res://Assets/Fotos/foto casamento.png" id="4_srvv7"]
 [ext_resource type="PackedScene" uid="uid://c8pib60ea3oan" path="res://Screens/icon.tscn" id="6_srvv7"]
-[ext_resource type="Texture2D" uid="uid://cmttvtysvpmse" path="res://Assets/Botoes/botao e Sheet.png" id="7_sd5mn"]
-[ext_resource type="Texture2D" uid="uid://cv717hfj140b5" path="res://Assets/Botoes/botao tab Sheet.png" id="8_3btot"]
+[ext_resource type="Texture2D" uid="uid://vwgfvanahojg" path="res://Assets/Album/icone album.png" id="7_sd5mn"]
+[ext_resource type="Texture2D" uid="uid://dqll0d3rb84vi" path="res://Assets/Album/icone album exclama.png" id="8_3btot"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_4w7y3")
@@ -22,6 +22,7 @@ text_3 = "Esse dia estava quente, mas nem tanto. Acabamos passando um pouco de f
 
 [node name="IconAlbum" parent="." instance=ExtResource("6_srvv7")]
 visible = false
+texture_filter = 1
 mouse_filter = 2
 icon_idle = ExtResource("7_sd5mn")
 icon_warning = ExtResource("8_3btot")

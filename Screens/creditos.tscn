@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfmcmlinpfs2b"]
+[gd_scene load_steps=22 format=3 uid="uid://dfmcmlinpfs2b"]
 
 [ext_resource type="Script" uid="uid://rncdd06517ue" path="res://Scripts/creditos.gd" id="1_iqcdc"]
-[ext_resource type="Texture2D" uid="uid://ct8qdupr7tq3g" path="res://Assets/menu/ending screen.png" id="2_yt1ni"]
+[ext_resource type="Texture2D" uid="uid://b8bmuap7agaa4" path="res://Assets/menu/ending screen v2.png" id="2_isiit"]
 [ext_resource type="Texture2D" uid="uid://di1qi1vr2juo1" path="res://Assets/menu/livro.png" id="3_isiit"]
 [ext_resource type="Texture2D" uid="uid://bwvfojs87tecx" path="res://Assets/menu/logo.png" id="4_vvamg"]
 [ext_resource type="Texture2D" uid="uid://bics1cysmrrus" path="res://Assets/Botoes/botao menu normal.png" id="5_a2kmy"]
@@ -11,6 +11,166 @@
 [ext_resource type="AudioStream" uid="uid://c8wcjiqf2eqn6" path="res://Sfx/click.wav" id="9_70rq8"]
 [ext_resource type="AudioStream" uid="uid://bsxoqkxrdak4v" path="res://Sfx/Menu/On a tous besoin de temps-pause loopable.mp3" id="9_isiit"]
 [ext_resource type="AudioStream" uid="uid://cqq3h8l0fxk5d" path="res://Sfx/segurado.mp3" id="10_wxrvk"]
+[ext_resource type="Texture2D" uid="uid://cuot76pgqvnvw" path="res://Assets/menu/folha verde v2.png" id="12_vvamg"]
+
+[sub_resource type="Animation" id="Animation_isiit"]
+resource_name = "descendo"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(30, 30), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vvamg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a2kmy"]
+_data = {
+&"RESET": SubResource("Animation_vvamg"),
+&"descendo": SubResource("Animation_isiit")
+}
+
+[sub_resource type="Animation" id="Animation_a2kmy"]
+resource_name = "petala caindo"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.46667, 3.03333, 4.53333, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(151, 11), Vector2(251, 240), Vector2(159, 420), Vector2(301, 596), Vector2(142, 609)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.46667, 3.03333, 4.53333, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.462695, -1.81478, -0.776032, -1.89331, -0.672468]
+}
+
+[sub_resource type="Animation" id="Animation_4m34m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(151, 11)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.462695]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dyyq3"]
+_data = {
+&"RESET": SubResource("Animation_4m34m"),
+&"petala caindo": SubResource("Animation_a2kmy")
+}
+
+[sub_resource type="Animation" id="Animation_l615n"]
+resource_name = "caindo"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(974, 11), Vector2(1024, 229), Vector2(989, 416), Vector2(1023, 571), Vector2(918, 597)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -1.28802, -0.293588, -1.75241, -0.433668]
+}
+
+[sub_resource type="Animation" id="Animation_70rq8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(974, 11)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wxrvk"]
+_data = {
+&"RESET": SubResource("Animation_70rq8"),
+&"caindo": SubResource("Animation_l615n")
+}
 
 [node name="Creditos" type="Control"]
 layout_mode = 3
@@ -24,7 +184,7 @@ script = ExtResource("1_iqcdc")
 [node name="Fundo" type="Sprite2D" parent="."]
 position = Vector2(574, 366)
 scale = Vector2(0.274985, 0.252652)
-texture = ExtResource("2_yt1ni")
+texture = ExtResource("2_isiit")
 
 [node name="Livro" type="Sprite2D" parent="."]
 position = Vector2(588.548, 169.904)
@@ -32,9 +192,9 @@ scale = Vector2(1.31678, 1.31678)
 texture = ExtResource("3_isiit")
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(601, 135.361)
+position = Vector2(597, 137)
 rotation = -0.343958
-scale = Vector2(2.50829, 2.50829)
+scale = Vector2(1.93757, 1.93757)
 texture = ExtResource("4_vvamg")
 
 [node name="menu" type="TextureButton" parent="."]
@@ -62,6 +222,12 @@ texture_hover = ExtResource("8_l615n")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_a2kmy")
+}
+autoplay = "descendo"
+
 [node name="Ost" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_isiit")
 volume_db = 3.748
@@ -73,7 +239,30 @@ stream = ExtResource("9_70rq8")
 [node name="hover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_wxrvk")
 
+[node name="petala" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(151, 11)
+rotation = -0.462695
+scale = Vector2(2.94944, 2.94944)
+texture = ExtResource("12_vvamg")
+
+[node name="petala 1" type="AnimationPlayer" parent="petala"]
+libraries = {
+&"": SubResource("AnimationLibrary_dyyq3")
+}
+
+[node name="petala 2" type="Sprite2D" parent="."]
+position = Vector2(974, 11)
+scale = Vector2(2.97838, 2.97838)
+texture = ExtResource("12_vvamg")
+
+[node name="petala 2" type="AnimationPlayer" parent="petala 2"]
+libraries = {
+&"": SubResource("AnimationLibrary_wxrvk")
+}
+
 [connection signal="mouse_entered" from="menu" to="." method="_on_menu_mouse_entered"]
 [connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
 [connection signal="mouse_entered" from="sair" to="." method="_on_sair_mouse_entered"]
 [connection signal="pressed" from="sair" to="." method="_on_sair_pressed"]
+[connection signal="animation_finished" from="Camera2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

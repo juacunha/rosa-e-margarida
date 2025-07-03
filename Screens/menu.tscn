@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dry5f677xv3pr"]
 
 [ext_resource type="Script" uid="uid://sfktwpdm11l7" path="res://Scripts/menu.gd" id="1_b0dvv"]
-[ext_resource type="Texture2D" uid="uid://crun1cqhh2or1" path="res://Assets/menu/mesa.png" id="2_02abu"]
+[ext_resource type="Texture2D" uid="uid://dp5g2o3h4rekw" path="res://Assets/menu/fundo menu v1.png" id="2_7l0h0"]
 [ext_resource type="AudioStream" uid="uid://d07mdydm8nyh4" path="res://Sfx/Menu/Ravi de te revoir-loopable.mp3" id="2_7ocep"]
 [ext_resource type="AudioStream" uid="uid://c8wcjiqf2eqn6" path="res://Sfx/click.wav" id="3_n8504"]
 [ext_resource type="Texture2D" uid="uid://dxlkpy0l0wucp" path="res://Assets/Botoes/Jogar hover1.png" id="5_d76eo"]
@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://dgyxhafyv2gvj" path="res://Assets/Botoes/Jogar hover3.png" id="6_q6r6m"]
 [ext_resource type="Texture2D" uid="uid://ukx1kdi6a5g" path="res://Assets/Botoes/Jogar hover2.png" id="7_5uwiu"]
 [ext_resource type="Texture2D" uid="uid://bxsrr2wcgfdxe" path="res://Assets/Botoes/sair normal.png" id="8_7l0h0"]
-[ext_resource type="Texture2D" uid="uid://1a0jsdfpreby" path="res://Assets/menu/aaa2.png" id="8_n8lv8"]
 [ext_resource type="Texture2D" uid="uid://twffk4sucd1j" path="res://Assets/Botoes/sair pressed.png" id="9_1nb2d"]
 [ext_resource type="Texture2D" uid="uid://bsgs0pfeil2gl" path="res://Assets/Botoes/sair hoverl.png" id="10_6ub56"]
 [ext_resource type="AudioStream" uid="uid://cqq3h8l0fxk5d" path="res://Sfx/segurado.mp3" id="11_7l0h0"]
+[ext_resource type="Texture2D" uid="uid://cuot76pgqvnvw" path="res://Assets/menu/folha verde v2.png" id="14_1nb2d"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -27,7 +27,7 @@ script = ExtResource("1_b0dvv")
 [node name="Mesa" type="Sprite2D" parent="."]
 position = Vector2(576, 330)
 scale = Vector2(0.195103, 0.277679)
-texture = ExtResource("2_02abu")
+texture = ExtResource("2_7l0h0")
 
 [node name="menu_ost" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_7ocep")
@@ -78,28 +78,64 @@ scale = Vector2(2.70378, 2.4698)
 texture = ExtResource("6_el75v")
 
 [node name="Aaa2" type="Sprite2D" parent="."]
-position = Vector2(140, 317)
+position = Vector2(193.268, 312.928)
+rotation = -0.840815
+scale = Vector2(3.1616, 3.81252)
+texture = ExtResource("14_1nb2d")
+
+[node name="Aaa3" type="Sprite2D" parent="."]
+position = Vector2(832, 383)
 rotation = -0.840815
 scale = Vector2(3.215, 3.77597)
-texture = ExtResource("8_n8lv8")
+texture = ExtResource("14_1nb2d")
 
 [node name="Aaa4" type="Sprite2D" parent="."]
 position = Vector2(189.464, 539.974)
 rotation = -0.614505
 scale = Vector2(2.41926, 2.91875)
-texture = ExtResource("8_n8lv8")
+texture = ExtResource("14_1nb2d")
+
+[node name="Aaa9" type="Sprite2D" parent="."]
+position = Vector2(67, 447)
+rotation = -2.09772
+scale = Vector2(2.41926, 2.91875)
+texture = ExtResource("14_1nb2d")
 
 [node name="Aaa5" type="Sprite2D" parent="."]
 position = Vector2(990.064, 214.589)
 rotation = 0.740235
 scale = Vector2(2.88152, 2.91875)
-texture = ExtResource("8_n8lv8")
+texture = ExtResource("14_1nb2d")
+
+[node name="Aaa10" type="Sprite2D" parent="."]
+position = Vector2(193, 132)
+rotation = 0.740235
+scale = Vector2(2.88152, 2.91875)
+texture = ExtResource("14_1nb2d")
+
+[node name="Aaa8" type="Sprite2D" parent="."]
+position = Vector2(1053, 62)
+rotation = -1.59103
+scale = Vector2(2.88152, 2.91875)
+texture = ExtResource("14_1nb2d")
 
 [node name="Aaa6" type="Sprite2D" parent="."]
-position = Vector2(959, 499)
+position = Vector2(984, 512)
 rotation = -0.473919
 scale = Vector2(3.3327, 3.26457)
-texture = ExtResource("8_n8lv8")
+texture = ExtResource("14_1nb2d")
+
+[node name="Aaa11" type="Sprite2D" parent="."]
+position = Vector2(875, 56)
+rotation = -0.248872
+scale = Vector2(3.3327, 3.26457)
+texture = ExtResource("14_1nb2d")
+
+[node name="Aaa7" type="Sprite2D" parent="."]
+position = Vector2(66, 62)
+rotation = -1.62565
+scale = Vector2(3.3327, 3.26457)
+texture = ExtResource("14_1nb2d")
 
 [connection signal="mouse_entered" from="Iniciar2" to="." method="_on_iniciar_2_mouse_entered"]
 [connection signal="pressed" from="Iniciar2" to="." method="_on_iniciar_2_pressed"]
