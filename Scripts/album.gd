@@ -14,6 +14,9 @@ signal change_scene(scene: String)
 @onready var pages = $pages
 @onready var animacao = $animacao
 @onready var menu = $Menu
+@onready var click = $click
+@onready var hover = $hover
+@onready var foto = $foto
 
 @export_category("Fotos")
 @export var image_1: CompressedTexture2D
@@ -46,7 +49,6 @@ func _ready() -> void:
 	
 	espaco_foto.show()
 	texto_foto.show()
-	
 
 func _process(delta: float) -> void:
 	if dragging == 1 and images_inventory["Foto 1"]:
@@ -63,7 +65,6 @@ func _process(delta: float) -> void:
 		drag.show()
 	else:
 		drag.hide()
-	
 
 func update_screen() -> void:
 	if index_atual == 1:
@@ -105,7 +106,6 @@ func next_image() -> void:
 		index_atual = 1
 	update_screen()
 
-
 func get_new_image(index: int) -> void:
 	if index == 1 and not album_inventory["Foto 1"]:
 		foto_1.texture = image_1
@@ -116,8 +116,6 @@ func get_new_image(index: int) -> void:
 	elif index == 3 and not  album_inventory["Foto 3"]:
 		foto_3.texture = image_3
 		images_inventory["Foto 3"] = true
-	
-		
 
 func _on_foto_1_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and images_inventory["Foto 1"]:
@@ -149,23 +147,25 @@ func _on_foto_3_gui_input(event: InputEvent) -> void:
 		else:
 			released_dragged()
 
-
 func released_dragged() -> void:
-	print(dragging, index_atual, mouse_on_area)
+
 	if dragging == index_atual and mouse_on_area:
 		match dragging:
 			1:
 				images_inventory["Foto 1"] = false
 				album_inventory["Foto 1"] = true
 				foto_1.texture = imagem_vazia
+				foto.play()
 			2:
 				images_inventory["Foto 2"] = false
 				album_inventory["Foto 2"] = true
-				foto_2.texture = imagem_vazia					
+				foto_2.texture = imagem_vazia
+				foto.play()
 			3:
 				images_inventory["Foto 3"] = false
 				album_inventory["Foto 3"] = true
 				foto_3.texture = imagem_vazia
+				foto.play()
 		if is_album_full():
 			album_full.emit()
 			hide()
@@ -173,7 +173,6 @@ func released_dragged() -> void:
 		update_screen()
 		return
 	dragging = 0
-			
 
 func _on_espaco_foto_mouse_entered() -> void:
 	mouse_on_area = true
@@ -190,11 +189,25 @@ func is_album_full() -> bool:
 	return true
 
 func _on_sair_pressed():
+	click.play()
 	get_tree().quit()
 
 func _on_menu_pressed():
+	click.play()
 	sair.emit()
 
 func _on_animacao_animation_finished():
 	espaco_foto.show()
 	texto_foto.show()
+
+func _on_proximo_mouse_entered():
+	hover.play()
+
+func _on_anterior_mouse_entered():
+	hover.play()
+
+func _on_sair_mouse_entered():
+	hover.play()
+
+func _on_menu_mouse_entered():
+	hover.play()

@@ -57,12 +57,14 @@ func change_scene(new_scene: String) -> void:
 		new = MENU.instantiate()
 		CURRENT_ROOM = "Menu"
 		Input.mouse_mode =  Input.MOUSE_MODE_VISIBLE
-		player.queue_free()
+		if player:
+			player.queue_free()
+			hud.hide()
 	elif new_scene == "Creditos":
 		new = CREDITOS.instantiate()
 		CURRENT_ROOM = "Creditos"
 		Input.mouse_mode =  Input.MOUSE_MODE_VISIBLE
-		player.hide()
+		player.queue_free()
 	
 	
 	for i in cenas.get_children():

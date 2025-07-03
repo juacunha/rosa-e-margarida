@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://cgfbm7r5mcce5"]
+[gd_scene load_steps=25 format=3 uid="uid://cgfbm7r5mcce5"]
 
 [ext_resource type="Script" uid="uid://bre1nb46r2l2i" path="res://Scripts/obj.gd" id="1_c4cuh"]
 [ext_resource type="Resource" uid="uid://b7h4v5v4w0q1x" path="res://Resources/segunda foto pega.tres" id="2_wucdm"]
 [ext_resource type="Texture2D" uid="uid://br2ksr8libcdn" path="res://Assets/Assets Casa/Assets Casa/Interagíveis/foto casamento-Sheet.png" id="3_wucdm"]
+[ext_resource type="AudioStream" uid="uid://dxbg53863pxib" path="res://Sfx/collect.mp3" id="4_c4cuh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4cuh"]
 atlas = ExtResource("3_wucdm")
@@ -167,6 +168,10 @@ shape = SubResource("CircleShape2D_wfq6a")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="collected" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_c4cuh")
+volume_db = -7.496
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

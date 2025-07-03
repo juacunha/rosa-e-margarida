@@ -14,6 +14,7 @@ class_name InteractableObject
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
+@onready var collected = $collected
 
 var already_interacted = false
 
@@ -23,7 +24,8 @@ func _ready() -> void:
 	timer.wait_time = timer_animacao_brilho
 
 func _process(delta):
-	if photo_check == 1 and already_interacted:
+	if photo_check == 1 and already_interacted and can_be_interacted:
+		collected.play()
 		animated_sprite_2d.hide()
 		can_be_interacted = false
 

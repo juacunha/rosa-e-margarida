@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://cotioohhfqxqh"]
+[gd_scene load_steps=25 format=3 uid="uid://cotioohhfqxqh"]
 
 [ext_resource type="Script" uid="uid://bre1nb46r2l2i" path="res://Scripts/obj.gd" id="1_to61b"]
 [ext_resource type="Resource" uid="uid://dx5rel1dllsa2" path="res://Resources/terceira foto pega.tres" id="2_to61b"]
 [ext_resource type="Texture2D" uid="uid://d31vso1bn3hu4" path="res://Assets/Assets Casa/Assets Casa/Interagíveis/foto bonsai-Sheet.png" id="3_to61b"]
+[ext_resource type="AudioStream" uid="uid://dxbg53863pxib" path="res://Sfx/collect.mp3" id="4_8yl8f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8yl8f"]
 atlas = ExtResource("3_to61b")
@@ -147,6 +148,7 @@ collision_mask = 0
 script = ExtResource("1_to61b")
 dialog = ExtResource("2_to61b")
 photo_index = 1
+photo_check = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xsaib")
@@ -166,6 +168,10 @@ shape = SubResource("CircleShape2D_wfq6a")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="collected" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_8yl8f")
+volume_db = -7.496
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

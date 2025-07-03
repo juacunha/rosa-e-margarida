@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://c3pveuuf4ws5i"]
+[gd_scene load_steps=25 format=3 uid="uid://c3pveuuf4ws5i"]
 
 [ext_resource type="Script" uid="uid://bre1nb46r2l2i" path="res://Scripts/obj.gd" id="1_jn0ca"]
 [ext_resource type="Resource" uid="uid://yxdkpcawd3ll" path="res://Resources/primeira foto pega.tres" id="2_jn0ca"]
 [ext_resource type="Texture2D" uid="uid://bt6ykcxryt547" path="res://Assets/Assets Casa/Assets Casa/Interagíveis/foto praia-Sheet.png" id="4_jn0ca"]
+[ext_resource type="AudioStream" uid="uid://dxbg53863pxib" path="res://Sfx/collect.mp3" id="4_li4a1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_grnjg"]
 atlas = ExtResource("4_jn0ca")
@@ -166,6 +167,10 @@ shape = SubResource("CircleShape2D_wfq6a")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="collected" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_li4a1")
+volume_db = -7.496
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -17,6 +17,7 @@ class_name Door
 # Referência aos Ns filhos
 @onready var area_2d: Area2D = $Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var abrindo = $abrindo
 
 # Exportações
 @export var animations: SpriteFrames # Passe as animações da porta. Elas devem ter o nome 'idle' e 'opening'
@@ -43,6 +44,7 @@ func enable_door() -> void:
 func interact(_dono) -> void:
 	# Animação de abertura
 	animated_sprite_2d.play("opening")
+	abrindo.play()
 	# Aviso para a Sala que a porta está sendo aberta
 	door_opened.emit(self)
 	

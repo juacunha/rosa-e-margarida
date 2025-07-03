@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfmcmlinpfs2b"]
+[gd_scene load_steps=12 format=3 uid="uid://dfmcmlinpfs2b"]
 
 [ext_resource type="Script" uid="uid://rncdd06517ue" path="res://Scripts/creditos.gd" id="1_iqcdc"]
+[ext_resource type="Texture2D" uid="uid://ct8qdupr7tq3g" path="res://Assets/menu/ending screen.png" id="2_yt1ni"]
+[ext_resource type="Texture2D" uid="uid://di1qi1vr2juo1" path="res://Assets/menu/livro.png" id="3_isiit"]
+[ext_resource type="Texture2D" uid="uid://bwvfojs87tecx" path="res://Assets/menu/logo.png" id="4_vvamg"]
+[ext_resource type="Texture2D" uid="uid://bics1cysmrrus" path="res://Assets/Botoes/botao menu normal.png" id="5_a2kmy"]
+[ext_resource type="Texture2D" uid="uid://bse4toulstglo" path="res://Assets/Botoes/botao menu pressed.png" id="6_4m34m"]
+[ext_resource type="Texture2D" uid="uid://h3l57dfo5icw" path="res://Assets/Botoes/botao sair normal.png" id="7_dyyq3"]
+[ext_resource type="Texture2D" uid="uid://qr8gtu7d4fx3" path="res://Assets/Botoes/botao sair pressed.png" id="8_l615n"]
+[ext_resource type="AudioStream" uid="uid://c8wcjiqf2eqn6" path="res://Sfx/click.wav" id="9_70rq8"]
+[ext_resource type="AudioStream" uid="uid://bsxoqkxrdak4v" path="res://Sfx/Menu/On a tous besoin de temps-pause loopable.mp3" id="9_isiit"]
+[ext_resource type="AudioStream" uid="uid://cqq3h8l0fxk5d" path="res://Sfx/segurado.mp3" id="10_wxrvk"]
 
 [node name="Creditos" type="Control"]
 layout_mode = 3
@@ -11,20 +21,59 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iqcdc")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Fim!"
+[node name="Fundo" type="Sprite2D" parent="."]
+position = Vector2(574, 366)
+scale = Vector2(0.274985, 0.252652)
+texture = ExtResource("2_yt1ni")
+
+[node name="Livro" type="Sprite2D" parent="."]
+position = Vector2(588.548, 169.904)
+scale = Vector2(1.31678, 1.31678)
+texture = ExtResource("3_isiit")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(601, 135.361)
+rotation = -0.343958
+scale = Vector2(2.50829, 2.50829)
+texture = ExtResource("4_vvamg")
+
+[node name="menu" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 586.0
+offset_right = 615.0
+offset_bottom = 650.0
+scale = Vector2(0.756484, 0.756484)
+texture_normal = ExtResource("5_a2kmy")
+texture_pressed = ExtResource("6_4m34m")
+texture_hover = ExtResource("6_4m34m")
+
+[node name="sair" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 586.0
+offset_right = 737.0
+offset_bottom = 650.0
+scale = Vector2(0.756484, 0.756484)
+texture_normal = ExtResource("7_dyyq3")
+texture_pressed = ExtResource("8_l615n")
+texture_hover = ExtResource("8_l615n")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+
+[node name="Ost" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_isiit")
+volume_db = 3.748
+parameters/looping = true
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_70rq8")
+
+[node name="hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_wxrvk")
+
+[connection signal="mouse_entered" from="menu" to="." method="_on_menu_mouse_entered"]
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
+[connection signal="mouse_entered" from="sair" to="." method="_on_sair_mouse_entered"]
+[connection signal="pressed" from="sair" to="." method="_on_sair_pressed"]

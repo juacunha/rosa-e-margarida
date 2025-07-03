@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://oau8obo3tb2o"]
+[gd_scene load_steps=31 format=3 uid="uid://oau8obo3tb2o"]
 
 [ext_resource type="Script" uid="uid://dus70ajbpyx1c" path="res://Scripts/album.gd" id="1_7sqki"]
 [ext_resource type="Texture2D" uid="uid://bhbq4pxoqjaba" path="res://Assets/Album/animação1.png" id="3_x2hwf"]
@@ -26,6 +26,9 @@
 [ext_resource type="Texture2D" uid="uid://qr8gtu7d4fx3" path="res://Assets/Botoes/botao sair pressed.png" id="23_kques"]
 [ext_resource type="Texture2D" uid="uid://bics1cysmrrus" path="res://Assets/Botoes/botao menu normal.png" id="24_7f0x0"]
 [ext_resource type="Texture2D" uid="uid://bse4toulstglo" path="res://Assets/Botoes/botao menu pressed.png" id="25_4ybj2"]
+[ext_resource type="AudioStream" uid="uid://c8wcjiqf2eqn6" path="res://Sfx/click.wav" id="27_7f0x0"]
+[ext_resource type="AudioStream" uid="uid://cqq3h8l0fxk5d" path="res://Sfx/segurado.mp3" id="28_4ybj2"]
+[ext_resource type="AudioStream" uid="uid://di4kqkk6jha2n" path="res://Sfx/foto colada.mp3" id="29_4ybj2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yyxj3"]
 animations = [{
@@ -211,6 +214,15 @@ texture_hover = ExtResource("25_4ybj2")
 [node name="pages" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_qo5d0")
 
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_7f0x0")
+
+[node name="hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_4ybj2")
+
+[node name="foto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_4ybj2")
+
 [connection signal="animation_finished" from="animacao" to="." method="_on_animacao_animation_finished"]
 [connection signal="mouse_entered" from="EspacoFoto" to="." method="_on_espaco_foto_mouse_entered"]
 [connection signal="mouse_exited" from="EspacoFoto" to="." method="_on_espaco_foto_mouse_exited"]
@@ -218,6 +230,10 @@ stream = ExtResource("10_qo5d0")
 [connection signal="gui_input" from="Fotos/Foto2" to="." method="_on_foto_2_gui_input"]
 [connection signal="gui_input" from="Fotos/Foto3" to="." method="_on_foto_3_gui_input"]
 [connection signal="button_down" from="Proximo" to="." method="next_image"]
+[connection signal="mouse_entered" from="Proximo" to="." method="_on_proximo_mouse_entered"]
 [connection signal="button_down" from="Anterior" to="." method="previous_image"]
+[connection signal="mouse_entered" from="Anterior" to="." method="_on_anterior_mouse_entered"]
+[connection signal="mouse_entered" from="Sair" to="." method="_on_sair_mouse_entered"]
 [connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
+[connection signal="mouse_entered" from="Menu" to="." method="_on_menu_mouse_entered"]
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

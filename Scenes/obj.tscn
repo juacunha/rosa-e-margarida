@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cau6235dpbadq"]
+[gd_scene load_steps=3 format=3 uid="uid://cau6235dpbadq"]
 
 [ext_resource type="Script" uid="uid://bre1nb46r2l2i" path="res://Scripts/obj.gd" id="1_2v6mm"]
+[ext_resource type="AudioStream" uid="uid://dxbg53863pxib" path="res://Sfx/collect.mp3" id="2_wm24v"]
 
 [node name="Obj" type="StaticBody2D"]
 script = ExtResource("1_2v6mm")
@@ -14,6 +15,9 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="collected" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_wm24v")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

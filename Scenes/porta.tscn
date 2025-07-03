@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://osy80j4wrwhi"]
+[gd_scene load_steps=11 format=3 uid="uid://osy80j4wrwhi"]
 
 [ext_resource type="Script" uid="uid://cg760x5fhhmbg" path="res://Scripts/porta.gd" id="1_5quaa"]
 [ext_resource type="Texture2D" uid="uid://di6k21cikricf" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/porta quarto Sheet.png" id="2_5f6wt"]
 [ext_resource type="Texture2D" uid="uid://dflhlm8or2k1t" path="res://Assets/Assets Casa/Assets Casa/Portas e Janelas/porta quarto Sheet-export.png" id="3_camwj"]
+[ext_resource type="AudioStream" uid="uid://dbr0a2wyvfiin" path="res://Sfx/Porta Abrindo.mp3" id="4_shvlh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5f6wt"]
 size = Vector2(24, 16)
@@ -64,6 +65,10 @@ shape = SubResource("RectangleShape2D_5f6wt")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_5quaa")
 animation = &"opening"
+
+[node name="abrindo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_shvlh")
+volume_db = -3.748
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
